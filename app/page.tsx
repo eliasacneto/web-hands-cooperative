@@ -20,6 +20,9 @@ export default function Home() {
 
   return (
     <>
+
+      {/*Contato e-mail + fone abaixo */}
+
       <div className="hidden lg:flex justify-between mx-36 mt-7 mb-7">
         <h4 className="text-gray-400 font-semibold text-base">
           brazilianhandscooperative@gmail.com
@@ -33,6 +36,12 @@ export default function Home() {
           +353 83 347 1038
         </a>
       </div>
+
+      {/*Contato e-mail + fone acima */}
+
+
+      {/*Menu abaixo */}
+    
       <div className="flex fixed items-center z-40 bg-white w-screen lg:hidden px-6 py-6 shadow-md">
         <a href="#" className="">
           <img
@@ -50,7 +59,7 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Menu */}
+      {/* Menu */} 
       <header className="h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-emerald-500  text-white antialiased font-bold mb-24">
         <a href="#" className="">
           <img
@@ -72,12 +81,16 @@ export default function Home() {
             >
               Home
             </a>
-            <a
-              className="hover:text-[#024218] transition-all duration-500"
-              href="about-us.html"
-            >
-              About Us
-            </a>
+
+            
+              <a
+                className="hover:text-[#024218] transition-all duration-500"
+                href="about-us.html"
+              >
+                About Us
+              </a>
+            
+
             <a
               className="hover:text-[#024218] transition-all duration-500"
               href="services.html"
@@ -91,6 +104,10 @@ export default function Home() {
               Work with us
             </a>
           </nav>
+
+         {/*Menu acima */}
+
+
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
               href="https://wa.me/557499797700?text=Ol%C3%Ahttps://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A1%21+Vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+projeto%21"
@@ -120,7 +137,12 @@ export default function Home() {
       <div className="flex w-full mt-6">
         <Footer />
       </div>
+
+       
+
     </>
+
+
   );
 }
 
