@@ -42,7 +42,7 @@ export default function Home() {
 
       {/*Menu abaixo */}
 
-      <div className="flex fixed items-center z-40 bg-white w-screen lg:hidden px-6 py-6 shadow-md">
+      <div className="flex fixed items-center z-40 bg-white w-screen lg:hidden px-6 py-6 shadow-md ">
         <a href="#" className="">
           <Image src={Logo} alt="logoo" width={150} height={50} />
         </a>
@@ -62,7 +62,7 @@ export default function Home() {
         </a>
 
         <div
-          className={`fixed lg:relative top-0 left-0 bg-emerald-500 lg:bg-transparent bg-opacity-95 text-center overflow-hidden transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center justify-center w-full z-10 lg:h-full lg:opacity-100 ${
+          className={`fixed lg:relative top-0 left-0 bg-emerald-500  z-20 lg:bg-transparent bg-opacity-95 text-center overflow-hidden transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center justify-center w-full z-10 lg:h-full lg:opacity-100 ${
             isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"
           }`}
         >
