@@ -18,7 +18,7 @@ import {
 
 function Form() {
   return (
-    <div>
+    <div className="flex">
       <Card className="w-[380px] bg-[#E4F0FF] ">
         <CardHeader>
           <CardTitle className="font-bold text-2xl">
@@ -36,9 +36,9 @@ function Form() {
                   className="bg-white "
                 />
                 <Input
-                  type="number"
+                  type="text"
                   id="phone"
-                  placeholder="Phone Number"
+                  placeholder="Your phone number"
                   className="bg-white"
                 />{" "}
                 {/*Verificar com elias o motivo do mt(Margin-top) não está funcionando */}
@@ -47,7 +47,7 @@ function Form() {
               <div className="flex flex-col">
                 <Select>
                   <SelectTrigger id="framework" className="bg-white">
-                    <SelectValue placeholder="Choose a services" />
+                    <SelectValue placeholder="Choose a service" />
                   </SelectTrigger>
 
                   <SelectContent position="popper">

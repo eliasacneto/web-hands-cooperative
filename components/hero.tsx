@@ -1,13 +1,31 @@
 import { CircleArrowRight } from "lucide-react";
-import Broom from "../assets/icons/broom.png";
+import Broom from "../public/assets/icons/broom.png";
 import React from "react";
 import Image from "next/image";
 import Form from "./form";
+import BHC from "../public/assets/bhc-hero.png";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center gap-7 lg:flex-row lg:justify-center">
-      <div className="flex flex-col mx-20 lg:mx-40">
+    <div className=" bg-hero bg-cover flex flex-col items-center mx-4  lg:mx-0 lg:flex-row lg:justify-center lg:w-full lg:h-full">
+      <div className="flex flex-col ">
         <h1 className="text-3xl text-center font-medium lg:text-4xl lg:w-[563px] lg:text-start ">
           Brazillian Hands Expert Cleaning Services Await
         </h1>
@@ -38,8 +56,18 @@ const Hero = () => {
           </ul>
         </div>
       </div>
-      <div className="flex">
-        <Form />
+      <div className="flex flex-col lg:flex-row items-center w-1/2 lg:justify-center ">
+        <Image
+          className="w-0 lg:w-1/2 "
+          src={BHC}
+          width={0}
+          height={0}
+          alt="hero-img"
+        />
+        <div className="flex z-10 lg:-ml-6 mt-10">
+          <Form />
+          {/*  */}
+        </div>
       </div>
     </div>
   );
