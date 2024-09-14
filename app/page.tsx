@@ -99,7 +99,7 @@ export default function Home() {
 
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
-              href="https://wa.me/557499797700?text=Ol%C3%Ahttps://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A1%21+Vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+projeto%21"
+              href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
               target="_blank"
               className="flex w-full px-8 py-4 bg-yellow-300 rounded-full text-base font-semibold text-black hover:bg-yellow-400 transition-all duration-500  hover:font-semibold"
             >
