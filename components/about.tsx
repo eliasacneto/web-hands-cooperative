@@ -46,20 +46,20 @@ const About = () => {
         </div>
       </div>
 
-      <div className="bg-emerald-500  p-12 text-white mt-20 mb-20 flex gap-8 justify-center items-center">
+      <div className="bg-emerald-500  p-12 text-white mt-20 mb-20 flex gap-8 justify-evenly items-center">
         <div className="text-center">
           <h1 className="font-bold text-3xl">100+</h1>
-          <p className="text-sm">Types of Tools Used</p>
+          <p className="text-sm">Add some info</p>
         </div>
 
         <div className="text-center">
           <h1 className="font-bold text-3xl">9800+</h1>
-          <p className="text-sm">Miles of Pipes Installed</p>
+          <p className="text-sm">Add some info</p>
         </div>
 
         <div className="text-center">
           <h1 className="font-bold text-3xl">24/7</h1>
-          <p className="text-sm">Emergency Service</p>
+          <p className="text-sm">Add some info</p>
         </div>
       </div>
 
