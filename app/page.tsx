@@ -12,6 +12,7 @@ import Services from "@/components/services";
 import ChooseUs from "@/components/chooseUs";
 import Logo from "../assets/logo/logo.png";
 import LogoWhite from "../assets/logo/logo_white.png";
+import OurService from "@/components/ourService";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -114,6 +115,11 @@ export default function Home() {
       <div className="flex w-full mt-10">
         <About />
       </div>
+
+      <div className="flex w-full mt-6">
+        <OurService />
+      </div>
+
       <div className="flex w-full mt-6">
         <ChooseUs />
       </div>
