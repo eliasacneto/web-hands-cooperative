@@ -12,6 +12,7 @@ import Services from "@/components/services";
 import ChooseUs from "@/components/chooseUs";
 import Logo from "../assets/logo/logo.png";
 import LogoWhite from "../assets/logo/logo_white.png";
+import OurService from "@/components/ourService";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -62,7 +63,7 @@ export default function Home() {
         </a>
 
         <div
-          className={`fixed lg:relative top-0 left-0 bg-emerald-500  z-20 lg:bg-transparent bg-opacity-95 text-center overflow-hidden transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center justify-center w-full z-10 lg:h-full lg:opacity-100 ${
+          className={`fixed lg:relative top-0 left-0 bg-emerald-500  z-20 lg:bg-transparent bg-opacity-95 text-center overflow-hidden transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center justify-center w-full lg:h-full lg:opacity-100 ${
             isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"
           }`}
         >
@@ -111,10 +112,15 @@ export default function Home() {
       <div className="flex">
         <Hero />
       </div>
+      {/* <div className="flex w-full mt-6">
+        <OurService />
+      </div> */}
+
       <div className="flex w-full mt-10">
         <About />
       </div>
-      <div className="flex w-full mt-6">
+
+      <div className="mt-10 lg:mt-20">
         <ChooseUs />
       </div>
       <div className="flex w-full mt-6">
