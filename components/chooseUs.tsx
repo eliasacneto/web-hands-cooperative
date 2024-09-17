@@ -10,9 +10,9 @@ const ChooseUs = () => {
   return (
     <div className="flex flex-col-reverse bg-emerald-50 items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 p-8">
       <div className="mx-4 flex flex-col items-center justify-center lg:items-start ">
-        <p className="text-center lg:text-start text-emerald-500 font-bold pt-5 pb-5">
+        <h3 className="text-center lg:text-start text-emerald-500 font-bold pt-5 pb-5">
           Why Choose Us
-        </p>
+        </h3>
 
         <div className="flex flex-col lg:w-[560px] ">
           <h1 className="pb-5 text-2xl text-center font-medium lg:text-4xl lg:text-start">
