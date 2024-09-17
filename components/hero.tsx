@@ -75,7 +75,7 @@ const Hero = () => {
             alt="hero-img"
           />
         </div>
-        <div className="flex z-10 lg:w-1/2  justify-center pr-10 items-center lg:justify-start lg:items-end lg:mt-10 lg:mb-10 pb-10">
+        <div className="flex z-10 lg:w-1/2  justify-center lg:pr-10 items-center lg:justify-start lg:items-end lg:mt-10 lg:mb-10 pb-10">
           <Form />
         </div>
       </div>
