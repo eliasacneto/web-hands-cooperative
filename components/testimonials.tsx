@@ -1,10 +1,9 @@
 import React from "react";
 import { Button } from "./ui/button";
-import OurPurpose from "./AboutUs/ourPurpose";
-import CleanerIMG from "../public/assets/cleaner.jpg";
 import Image from "next/image";
 import Broom from "../public/assets/icons/broom.png";
-import ChooseIMG from "../public/assets/choose-img.jpg";
+import Samir from "../public/assets/testimonials/samir.jpg";
+import Ada from "../public/assets/testimonials/ada.jpg";
 import { Calendar } from "lucide-react";
 
 const Testimonials = () => {
@@ -32,12 +31,18 @@ const Testimonials = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-7 lg:flex-row w-full">
           <div className="flex flex-col mt-10 justify- items-start lg:justify-start gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl">
-            <div className="flex gap-5">
-              <div className="flex bg-black px-4 py-4 items-start justify-start rounded-full">
-                <Image src={Broom} alt="broom icon" width={24} height={24} />
+            <div className="flex  flex-col lg:flex-row  items-center gap-5">
+              <div className="flex  px-4 py-4 items-start justify-start rounded-full">
+                <Image
+                  src={Samir}
+                  alt="broom icon"
+                  width={100}
+                  height={100}
+                  className="rounded-full"
+                />
               </div>
               <div className="flex flex-col">
-                <h2 className="font-bold text-2xl">Mark Johson</h2>
+                <h2 className="font-bold text-2xl">Samir Rajesh</h2>
                 <span>Marketing Manager</span>
               </div>
             </div>
@@ -52,12 +57,18 @@ const Testimonials = () => {
             </p>
           </div>
           <div className="flex flex-col mt-10 justify-start items-start lg:justify-start gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl">
-            <div className="flex gap-5">
-              <div className="flex bg-black px-4 py-4 items-start justify-start rounded-full">
-                <Image src={Broom} alt="broom icon" width={24} height={24} />
+            <div className="flex flex-col lg:flex-row items-center gap-5">
+              <div className="flex px-4 py-4 items-start justify-start rounded-full">
+                <Image
+                  src={Ada}
+                  alt="broom icon"
+                  width={100}
+                  height={100}
+                  className="rounded-full"
+                />
               </div>
               <div className="flex flex-col">
-                <h2 className="font-bold text-2xl">Percis Waren</h2>
+                <h2 className="font-bold text-lg lg:text-2xl">Ada Waren</h2>
                 <span>Small Business Owner</span>
               </div>
             </div>
