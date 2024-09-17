@@ -13,6 +13,7 @@ import ChooseUs from "@/components/chooseUs";
 import Logo from "../assets/logo/logo_g.png";
 import LogoWhite from "../assets/logo/logo_w.png";
 import OurService from "@/components/ourService";
+import SpecialOffer from "@/components/specialOffer";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -126,9 +127,15 @@ export default function Home() {
       <div className="flex w-full">
         <Services />
       </div>
+
       <div className="flex w-full mt-6">
         <Testimonials />
       </div>
+
+      <div className="flex w-full mt-6">
+        <SpecialOffer />
+      </div>
+
       <div className="flex w-full mt-6">
         <Footer />
       </div>
