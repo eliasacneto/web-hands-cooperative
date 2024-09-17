@@ -20,7 +20,7 @@ function Services() {
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-10 lg:flex-row px-4 lg:gap-10 lg:mt-12">
-          <div className="flex flex-col items-center text-white lg:w-[560px]">
+          <div className="flex flex-col items-center text-white lg:w-[500px]">
             <Image
               className="rounded-3xl w-[450px] lg:w-[560px] "
               src={ResidentialIMG}
@@ -40,7 +40,7 @@ function Services() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center text-white lg:w-[560px]">
+          <div className="flex flex-col items-center text-white lg:w-[500px]">
             <Image
               className="rounded-3xl w-[450px] lg:w-[560px] "
               src={CommercialIMG}
@@ -61,10 +61,10 @@ function Services() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-10 lg:mt-12">
+        <div className="flex flex-col gap-10  px-4  lg:flex-row lg:gap-10 lg:mt-12">
           <div className="flex flex-col items-center text-white lg:w-[560px]">
             <Image
-              className="rounded-3xl w-[450px] lg:w-[560px] "
+              className="rounded-3xl w-[450px] lg:w-[500px] "
               src={DeepIMG}
               width={0}
               height={0}
@@ -82,9 +82,9 @@ function Services() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center text-white lg:w-[560px]">
+          <div className="flex flex-col items-center text-white lg:w-[500px]">
             <Image
-              className="rounded-3xl w-[450px] lg:w-[560px] "
+              className="rounded-3xl w-[450px] lg:w-[500px] "
               src={WindowIMG}
               width={0}
               height={0}

@@ -10,8 +10,8 @@ import Footer from "@/components/footer";
 import Testimonials from "@/components/testimonials";
 import Services from "@/components/services";
 import ChooseUs from "@/components/chooseUs";
-import Logo from "../assets/logo/logo.png";
-import LogoWhite from "../assets/logo/logo_white.png";
+import Logo from "../assets/logo/logo_g.png";
+import LogoWhite from "../assets/logo/logo_w.png";
 import OurService from "@/components/ourService";
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
 
       <div className="flex fixed items-center z-40 bg-white w-screen lg:hidden px-6 py-6 shadow-md ">
         <a href="#" className="">
-          <Image src={Logo} alt="logoo" width={150} height={50} />
+          <Image src={Logo} alt="logoo" width={60} height={50} />
         </a>
 
         <button
@@ -59,7 +59,7 @@ export default function Home() {
       {/* Menu */}
       <header className="h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-emerald-500  text-white antialiased font-bold mb-24 lg:mb-0">
         <a href="#" className="">
-          <Image src={LogoWhite} alt="logoo" width={250} height={100} />
+          <Image src={LogoWhite} alt="logoo" width={100} height={100} />
         </a>
 
         <div
@@ -123,7 +123,7 @@ export default function Home() {
       <div className="mt-10 lg:mt-20">
         <ChooseUs />
       </div>
-      <div className="flex w-full mt-6">
+      <div className="flex w-full">
         <Services />
       </div>
       <div className="flex w-full mt-6">
