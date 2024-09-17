@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         hero: "url('/assets/hero.png')",
+        service: "url('/assets/services.png')",
       },
       colors: {
         background: "hsl(var(--background))",

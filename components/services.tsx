@@ -8,7 +8,7 @@ import Image from "next/image";
 
 function Services() {
   return (
-    <div className="flex flex-col justify-around items-center w-full  bg-emerald-800 lg:pt-10 pb-20">
+    <div className="flex flex-col justify-around items-center w-full bg-service bg-cover lg:pt-10 pb-20">
       <div className="flex flex-col items-center w-full  mt-10 mb-10 lg:mb-0 ">
         <p className="text-center items-center lg:text-center w-fit px-4 py-2 rounded-full text-emerald-50 font-bold  ">
           Our Services
@@ -61,7 +61,7 @@ function Services() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-10  px-4  lg:flex-row lg:gap-10 lg:mt-12">
+        <div className="flex flex-col gap-10  px-4 mt-10 lg:flex-row lg:gap-10 lg:mt-12">
           <div className="flex flex-col items-center text-white lg:w-[560px]">
             <Image
               className="rounded-3xl w-[450px] lg:w-[500px] "
