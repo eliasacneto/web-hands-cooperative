@@ -5,8 +5,8 @@ import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-emerald-700 w-full h-full flex flex-col justify-center items-start pl-6 gap-6 lg:justify-around lg:flex-row lg:px-6 lg:py-6 text-white lg:gap-12 lg:pt-10 lg:pb-20">
-      <div className="flex flex-col w-[320px] gap-4 items-center  ">
+    <div className="bg-emerald-700 w-full h-full flex flex-col justify-center items-start pl-6 gap-6 lg:justify-around lg:flex-row p-10 lg:px-6 lg:py-6 text-white lg:gap-12 lg:pt-10 lg:pb-20">
+      <div className="flex flex-col w-[320px] gap-4 items-start lg:items-center  ">
         <Image
           className="-ml-10"
           src={LogoWhite}
