@@ -34,7 +34,7 @@ function Form() {
                 placeholder="Your phone number"
                 className="bg-white"
               />{" "}
-              {/*Verificar com elias o motivo do mt(Margin-top) não está funcionando */}
+              
             </div>
 
             <div className="flex flex-col">
@@ -44,10 +44,11 @@ function Form() {
                 </SelectTrigger>
 
                 <SelectContent position="popper">
-                  <SelectItem value="next">Quick Cleaning</SelectItem>
-                  <SelectItem value="sveltekit">Cost-effective</SelectItem>
-                  <SelectItem value="astro">Silent Cleaning</SelectItem>
-                  <SelectItem value="nuxt">Exterior Cleaning</SelectItem>
+                  <SelectItem className="cursor-pointer" value="next">Quick Cleaning</SelectItem>
+                  <SelectItem className="cursor-pointer" value="sveltekit">Cost-effective</SelectItem>
+                  <SelectItem className="cursor-pointer" value="astro">Silent Cleaning</SelectItem>
+                  <SelectItem className="cursor-pointer" value="nuxt">Exterior Cleaning</SelectItem>
+                  <SelectItem className="cursor-pointer" value="nuxt">Other services ...</SelectItem>
                 </SelectContent>
               </Select>
             </div>
