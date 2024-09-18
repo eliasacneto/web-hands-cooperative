@@ -9,41 +9,41 @@ import { Calendar } from "lucide-react";
 const Testimonials = () => {
   return (
     <div className="flex flex-col-reverse w-full items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 p-8">
-      <div className=" flex flex-col items-center justify-center lg:items-start ">
+      <div className="flex flex-col items-center justify-center lg:items-start">
         <h3 className="text-center lg:text-start text-emerald-500 font-bold pt-5 pb-5">
           Testimonials
         </h3>
         <div className="flex flex-col items-center lg:flex-row justify-between w-full">
-          <div className="flex flex-col lg:w-[600px] ">
+          <div className="flex flex-col lg:w-[600px]">
             <h1 className="pb-5 text-2xl text-center font-medium lg:text-4xl lg:text-start lg:w-[380px]">
               Testimonials from Our Customers
             </h1>
-
             <p className="pb-5 text-start">
               Fermentum enim a tellus ac feugiat sit. Posuere cras in duis nec
               potenti. Velit ornare mi auctor aliquam pellentesque arcu.
               Tristique mollis vel turpis.
             </p>
           </div>
-          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold ">
+          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold">
             <Calendar className="mr-2" /> Book now
           </Button>
         </div>
         <div className="flex flex-col justify-center items-center gap-7 lg:flex-row w-full">
-          <div className="flex flex-col mt-10 justify- items-start lg:justify-start gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl">
-            <div className="flex  flex-col lg:flex-row  items-center gap-5">
-              <div className="flex  px-4 py-4 items-start justify-start rounded-full">
+          <div className="flex flex-col mt-10 gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl lg:items-start items-center">
+
+          <div className="flex flex-col lg:flex-row items-center gap-5">
+              <div className="flex px-4 py-2 items-start justify-center lg:justify-start rounded-full">
                 <Image
-                  src={Samir}
-                  alt="broom icon"
-                  width={100}
-                  height={100}
-                  className="rounded-full"
-                />
+                    src={Samir}
+                    alt="testimonial"
+                    width={100}
+                    height={100}
+                    className="rounded-full"
+                  />
               </div>
               <div className="flex flex-col">
-                <h2 className="font-bold text-2xl">Samir Rajesh</h2>
-                <span>Marketing Manager</span>
+                  <h2 className="font-bold text-2xl">Samir Rajesh</h2>
+                  <span>Marketing Manager</span>
               </div>
             </div>
             <h2 className="font-bold text-xl text-emerald-600">
@@ -56,12 +56,13 @@ const Testimonials = () => {
               excepturi est nulla perspiciatis eius?
             </p>
           </div>
-          <div className="flex flex-col mt-10 justify-start items-start lg:justify-start gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl">
+
+          <div className="flex flex-col mt-10 gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl lg:items-start items-center">
             <div className="flex flex-col lg:flex-row items-center gap-5">
-              <div className="flex px-4 py-4 items-start justify-start rounded-full">
+              <div className="flex px-4 py-2 items-start justify-center lg:justify-start rounded-full">
                 <Image
                   src={Ada}
-                  alt="broom icon"
+                  alt="testimonial"
                   width={100}
                   height={100}
                   className="rounded-full"
@@ -85,10 +86,7 @@ const Testimonials = () => {
         </div>
       </div>
     </div>
-    /* <OurPurpose /> */
   );
 };
 
 export default Testimonials;
-
-//rafce
