@@ -50,7 +50,7 @@ const Testimonials = () => {
               Quick and Reliable service
             </h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
               dolore corrupti nesciunt architecto? Consectetur, harum. Dolorem
               excepturi est nulla perspiciatis eius?
