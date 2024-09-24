@@ -17,7 +17,6 @@ const Testimonials = () => {
             <h1 className="pb-5 text-2xl text-center font-medium lg:text-4xl lg:text-start lg:w-[380px]">
               Testimonials from Our Customers
             </h1>
-
             <p className="pb-5 text-start">
               Fermentum enim a tellus ac feugiat sit. Posuere cras in duis nec
               potenti. Velit ornare mi auctor aliquam pellentesque arcu.
@@ -44,16 +43,15 @@ const Testimonials = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <h2 className="font-bold text-2xl">Samir Rajesh</h2>
-                <span>Marketing Manager</span>
+                  <h2 className="font-bold text-2xl">Samir Rajesh</h2>
+                  <span>Marketing Manager</span>
               </div>
             </div>
             <h2 className="font-bold text-xl text-emerald-600">
               Quick and Reliable service
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
               dolore corrupti nesciunt architecto? Consectetur, harum. Dolorem
               excepturi est nulla perspiciatis eius?
             </p>
@@ -89,7 +87,6 @@ const Testimonials = () => {
         </div>
       </div>
     </div>
-    /* <OurPurpose /> */
   );
 };
 

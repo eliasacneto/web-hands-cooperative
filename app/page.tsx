@@ -13,8 +13,10 @@ import ChooseUs from "@/components/chooseUs";
 import Logo from "../assets/logo/logo_g.png";
 import LogoWhite from "../assets/logo/logo_w.png";
 import OurService from "@/components/ourService";
+import SpecialOffer from "@/components/specialOffer";
 
 export default function Home() {
+  
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
@@ -70,7 +72,7 @@ export default function Home() {
           <nav className="lg:flex-1 justify-end flex gap-8 flex-col lg:flex-row lg:ml-16">
             <a
               className=" hover:text-[#024218] transition-all duration-500"
-              href="index.html"
+              href="/"
             >
               Home
             </a>
@@ -90,13 +92,13 @@ export default function Home() {
             </a>
             <a
               className="hover:text-[#024218] transition-all duration-500"
-              href="services.html"
+              href="/workWithUs"
             >
               Work with us
             </a>
           </nav>
 
-          {/*Menu acima */}
+          
 
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
@@ -109,6 +111,8 @@ export default function Home() {
           </div>
         </div>
       </header>
+      {/*Menu acima */}
+
       <div className="flex">
         <Hero />
       </div>
@@ -126,9 +130,15 @@ export default function Home() {
       <div className="flex w-full">
         <Services />
       </div>
+
       <div className="flex w-full mt-6">
         <Testimonials />
       </div>
+
+      <div className="flex w-full mt-6">
+        <SpecialOffer />
+      </div>
+
       <div className="flex w-full mt-6">
         <Footer />
       </div>
