@@ -19,7 +19,7 @@ function Services() {
         </h1>
       </div>
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-10 lg:flex-row px-4 lg:gap-10 lg:mt-12">
+        <div className="flex flex-col gap-10 lg:flex-row px-4 lg:gap-20 lg:mt-12">
           <div className="flex flex-col items-center text-white lg:w-[500px]">
             <Image
               className="rounded-3xl w-[450px] lg:w-[560px] "
@@ -29,7 +29,7 @@ function Services() {
               quality={100}
               alt="hero-img"
             />
-            <div className="flex flex-col items-start gap-4 px-4 pt-10">
+            <div className="flex flex-col items-start gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Residential Cleaning</h3>
               <p>
                 Justo porta nunc donec at faucibus ornare quam integer lectus.
@@ -49,7 +49,7 @@ function Services() {
               quality={100}
               alt="hero-img"
             />
-            <div className="flex flex-col gap-4 px-4 pt-10">
+            <div className="flex flex-col gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Commercial Cleaning</h3>
               <p>
                 Justo porta nunc donec at faucibus ornare quam integer lectus.
@@ -61,17 +61,19 @@ function Services() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-10  px-4 mt-10 lg:flex-row lg:gap-10 lg:mt-12">
-          <div className="flex flex-col items-center text-white lg:w-[560px]">
+
+
+        <div className="flex flex-col gap-10 lg:flex-row px-4 lg:gap-20 lg:mt-12">
+          <div className="flex flex-col items-center text-white lg:w-[500px]">
             <Image
-              className="rounded-3xl w-[450px] lg:w-[500px] "
+              className="rounded-3xl w-[450px] lg:w-[560px] "
               src={DeepIMG}
               width={0}
               height={0}
               quality={100}
               alt="hero-img"
             />
-            <div className="flex flex-col gap-4 px-4 pt-10">
+            <div className="flex flex-col items-start gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Deep Cleaning</h3>
               <p>
                 Justo porta nunc donec at faucibus ornare quam integer lectus.
@@ -84,14 +86,14 @@ function Services() {
           </div>
           <div className="flex flex-col items-center text-white lg:w-[500px]">
             <Image
-              className="rounded-3xl w-[450px] lg:w-[500px] "
+              className="rounded-3xl w-[450px] lg:w-[560px] "
               src={WindowIMG}
               width={0}
               height={0}
               quality={100}
               alt="hero-img"
             />
-            <div className="flex flex-col gap-4 px-4 pt-10">
+            <div className="flex flex-col gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Window Cleaning</h3>
               <p>
                 Justo porta nunc donec at faucibus ornare quam integer lectus.
