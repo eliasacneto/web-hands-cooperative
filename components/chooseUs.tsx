@@ -28,7 +28,7 @@ const ChooseUs = () => {
         </div>
         <div className="flex flex-col gap-4 lg:flex-row lg:w-[657px]">
           <div className="flex mt-10  flex-col justify-start items-start lg:justify-start gap-4">
-            <div className="flex  bg-emerald-400 px-4 py-4 items-start justify-start rounded-full">
+            <div className="flex  bg-emerald-500 px-4 py-4 items-start justify-start rounded-full">
               <Image src={Broom} alt="broom icon" width={24} height={24} />
             </div>
             <h2 className="font-bold text-2xl">Professional Expertise</h2>
@@ -39,7 +39,7 @@ const ChooseUs = () => {
             </p>
           </div>
           <div className="flex mt-10  flex-col justify-start items-start lg:justify-start gap-4">
-            <div className="flex  bg-emerald-400 px-4 py-4 items-start justify-start rounded-full">
+            <div className="flex  bg-emerald-500 px-4 py-4 items-start justify-start rounded-full">
               <Image src={Broom} alt="broom icon" width={24} height={24} />
             </div>
             <h2 className="font-bold text-2xl">Customized Solutions</h2>
@@ -68,4 +68,3 @@ const ChooseUs = () => {
 
 export default ChooseUs;
 
-//rafce

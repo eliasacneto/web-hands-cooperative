@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import Broom from "../public/assets/icons/broom.png";
 import Samir from "../public/assets/testimonials/samir.jpg";
 import Ada from "../public/assets/testimonials/ada.jpg";
 import { Calendar } from "lucide-react";
@@ -28,18 +27,20 @@ const Testimonials = () => {
             <Calendar className="mr-2" /> Book now
           </Button>
         </div>
-        <div className="flex flex-col justify-center items-center gap-7 lg:flex-row w-full">
-          <div className="flex flex-col mt-10 gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl lg:items-start items-center">
 
-          <div className="flex flex-col lg:flex-row items-center gap-5">
-              <div className="flex px-4 py-2 items-start justify-center lg:justify-start rounded-full">
+        {/* Testimonials */}
+        <div className="flex flex-col justify-center items-center gap-7 lg:flex-row w-full">
+          {/* Primeiro Testimonial */}
+          <div className="flex flex-col mt-10 justify-center items-center lg:justify-start lg:items-start gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl">
+            <div className="flex flex-col lg:flex-row items-center gap-5">
+              <div className="flex px-4 items-center justify-center rounded-full lg:justify-start lg:items-start">
                 <Image
-                    src={Samir}
-                    alt="testimonial"
-                    width={100}
-                    height={100}
-                    className="rounded-full"
-                  />
+                  src={Samir}
+                  alt="Samir Rajesh"
+                  width={100}
+                  height={100}
+                  className="rounded-full"
+                />
               </div>
               <div className="flex flex-col">
                   <h2 className="font-bold text-2xl">Samir Rajesh</h2>
@@ -50,19 +51,19 @@ const Testimonials = () => {
               Quick and Reliable service
             </h2>
             <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
               dolore corrupti nesciunt architecto? Consectetur, harum. Dolorem
               excepturi est nulla perspiciatis eius?
             </p>
           </div>
 
-          <div className="flex flex-col mt-10 gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl lg:items-start items-center">
+          {/* Segundo Testimonial */}
+          <div className="flex flex-col mt-10 justify-center items-center lg:justify-start lg:items-start gap-4 border border-1 shadow-sm lg:w-[558px] p-14 rounded-xl">
             <div className="flex flex-col lg:flex-row items-center gap-5">
-              <div className="flex px-4 py-2 items-start justify-center lg:justify-start rounded-full">
+              <div className="flex px-4  items-center justify-center rounded-full lg:justify-start lg:items-start">
                 <Image
                   src={Ada}
-                  alt="testimonial"
+                  alt="Ada Waren"
                   width={100}
                   height={100}
                   className="rounded-full"
@@ -77,7 +78,7 @@ const Testimonials = () => {
               Impressive Attention to Detail
             </h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
               dolore corrupti nesciunt architecto? Consectetur, harum. Dolorem
               excepturi est nulla perspiciatis eius?

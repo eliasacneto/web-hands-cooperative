@@ -36,7 +36,7 @@ const Hero = () => {
     <div className="bg-hero bg-cover flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-end  w-full">
       <div className="flex flex-col justify-evenly items-center w-full">
         <div className="flex flex-col items-center lg:items-start mt-10">
-          <p className="text-center lg:text-start bg-black w-fit px-4 py-2 rounded-full text-white font-bold mb-5">
+          <p className="text-center lg:text-start bg-emerald-500 w-fit px-4 py-2 rounded-full text-white font-bold mb-5">
             #01 Cleaning Service
           </p>
 
