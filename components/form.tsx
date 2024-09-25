@@ -78,7 +78,7 @@ function Form() {
     );
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validateForm()) {
       alert("Please, fill in all fields!");
       return;
@@ -87,7 +87,7 @@ function Form() {
     const serviceMessage =
       formData.service === "Other" ? formData.otherService : formData.service;
 
-    const message = `*Hello! I came across the Brazilian Hands website and would like to request a service:*
+    const message = `Hello! I came across the Brazilian Hands website and would like to request a service:
 
 *Name:* ${formData.name}
 *Phone:* ${formData.phone}
@@ -101,12 +101,28 @@ function Form() {
 - *District:* ${formData.district}
 - *House Number:* ${formData.houseNumber}
 
-Thanks! We will confirm your request shortly.`;
+Thanks!`;
 
     const whatsappUrl = `https://wa.me/5588997652020?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, "_blank"); // Abre o WhatsApp em uma nova aba
+    window.open(whatsappUrl, "_blank");
+
+    // Enviar mensagem para o Discord
+    try {
+      const discordWebhookUrl =
+        "https://discord.com/api/webhooks/1288456722352177153/GMs-ePR7U7aLyHePFS6OqZcs0uFDBjaRDw9iem1vEMd6NRDcTMo1Hp02KrZxBiWzlZFj";
+      await fetch(discordWebhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content: message }),
+      });
+      console.log("Mensagem enviada para o Discord!");
+    } catch (error) {
+      console.error("Erro ao enviar mensagem para o Discord:", error);
+    }
   };
 
   return (
