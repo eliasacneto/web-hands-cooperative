@@ -4,30 +4,20 @@ import React from "react";
 import Image from "next/image";
 import Form from "./form";
 import BHC from "../public/assets/bhc-hero.png";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
+import { useInView } from "react-intersection-observer"; //Hook para observar se o "conteúdo" solicitado, está sendo observado
 
 const Hero = () => {
+  // Usando o hook useInView para o formulário
+  const { ref: formRef, inView: formInView } = useInView({
+    triggerOnce: false, // se deixarmos true, está estilização será exibida uma vez após a tela observar o elemento. caso deixamos false, será exibida todas as vezes em que saimos e entramos no modo "observação" do elemento
+  });
+
   return (
     <div className="bg-hero bg-cover flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-end  w-full">
       <div className="flex flex-col justify-evenly items-center w-full">
         <div className="flex flex-col items-center lg:items-start mt-10">
-          <p className="text-center lg:text-start bg-black w-fit px-4 py-2 rounded-full text-white font-bold mb-5">
+          <p className="text-center lg:text-start bg-emerald-500 w-fit px-4 py-2 rounded-full text-white font-bold mb-5">
             #01 Cleaning Service
           </p>
 
@@ -75,7 +65,16 @@ const Hero = () => {
             alt="hero-img"
           />
         </div>
-        <div className="flex z-10 lg:w-1/2  justify-center lg:pr-10 items-center lg:justify-start lg:items-end lg:mt-10 lg:mb-10 pb-10">
+
+        <div
+          ref={formRef} // Estamos observando este elemento
+          className={`flex z-10 lg:w-1/2 justify-center lg:pr-10 items-center lg:justify-start lg:items-end lg:mt-10 lg:mb-10 pb-10 transition-all duration-1000 
+            ${
+              formInView
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-full"
+            }`}
+        >
           <Form />
         </div>
       </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import LogoWhite from "../assets/logo/logo_white.png";
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -40,11 +41,61 @@ const Footer = () => {
         <h3 className="font-bold text-xl">Follow us</h3>
         <ul className="flex  gap-4 mt-6">
           {/* TODO: add social links  */}
+
+          <a href='https://WA.me/353833471038' target='_blank' rel='noopener noreferrer'>
+
           <li>
-            <FaWhatsapp size={32} />
+
+              <FaWhatsapp size={32} className="hover:text-yellow-300" />
+
           </li>
-          <FaInstagram size={32} />
-          <FaLinkedin size={32} />
+          
+          
+          </a>
+
+          <a href='https://www.facebook.com/profile.php?id=61563594075044' target='_blank' rel='noopener noreferrer'> 
+          
+          
+          <li>
+
+                <FaInstagram size={32} className="hover:text-yellow-300" />
+
+          </li>
+          
+          
+          </a>
+
+
+          
+
+          <a href='https://www.facebook.com/profile.php?id=61563594075044' target='_blank' rel='noopener noreferrer'> 
+          
+          
+          <li>
+
+                <FaLinkedin size={32} className="hover:text-yellow-300" />
+
+          </li>
+          
+          
+          </a>
+
+
+          <a href='https://www.facebook.com/profile.php?id=61563594075044' target='_blank' rel='noopener noreferrer'> 
+          
+          
+          <li>
+
+              <FaFacebookF size={32} className="hover:text-yellow-300" />
+
+          </li>
+          
+          
+          </a>
+          
+          
+
+
         </ul>
       </div>
     </div>
