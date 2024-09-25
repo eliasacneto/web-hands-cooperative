@@ -3,7 +3,6 @@
 import { Calendar, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import Form from "@/components/form";
 import About from "@/components/about";
 import Hero from "@/components/hero";
 import Footer from "@/components/footer";
@@ -12,8 +11,8 @@ import Services from "@/components/services";
 import ChooseUs from "@/components/chooseUs";
 import Logo from "../assets/logo/logo_g.png";
 import LogoWhite from "../assets/logo/logo_w.png";
-import OurService from "@/components/ourService";
 import SpecialOffer from "@/components/specialOffer";
+import ScrollToTop from "@/components/scrollToTop";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -71,21 +70,21 @@ export default function Home() {
           <nav className="lg:flex-1 justify-end flex gap-8 flex-col lg:flex-row lg:ml-16">
             <a
               className=" hover:text-[#024218] transition-all duration-500"
-              href="/"
+              href="#"
             >
               Home
             </a>
 
             <a
               className="hover:text-[#024218] transition-all duration-500"
-              href="about-us.html"
+              href="#about"
             >
               About Us
             </a>
 
             <a
               className="hover:text-[#024218] transition-all duration-500"
-              href="services.html"
+              href="#services"
             >
               Services
             </a>
@@ -99,8 +98,7 @@ export default function Home() {
 
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
-              href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
-              target="_blank"
+              href="#hero"
               className="flex w-full px-8 py-4 bg-yellow-300 rounded-full text-base font-semibold text-black hover:bg-yellow-400 transition-all duration-500  hover:font-semibold"
             >
               <Calendar className="mr-2" /> Book schedule
@@ -117,28 +115,29 @@ export default function Home() {
         <OurService />
       </div> */}
 
-      <div className="flex w-full mt-10">
+      <div id="about" className="flex w-full mt-10">
         <About />
       </div>
 
-      <div className="mt-10 lg:mt-20">
+      <div id="chooseus" className="mt-10 lg:mt-20">
         <ChooseUs />
       </div>
-      <div className="flex w-full">
+      <div id="services" className="flex w-full">
         <Services />
       </div>
 
-      <div className="flex w-full mt-6">
+      <div id="testimonials" className="flex w-full mt-6">
         <Testimonials />
       </div>
 
-      <div className="flex w-full mt-6">
+      <div id="offer" className="flex w-full mt-6">
         <SpecialOffer />
       </div>
 
       <div className="flex w-full">
         <Footer />
       </div>
+      <ScrollToTop />
     </>
   );
 }

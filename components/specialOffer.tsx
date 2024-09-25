@@ -4,6 +4,7 @@ import { Calendar } from "lucide-react";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import ResidentialIMG from "../public/assets/services/Discount.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 const SpecialOffer = () => {
   return (
@@ -76,9 +77,11 @@ const SpecialOffer = () => {
 
           <h3>Book Now and Experience the Super clean Difference!</h3>
 
-          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold mt-4  mb-4">
-            <Calendar className="mr-2" /> Book now
-          </Button>
+          <Link href="#hero">
+            <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold mt-4  mb-4">
+              <Calendar className="mr-2" /> Book now
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
