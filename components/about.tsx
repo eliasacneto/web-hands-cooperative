@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import OurPurpose from "./AboutUs/ourPurpose";
 import CleanerIMG from "../public/assets/cleaner.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -35,9 +36,11 @@ const About = () => {
             nunc.
           </p>
         </div>
-        <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold ">
-          Request now
-        </Button>
+        <Link href="#hero">
+          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-3 rounded-full font-semibold ">
+            Request now
+          </Button>
+        </Link>
       </div>
     </div>
   );
