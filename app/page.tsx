@@ -16,7 +16,6 @@ import OurService from "@/components/ourService";
 import SpecialOffer from "@/components/specialOffer";
 
 export default function Home() {
-  
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
@@ -98,8 +97,6 @@ export default function Home() {
             </a>
           </nav>
 
-          
-
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
               href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
@@ -139,7 +136,7 @@ export default function Home() {
         <SpecialOffer />
       </div>
 
-      <div className="flex w-full mt-6">
+      <div className="flex w-full">
         <Footer />
       </div>
     </>

@@ -5,28 +5,9 @@ import Image from "next/image";
 import Form from "./form";
 import BHC from "../public/assets/bhc-hero.png";
 
-import { useInView } from "react-intersection-observer"; //Hook para observar se o "conteúdo" solicitado, está sendo observado 
-
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { useInView } from "react-intersection-observer"; //Hook para observar se o "conteúdo" solicitado, está sendo observado
 
 const Hero = () => {
-
   // Usando o hook useInView para o formulário
   const { ref: formRef, inView: formInView } = useInView({
     triggerOnce: false, // se deixarmos true, está estilização será exibida uma vez após a tela observar o elemento. caso deixamos false, será exibida todas as vezes em que saimos e entramos no modo "observação" do elemento
@@ -88,10 +69,14 @@ const Hero = () => {
         <div
           ref={formRef} // Estamos observando este elemento
           className={`flex z-10 lg:w-1/2 justify-center lg:pr-10 items-center lg:justify-start lg:items-end lg:mt-10 lg:mb-10 pb-10 transition-all duration-1000 
-            ${formInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}>
+            ${
+              formInView
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-full"
+            }`}
+        >
           <Form />
         </div>
-
       </div>
     </div>
   );
