@@ -98,3 +98,20 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* loader */
+
+.loader {
+    border: 5px solid rgba(255, 255, 255, 0.955);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    border-top-color: #fde047;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

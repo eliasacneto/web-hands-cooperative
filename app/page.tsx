@@ -2,7 +2,7 @@
 
 import { Calendar, MenuIcon } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import About from "@/components/about";
 import Hero from "@/components/hero";
 import Footer from "@/components/footer";
@@ -13,6 +13,7 @@ import Logo from "../assets/logo/logo_g.png";
 import LogoWhite from "../assets/logo/logo_w.png";
 import SpecialOffer from "@/components/specialOffer";
 import ScrollToTop from "@/components/scrollToTop";
+import Loader from "@/components/loader";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -21,10 +22,31 @@ export default function Home() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenuOnClick = (sectionId: string) => {
+    setIsMenuOpen(false);
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Aqui estou simulando um atraso no carregamento para exibir o loader
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // tempo de 2 segundos de espera
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
-      {/*Contato e-mail + fone abaixo */}
-
       <div className="hidden lg:flex justify-between lg:mx-20 mt-7 mb-7">
         <h4 className="text-gray-400 font-semibold text-base">
           brazilianhandscooperative@gmail.com
@@ -34,12 +56,9 @@ export default function Home() {
           target="_blank"
           className="text-2xl font-semibold text-emerald-500"
         >
-          {" "}
           +353 83 347 1038
         </a>
       </div>
-
-      {/*Contato e-mail + fone acima */}
 
       {/*Menu abaixo */}
 
@@ -70,7 +89,8 @@ export default function Home() {
           <nav className="lg:flex-1 justify-end flex gap-8 flex-col lg:flex-row lg:ml-16">
             <a
               className=" hover:text-[#024218] transition-all duration-500"
-              href="#"
+              href="/"
+              onClick={() => closeMenuOnClick("#")}
             >
               Home
             </a>
@@ -78,6 +98,7 @@ export default function Home() {
             <a
               className="hover:text-[#024218] transition-all duration-500"
               href="#about"
+              onClick={() => closeMenuOnClick("#about")}
             >
               About Us
             </a>
@@ -85,6 +106,7 @@ export default function Home() {
             <a
               className="hover:text-[#024218] transition-all duration-500"
               href="#services"
+              onClick={() => closeMenuOnClick("#services")}
             >
               Services
             </a>
@@ -106,7 +128,6 @@ export default function Home() {
           </div>
         </div>
       </header>
-      {/*Menu acima */}
 
       <div className="flex">
         <Hero />
