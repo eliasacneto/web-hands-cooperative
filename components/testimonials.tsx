@@ -4,6 +4,7 @@ import Image from "next/image";
 import Samir from "../public/assets/testimonials/samir.jpg";
 import Ada from "../public/assets/testimonials/ada.jpg";
 import { Calendar } from "lucide-react";
+import Link from "next/link";
 
 const Testimonials = () => {
   return (
@@ -23,9 +24,11 @@ const Testimonials = () => {
               Tristique mollis vel turpis.
             </p>
           </div>
-          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold">
-            <Calendar className="mr-2" /> Book now
-          </Button>
+          <Link href="#hero">
+            <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold">
+              <Calendar className="mr-2" /> Book now
+            </Button>
+          </Link>
         </div>
 
         {/* Testimonials */}
@@ -43,15 +46,16 @@ const Testimonials = () => {
                 />
               </div>
               <div className="flex flex-col">
-                  <h2 className="font-bold text-2xl">Samir Rajesh</h2>
-                  <span>Marketing Manager</span>
+                <h2 className="font-bold text-2xl">Samir Rajesh</h2>
+                <span>Marketing Manager</span>
               </div>
             </div>
             <h2 className="font-bold text-xl text-emerald-600">
               Quick and Reliable service
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
               dolore corrupti nesciunt architecto? Consectetur, harum. Dolorem
               excepturi est nulla perspiciatis eius?
             </p>

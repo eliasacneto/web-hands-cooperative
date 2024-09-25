@@ -2,8 +2,7 @@
 
 import { Calendar, MenuIcon } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
-import Form from "@/components/form";
+import { useEffect, useState } from "react";
 import About from "@/components/about";
 import Hero from "@/components/hero";
 import Footer from "@/components/footer";
@@ -12,8 +11,9 @@ import Services from "@/components/services";
 import ChooseUs from "@/components/chooseUs";
 import Logo from "../assets/logo/logo_g.png";
 import LogoWhite from "../assets/logo/logo_w.png";
-import OurService from "@/components/ourService";
 import SpecialOffer from "@/components/specialOffer";
+import ScrollToTop from "@/components/scrollToTop";
+import Loader from "@/components/loader";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -22,10 +22,31 @@ export default function Home() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenuOnClick = (sectionId: string) => {
+    setIsMenuOpen(false);
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Aqui estou simulando um atraso no carregamento para exibir o loader
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // tempo de 2 segundos de espera
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
-      {/*Contato e-mail + fone abaixo */}
-
       <div className="hidden lg:flex justify-between lg:mx-20 mt-7 mb-7">
         <h4 className="text-gray-400 font-semibold text-base">
           brazilianhandscooperative@gmail.com
@@ -35,12 +56,9 @@ export default function Home() {
           target="_blank"
           className="text-2xl font-semibold text-emerald-500"
         >
-          {" "}
           +353 83 347 1038
         </a>
       </div>
-
-      {/*Contato e-mail + fone acima */}
 
       {/*Menu abaixo */}
 
@@ -72,20 +90,23 @@ export default function Home() {
             <a
               className=" hover:text-[#024218] transition-all duration-500"
               href="/"
+              onClick={() => closeMenuOnClick("#")}
             >
               Home
             </a>
 
             <a
               className="hover:text-[#024218] transition-all duration-500"
-              href="about-us.html"
+              href="#about"
+              onClick={() => closeMenuOnClick("#about")}
             >
               About Us
             </a>
 
             <a
               className="hover:text-[#024218] transition-all duration-500"
-              href="services.html"
+              href="#services"
+              onClick={() => closeMenuOnClick("#services")}
             >
               Services
             </a>
@@ -99,8 +120,7 @@ export default function Home() {
 
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
-              href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
-              target="_blank"
+              href="#hero"
               className="flex w-full px-8 py-4 bg-yellow-300 rounded-full text-base font-semibold text-black hover:bg-yellow-400 transition-all duration-500  hover:font-semibold"
             >
               <Calendar className="mr-2" /> Book schedule
@@ -108,7 +128,6 @@ export default function Home() {
           </div>
         </div>
       </header>
-      {/*Menu acima */}
 
       <div className="flex">
         <Hero />
@@ -117,28 +136,29 @@ export default function Home() {
         <OurService />
       </div> */}
 
-      <div className="flex w-full mt-10">
+      <div id="about" className="flex w-full mt-10">
         <About />
       </div>
 
-      <div className="mt-10 lg:mt-20">
+      <div id="chooseus" className="mt-10 lg:mt-20">
         <ChooseUs />
       </div>
-      <div className="flex w-full">
+      <div id="services" className="flex w-full">
         <Services />
       </div>
 
-      <div className="flex w-full mt-6">
+      <div id="testimonials" className="flex w-full mt-6">
         <Testimonials />
       </div>
 
-      <div className="flex w-full mt-6">
+      <div id="offer" className="flex w-full mt-6">
         <SpecialOffer />
       </div>
 
       <div className="flex w-full">
         <Footer />
       </div>
+      <ScrollToTop />
     </>
   );
 }

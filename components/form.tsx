@@ -87,7 +87,7 @@ function Form() {
     const serviceMessage =
       formData.service === "Other" ? formData.otherService : formData.service;
 
-    const message = `Hello! I came across the Brazilian Hands website and would like to request a service:
+    const message = `Hello! I came across the Brazilian Hands website and I'd like to request a service:
 
 *Name:* ${formData.name}
 *Phone:* ${formData.phone}
@@ -126,7 +126,7 @@ Thanks!`;
   };
 
   return (
-    <Card className="w-[350px] lg:w-[400px] bg-[#E4F0FF] ">
+    <Card id="form" className="w-[350px] lg:w-[400px] bg-[#E4F0FF] ">
       <CardHeader>
         <CardTitle className="font-bold text-2xl">Request a Service</CardTitle>
       </CardHeader>
