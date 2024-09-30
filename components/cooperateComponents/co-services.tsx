@@ -1,8 +1,8 @@
 import React from "react";
-import CommercialIMG from "../public/assets/services/commercial.jpg";
-import DeepIMG from "../public/assets/services/deep.jpg";
-import ResidentialIMG from "../public/assets/services/residential.jpg";
-import WindowIMG from "../public/assets/services/window.jpg";
+import CommercialIMG from "../../public/assets/services/commercial.jpg";
+import DeepIMG from "../../public/assets/services/deep.jpg";
+import ResidentialIMG from "../../public/assets/services/residential.jpg";
+import WindowIMG from "../../public/assets/services/window.jpg";
 import Image from "next/image";
 
 function CoServices() {
