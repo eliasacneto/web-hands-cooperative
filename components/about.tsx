@@ -26,14 +26,13 @@ const About = () => {
 
         <div className="flex flex-col lg:w-[560px] ">
           <h1 className="pb-5 text-2xl text-center font-medium lg:text-4xl lg:text-start">
-            Experience Expert Cleaning Services
+            Experience expert cleaning services
           </h1>
 
           <p className="pb-5 text-start">
-            Vitae bibendum tincidunt sagittis tellus lectus. Amet quis sed eget
-            viverra aliquet magna turpis. Imperdiet sociis viverra sem amet. Cum
-            augue sit feugiat eu. Sed gravida integer sit risus sed id a nisl
-            nunc.
+            Discover the skilled and dedicated individuals behind Brazilian
+            Hands Co-operative, offering a variety of high-quality services to
+            make your life easier and your home more beautiful.
           </p>
         </div>
         <Link href="#hero">
