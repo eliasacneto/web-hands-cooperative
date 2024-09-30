@@ -51,5 +51,3 @@ const CoAbout = () => {
 };
 
 export default CoAbout;
-
-//rafce
