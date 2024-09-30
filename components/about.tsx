@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 w-full">
+    <div className="bg-gray-50 flex flex-col items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 w-full py-10">
       <div className="flex flex-col mx-10 lg:mx-10 ">
         <Image
           className="rounded-3xl w-[300px] lg:w-[450px] "

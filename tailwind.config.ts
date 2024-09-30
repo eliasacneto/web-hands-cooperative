@@ -11,6 +11,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         hero: "url('/assets/hero.png')",
+        coform: "url('/assets/co-form-img.png')",
+        cohero: "url('/assets/co-hero-img.png')",
         service: "url('/assets/services.png')",
       },
       colors: {
