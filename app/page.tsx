@@ -52,7 +52,7 @@ export default function Home() {
           brazilianhandscooperative@gmail.com
         </h4>
         <a
-          href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
+          href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20your%20website%20and%20I'd%20like%20to%20schedule%20a%20service!%0A"
           target="_blank"
           className="text-2xl font-semibold text-emerald-500"
         >
@@ -122,6 +122,7 @@ export default function Home() {
             <a
               href="#hero"
               className="flex w-full px-8 py-4 bg-yellow-300 rounded-full text-base font-semibold text-black hover:bg-yellow-400 transition-all duration-500  hover:font-semibold"
+              onClick={() => closeMenuOnClick("#hero")}
             >
               <Calendar className="mr-2" /> Book schedule
             </a>
