@@ -14,7 +14,7 @@ function Services() {
           Our Services
         </p>
 
-        <h1 className="text-4xl text-center text-white font-regular lg:w-[500px] lg:leading-normal lg:text-4xl lg:text-center ">
+        <h1 className="text-4xl text-center text-white font-semibold lg:w-[500px] lg:leading-normal lg:text-4xl lg:text-center ">
           Comprehensive Cleaning Services for Your Need
         </h1>
       </div>
@@ -61,7 +61,6 @@ function Services() {
             </div>
           </div>
         </div>
-
 
         <div className="flex flex-col gap-10 lg:flex-row px-4 lg:gap-20 lg:mt-12">
           <div className="flex flex-col items-center text-white lg:w-[500px]">
