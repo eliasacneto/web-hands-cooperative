@@ -46,7 +46,7 @@ const Testimonials = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <h2 className="font-bold text-2xl">Samir Rajesh</h2>
+                <h2 className="font-bold text-2xl">Seán O'Connor</h2>
                 <span>Marketing Manager</span>
               </div>
             </div>
@@ -54,10 +54,12 @@ const Testimonials = () => {
               Quick and Reliable service
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
-              dolore corrupti nesciunt architecto? Consectetur, harum. Dolorem
-              excepturi est nulla perspiciatis eius?
+              I had an excellent experience with the cleaning service. I reached
+              out on a Saturday afternoon, and by that evening, a kind woman was
+              at my mother’s home, ready to assist. Marcelo was incredibly
+              helpful in arranging everything on short notice, as my mother was
+              returning from hospital the next day and we needed her house
+              prepared. The rates were very reasonable as well.
             </p>
           </div>
 
@@ -74,7 +76,9 @@ const Testimonials = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <h2 className="font-bold text-lg lg:text-2xl">Ada Waren</h2>
+                <h2 className="font-bold text-lg lg:text-2xl">
+                  Michelle Kelly
+                </h2>
                 <span>Small Business Owner</span>
               </div>
             </div>
@@ -82,10 +86,12 @@ const Testimonials = () => {
               Impressive Attention to Detail
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, voluptates rem amet ratione culpa ullam, quo labore id
-              dolore corrupti nesciunt architecto? Consectetur, harum. Dolorem
-              excepturi est nulla perspiciatis eius?
+              I was very impressed with the cleaning service. I called on a
+              Sunday morning and was able to have a lovely lady come to my
+              father’s house that afternoon. Marcelo was amazing trying to help
+              me find someone as my father was being discharged from hospital
+              the following day and we needed his house cleaned for him . His
+              prices are also affordable. Would highly recommended his company.
             </p>
           </div>
         </div>
