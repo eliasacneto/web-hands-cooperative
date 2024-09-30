@@ -1,13 +1,11 @@
 import React from "react";
-import CleanerIMG from "../public/assets/cleaner.jpg";
 import CommercialIMG from "../public/assets/services/commercial.jpg";
 import DeepIMG from "../public/assets/services/deep.jpg";
 import ResidentialIMG from "../public/assets/services/residential.jpg";
 import WindowIMG from "../public/assets/services/window.jpg";
 import Image from "next/image";
-import ServiceCard from "./serviceCard";
 
-function Services() {
+function CoServices() {
   return (
     <div className="flex flex-col justify-around items-center w-full bg-service bg-cover lg:pt-10 pb-20">
       <div className="flex flex-col items-center w-full  mt-10 mb-10 lg:mb-0 ">
@@ -111,4 +109,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default CoServices;

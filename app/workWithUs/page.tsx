@@ -1,56 +1,51 @@
 "use client";
 
-import React from 'react'
+import React from "react";
 import { Calendar, MenuIcon } from "lucide-react";
-import LogoWhite from '../../assets/logo/logo_w.png'
-import Logo from '../../assets/logo/logo_g.png'
+import LogoWhite from "../../assets/logo/logo_w.png";
+import Logo from "../../assets/logo/logo_g.png";
 import Image from "next/image";
 import { useState } from "react";
-import FormWorkUs from '@/components/FormWorkUs/formWorkUs';
-
+import FormWorkUs from "@/components/FormWorkUs/formWorkUs";
+import CoServices from "@/components/cooperateComponents/co-services";
 
 const WorkWithUs = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
+      <div className="hidden lg:flex justify-between lg:mx-20 mt-7 mb-7">
+        <h4 className="text-gray-400 font-semibold text-base">
+          brazilianhandscooperative@gmail.com
+        </h4>
+        <a
+          href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
+          target="_blank"
+          className="text-2xl font-semibold text-emerald-500"
+        >
+          {" "}
+          +353 83 347 1038
+        </a>
+      </div>
 
-        <div className="hidden lg:flex justify-between lg:mx-20 mt-7 mb-7">
+      <div className="flex fixed items-center z-40 bg-white w-screen lg:hidden px-6 py-6 shadow-md ">
+        <a href="#" className="">
+          <Image src={Logo} alt="logoo" width={60} height={50} />
+        </a>
 
-            <h4 className="text-gray-400 font-semibold text-base">
-            brazilianhandscooperative@gmail.com
-            </h4>
-            <a
-            href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
-            target="_blank"
-            className="text-2xl font-semibold text-emerald-500"
-            >
-            {" "}
-            +353 83 347 1038
-            </a>
+        <button
+          onClick={toggleMenu}
+          className="fixed flex items-center top-4 right-0 p-4 z-40 lg:hidden lg:bg-none  rounded-lg"
+        >
+          <MenuIcon size={28} className="text-emerald-400 font-bold" />
+        </button>
+      </div>
 
-        </div>
-
-        <div className="flex fixed items-center z-40 bg-white w-screen lg:hidden px-6 py-6 shadow-md ">
-
-                <a href="#" className="">
-                <Image src={Logo} alt="logoo" width={60} height={50} />
-                </a>
-
-                <button
-                onClick={toggleMenu}
-                className="fixed flex items-center top-4 right-0 p-4 z-40 lg:hidden lg:bg-none  rounded-lg"
-                >
-                <MenuIcon size={28} className="text-emerald-400 font-bold" />
-                </button>
-        </div>
-
-        <header className="h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-emerald-500  text-white antialiased font-bold mb-24 lg:mb-0">
+      <header className="h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-emerald-500  text-white antialiased font-bold mb-24 lg:mb-0">
         <a href="#" className="">
           <Image src={LogoWhite} alt="logoo" width={100} height={100} />
         </a>
@@ -89,8 +84,6 @@ const WorkWithUs = () => {
             </a>
           </nav>
 
-          
-
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
               href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20the%20website%20and%20I%20would%20like%20to%20schedule%20a%20service!%0A"
@@ -103,16 +96,10 @@ const WorkWithUs = () => {
         </div>
       </header>
 
-
-            <FormWorkUs />
-
-       
-          
-          
-    
-    
+      <FormWorkUs />
+      <CoServices />
     </>
-  )
-}
+  );
+};
 
-export default WorkWithUs
+export default WorkWithUs;

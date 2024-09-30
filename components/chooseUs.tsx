@@ -8,7 +8,7 @@ import ChooseIMG from "../public/assets/choose-img.jpg";
 
 const ChooseUs = () => {
   return (
-    <div className="flex flex-col-reverse bg-emerald-50 items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 p-8">
+    <div className="flex flex-col-reverse bg-emerald-50 items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 p-10">
       <div className="mx-4 flex flex-col items-center justify-center lg:items-start ">
         <h3 className="text-center lg:text-start text-emerald-500 font-bold pt-5 pb-5">
           Why Choose Us
@@ -67,4 +67,3 @@ const ChooseUs = () => {
 };
 
 export default ChooseUs;
-

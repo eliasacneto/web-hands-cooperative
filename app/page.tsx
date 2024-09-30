@@ -137,11 +137,11 @@ export default function Home() {
         <OurService />
       </div> */}
 
-      <div id="about" className="flex w-full mt-10">
+      <div id="about" className="flex w-full">
         <About />
       </div>
 
-      <div id="chooseus" className="mt-10 lg:mt-20">
+      <div id="chooseus" className=" ">
         <ChooseUs />
       </div>
       <div id="services" className="flex w-full">
