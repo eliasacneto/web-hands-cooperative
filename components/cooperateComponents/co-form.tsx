@@ -216,7 +216,7 @@ const CoForm = () => {
 
               <Button
                 type="submit"
-                className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6"
+                className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6 lg:mb-11"
               >
                 Enviar candidatura
               </Button>
