@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
-import CleanerIMG from "../../public/assets/cleaner.jpg";
+import CleanerIMG from "../../public/assets/working.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,7 +42,7 @@ const CoAbout = () => {
         </div>
         <Link href="#hero">
           <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg">
-            Candidate=se agora!
+            Candidate-se agora!
           </Button>
         </Link>
       </div>
