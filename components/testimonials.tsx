@@ -25,7 +25,7 @@ const Testimonials = () => {
             </p>
           </div>
           <Link href="#hero">
-            <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold">
+            <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg">
               <Calendar className="mr-2" /> Book now
             </Button>
           </Link>

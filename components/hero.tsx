@@ -40,7 +40,7 @@ const Hero = () => {
               <h2 className="font-bold text-2xl">Our Services</h2>
             </div>
             <div className="flex flex-col items-center justify-center bg-[#DAF9FF] w-fit px-10 py-6 lg:w-[300px] lg:px-0 mt-4 rounded-xl lg:mb-5">
-              <ul className="flex flex-col justify-center gap-5 lg:items-start ml-6">
+              <ul className="flex flex-col justify-center gap-5 lg:items-start ml-6 text-lg">
                 <li className="flex gap-4">
                   <CircleArrowRight />
                   Residential Cleaning

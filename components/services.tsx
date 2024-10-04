@@ -32,12 +32,11 @@ function Services() {
             />
             <div className="flex flex-col items-start gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Residential Cleaning</h3>
-              <p>
-                Justo porta nunc donec at faucibus ornare quam integer lectus.
-                Eu at dignissim at proin sit faucibus elementum mi. Interdum
-                viverra faucibus dui amet habitasse. Feugiat est et dui
-                tristique vel. Facilisis interdum ut varius velit a amet arcu
-                faucibus. Consectetur.
+              <p className="text-justify text-lg">
+                Make your home sparkle with our thorough residential cleaning
+                services. Whether you need regular maintenance or a one-time
+                deep clean, our team ensures your space is always fresh and
+                inviting.
               </p>
             </div>
           </div>
@@ -53,12 +52,11 @@ function Services() {
             />
             <div className="flex flex-col gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Commercial Cleaning</h3>
-              <p>
-                Justo porta nunc donec at faucibus ornare quam integer lectus.
-                Eu at dignissim at proin sit faucibus elementum mi. Interdum
-                viverra faucibus dui amet habitasse. Feugiat est et dui
-                tristique vel. Facilisis interdum ut varius velit a amet arcu
-                faucibus. Consectetur.
+              <p className="text-justify text-lg">
+                Keep your business looking its best with our commercial cleaning
+                solutions. We provide tailored services to meet the demands of
+                busy office spaces, retail shops, and other commercial
+                environments.
               </p>
             </div>
           </div>
@@ -76,12 +74,11 @@ function Services() {
             />
             <div className="flex flex-col items-start gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Deep Cleaning</h3>
-              <p>
-                Justo porta nunc donec at faucibus ornare quam integer lectus.
-                Eu at dignissim at proin sit faucibus elementum mi. Interdum
-                viverra faucibus dui amet habitasse. Feugiat est et dui
-                tristique vel. Facilisis interdum ut varius velit a amet arcu
-                faucibus. Consectetur.
+              <p className="text-justify text-lg">
+                Our deep cleaning service tackles those hard-to-reach places and
+                ensures every nook and cranny is spotless. Perfect for
+                post-renovation clean-ups or preparing your home for special
+                occasions.
               </p>
             </div>
           </div>
@@ -96,12 +93,10 @@ function Services() {
             />
             <div className="flex flex-col gap-4 px-4 pt-10 lg:px-0">
               <h3 className="text-xl font-bold">Window Cleaning</h3>
-              <p>
-                Justo porta nunc donec at faucibus ornare quam integer lectus.
-                Eu at dignissim at proin sit faucibus elementum mi. Interdum
-                viverra faucibus dui amet habitasse. Feugiat est et dui
-                tristique vel. Facilisis interdum ut varius velit a amet arcu
-                faucibus. Consectetur.
+              <p className="text-justify text-lg">
+                Bring more light into your home or office with our window
+                cleaning service. We make sure your windows are streak-free and
+                shining, providing a clear view of the world outside.
               </p>
             </div>
           </div>
