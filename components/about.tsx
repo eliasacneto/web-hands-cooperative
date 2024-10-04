@@ -36,7 +36,7 @@ const About = () => {
           </p>
         </div>
         <Link href="#hero">
-          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-3 rounded-full font-semibold ">
+          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-3 rounded-full font-semibold lg:hover:-translate-y-2 transition-transform duration-700">
             Request now
           </Button>
         </Link>

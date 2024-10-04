@@ -38,7 +38,7 @@ const CoChooseUs = () => {
                 <Image src={Broom} alt="broom icon" width={24} height={24} />
               </div>
               <h2 className="font-bold text-2xl">Flexibilidade</h2>
-              <p className="text-justify">
+              <p className="text-justify ">
                 Você decide onde e quando quer trabalhar. Pode optar por atender
                 apenas em sua cidade ou se deslocar para outras, conforme sua
                 disponibilidade e meios de transporte. Na Brazilian Hands
@@ -51,7 +51,7 @@ const CoChooseUs = () => {
               <Image src={Broom} alt="broom icon" width={24} height={24} />
             </div>
             <h2 className="font-bold text-2xl">Pagamento Garantido</h2>
-            <p className="text-justify">
+            <p className="text-justify lg:w-[48%]">
               Nós cuidamos de toda a parte administrativa! A empresa recebe o
               pagamento dos clientes e faz o repasse diretamente para você. Isso
               significa que você pode focar no que faz de melhor, sem
@@ -59,7 +59,7 @@ const CoChooseUs = () => {
             </p>
           </div>
           <Link href="#hero">
-            <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-10">
+            <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-10 lg:hover:-translate-y-2 transition-transform duration-700">
               Quero me candidatar
             </Button>
           </Link>

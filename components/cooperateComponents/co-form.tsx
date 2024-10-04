@@ -117,7 +117,7 @@ const CoForm = () => {
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="Seu nome"
+                      placeholder="Nome"
                       className="bg-white text-black"
                     />
                   </div>
@@ -128,7 +128,7 @@ const CoForm = () => {
                       type="number"
                       value={telefone}
                       onChange={(e) => setTelefone(e.target.value)}
-                      placeholder="Seu número de contato"
+                      placeholder="Número de contato"
                       className="bg-white text-black"
                     />
                   </div>
