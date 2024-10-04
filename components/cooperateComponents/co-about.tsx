@@ -33,7 +33,7 @@ const CoAbout = () => {
             jardinagem, pintura, reparos ou beleza, e está na Irlanda procurando
             por uma oportunidade, queremos você na nossa equipe! Seja experiente
             ou novo na área, na{" "}
-            <span className="text-emerald-500 font-bold">
+            <span className="text-blue-500 font-bold">
               Brazilian Hands Cooperative
             </span>{" "}
             oferecemos suporte para que você se sinta seguro e valorizado no
@@ -41,7 +41,8 @@ const CoAbout = () => {
           </p>
         </div>
         <Link href="#hero">
-          <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg">
+
+          <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg lg:hover:-translate-y-2 transition-transform duration-700">
             Candidate-se agora!
           </Button>
         </Link>
