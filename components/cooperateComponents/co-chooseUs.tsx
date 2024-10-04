@@ -4,7 +4,7 @@ import OurPurpose from "../AboutUs/ourPurpose";
 import CleanerIMG from "../public/assets/cleaner.jpg";
 import Image from "next/image";
 import Broom from "../../public/assets/icons/broom.png";
-import ChooseIMG from "../../public/assets/choose-img.jpg";
+import ChooseIMG from "../../public/assets/partners.jpg";
 import Link from "next/link";
 
 const CoChooseUs = () => {

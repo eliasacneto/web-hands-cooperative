@@ -29,14 +29,19 @@ const About = () => {
             Experience expert cleaning services
           </h1>
 
-          <p className="pb-5 text-start">
-            Discover the skilled and dedicated individuals behind Brazilian
-            Hands Co-operative, offering a variety of high-quality services to
-            make your life easier and your home more beautiful.
+          <p className="pb-5 text-justify text-lg">
+            At{" "}
+            <span className="font-semibold">Brazilian Hands Co-operative</span>,
+            we believe in providing exceptional service with a personal touch.
+            Founded by a group of hardworking Brazilians in Ireland, our mission
+            is simple: to make your life easier by offering high-quality
+            services in areas like cleaning, gardening, painting, and much more.
+            Whether it’s a one-time job or regular support, we’re committed to
+            delivering excellence in everything we do.
           </p>
         </div>
         <Link href="#hero">
-          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-3 rounded-full font-semibold ">
+          <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold text-lg">
             Request now
           </Button>
         </Link>
