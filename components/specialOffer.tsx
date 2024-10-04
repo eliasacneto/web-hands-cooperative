@@ -85,12 +85,12 @@ const SpecialOffer = () => {
             </div>
           </div>
 
-          <h3 className="mt-10 font-bold">
+          <h3 className="mt-10 text-lg font-bold">
             Book Now and Experience the Super clean difference!
           </h3>
 
           <Link href="#hero">
-            <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-6 rounded-3xl font-semibold mt-4  mb-4">
+            <Button className="bg-[#FDE047] text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg m-4">
               <Calendar className="mr-2" /> Book now
             </Button>
           </Link>

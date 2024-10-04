@@ -41,7 +41,7 @@ const CoAbout = () => {
           </p>
         </div>
         <Link href="#hero">
-          <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg">
+          <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg">
             Candidate-se agora!
           </Button>
         </Link>
