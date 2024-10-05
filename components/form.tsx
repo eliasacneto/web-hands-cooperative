@@ -123,6 +123,18 @@ Thanks!`;
     } catch (error) {
       console.error("Erro ao enviar mensagem para o Discord:", error);
     }
+
+    setFormData({
+      name: "",
+      phone: "",
+      service: "",
+      city: "",
+      otherService: "",
+      eircode: "",
+      street: "",
+      district: "",
+      houseNumber: "",
+    });
   };
 
   return (
