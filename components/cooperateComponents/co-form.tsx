@@ -148,6 +148,7 @@ Obrigado e aguardo resposta!`;
             </h1>
 
             <form
+              id="apply"
               className="text-white"
               method="post"
               onSubmit={(e) => {

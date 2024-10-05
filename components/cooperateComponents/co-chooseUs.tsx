@@ -1,12 +1,9 @@
 import React from "react";
 import { Button } from "../ui/button";
-import OurPurpose from "../AboutUs/ourPurpose";
-import CleanerIMG from "../public/assets/cleaner.jpg";
 import Image from "next/image";
-import Broom from "../../public/assets/icons/broom.png";
 import ChooseIMG from "../../public/assets/partners.jpg";
 import Link from "next/link";
-
+import { BanknoteIcon, Clock, HandCoinsIcon } from "lucide-react";
 const CoChooseUs = () => {
   return (
     <div className="flex flex-col-reverse bg-blue-100 items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 p-10">
@@ -24,7 +21,7 @@ const CoChooseUs = () => {
           <div className="flex flex-col gap-8 lg:flex-row ">
             <div className="flex mt-4 flex-col justify-start items-start lg:justify-start gap-4 lg:w-full">
               <div className="flex  bg-blue-500 px-4 py-4 items-start justify-start rounded-full">
-                <Image src={Broom} alt="broom icon" width={24} height={24} />
+                <BanknoteIcon width={24} height={24} color="white" />
               </div>
               <h2 className="font-bold text-2xl">Ganhos Atraentes</h2>
               <p className="text-justify">
@@ -35,7 +32,7 @@ const CoChooseUs = () => {
             </div>
             <div className="flex mt-4  flex-col justify-start items-start lg:justify-start gap-4 w-full">
               <div className="flex  bg-blue-500 px-4 py-4 items-start justify-start rounded-full">
-                <Image src={Broom} alt="broom icon" width={24} height={24} />
+                <Clock width={24} height={24} color="white" />
               </div>
               <h2 className="font-bold text-2xl">Flexibilidade</h2>
               <p className="text-justify ">
@@ -48,7 +45,7 @@ const CoChooseUs = () => {
           </div>
           <div className="flex mt-4  flex-col justify-start items-start lg:justify-start gap-4">
             <div className="flex  bg-blue-500 px-4 py-4 items-start justify-start rounded-full ">
-              <Image src={Broom} alt="broom icon" width={24} height={24} />
+              <HandCoinsIcon width={24} height={24} color="white" />
             </div>
             <h2 className="font-bold text-2xl">Pagamento Garantido</h2>
             <p className="text-justify lg:w-[48%]">
@@ -58,7 +55,7 @@ const CoChooseUs = () => {
               preocupações com burocracias.
             </p>
           </div>
-          <Link href="#hero">
+          <Link href="#apply">
             <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-10 lg:hover:-translate-y-2 transition-transform duration-700">
               Quero me candidatar
             </Button>
