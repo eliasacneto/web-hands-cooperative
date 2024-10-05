@@ -13,77 +13,117 @@ import {
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 
-const webhookUrl = process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL;
+interface CoFormData {
+  name: string;
+  whatsapp: string;
+  city: string;
+  eircode: string;
+  street: string;
+  district: string;
+  houseNumber: string;
+  skills: string;
+}
 
 const CoForm = () => {
+  const [coFormData, setCoFormData] = useState<CoFormData>({
+    name: "",
+    whatsapp: "",
+    city: "",
+    eircode: "",
+    street: "",
+    district: "",
+    houseNumber: "",
+    skills: "",
+  });
 
-  //Criei estes estado para Limpar os campos após o preechimento do mesmo
-  const [name, setName] = useState("");
-  const [telefone, setTelefone] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [eircode, setEircode] = useState("");
-  const [street, setStreet] = useState("");
-  const [district, setDistrict] = useState("");
-  const [houseNumber, setHouseNumber] = useState("");
-  const [skills, setSkills] = useState("");
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    
-    const sender = {
-      name,
-      telefone,
-      cidade,
-      eircode,
-      street,
-      district,
-      houseNumber,
-      skills,
-    };
-
-    const payload = {
-      content: `Novo formulário preenchido:
-      Nome: ${sender.name}
-      Telefone: ${sender.telefone}
-      Cidade: ${sender.cidade}
-      Eircode: ${sender.eircode}
-      Rua: ${sender.street}
-      Bairro: ${sender.district}
-      Número: ${sender.houseNumber}
-      Skills: ${sender.skills}`,
-    };
-
-    if (webhookUrl) {
-      try {
-        await fetch(webhookUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }); //Explicando a Lógica acima: Primeiro, ele verifica se o webhookUrl(no documento .env poderá verificar a url) existe. Se for verdadeiro, ele envia uma requisição POST com fetch para essa URL (definida no arquivo .env) usando o cabeçalho Content-Type como "application/json". O JSON.stringify converte os dados em formato JSON para o Discord.
-
-        // Limpa os campos após o envio
-        setName("");
-        setTelefone("");
-        setCidade("");
-        setEircode("");
-        setStreet("");
-        setDistrict("");
-        setHouseNumber("");
-        setSkills("");
-
-        alert("Formulário enviado com sucesso!");
-
-        console.log("Dados enviados para o Discord com sucesso");
-      } catch (error) {
-        console.error("Erro ao enviar dados para o Discord:", error);
-      }
-    } else {
-      console.error("Webhook URL não definida");
-    }
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setCoFormData({
+      ...coFormData,
+      [e.target.id]: e.target.value,
+    });
   };
 
+  const handleTextAreaChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setCoFormData({
+      ...coFormData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleCityChange = (value: string) => {
+    setCoFormData({ ...coFormData, city: value });
+  };
+
+  const validateForm = (): boolean => {
+    return (
+      coFormData.name !== "" &&
+      coFormData.whatsapp !== "" &&
+      coFormData.city !== "" &&
+      coFormData.eircode !== "" &&
+      coFormData.street !== "" &&
+      coFormData.district !== "" &&
+      coFormData.houseNumber !== "" &&
+      coFormData.skills !== ""
+    );
+  };
+  const handleSubmit = async () => {
+    if (!validateForm()) {
+      alert("Por favor, preencha todos os campos!");
+      return;
+    }
+
+    const message = `Olá! Gostaria de fazer parte do time Brazilian Hands Cooperative:
+
+*Nome:* ${coFormData.name}
+*WhatsApp:* ${coFormData.whatsapp}
+
+*Serviços que realizo:* ${coFormData.skills}
+
+*Meu endereço na Irlanda:*
+- *Cidade:* ${coFormData.city}
+- *Eircode:* ${coFormData.eircode}
+- *Rua:* ${coFormData.street}
+- *Distrito:* ${coFormData.district}
+- *Número:* ${coFormData.houseNumber}
+
+Obrigado e aguardo resposta!`;
+
+    const whatsappUrl = `https://wa.me/5588997652020?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+
+    // Enviar mensagem para o Discord
+    try {
+      const discordWebhookUrl =
+        "https://discord.com/api/webhooks/1288456738714026044/kSnKDxhBJ8r3vxUGdSCOZ3PQJMtPj5xaF8OXzZgSEZ4kTB3CRmHonHkIa6LHZzu1IelL";
+      await fetch(discordWebhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content: message }),
+      });
+      console.log("Mensagem enviada para o Discord!");
+    } catch (error) {
+      console.error("Erro ao enviar mensagem para o Discord:", error);
+    }
+
+    setCoFormData({
+      name: "",
+      whatsapp: "",
+      city: "",
+      eircode: "",
+      street: "",
+      district: "",
+      houseNumber: "",
+      skills: "",
+    });
+  };
 
   return (
     <div className="flex flex-col lg:flex-row w-full lg:h-screen">
@@ -107,28 +147,35 @@ const CoForm = () => {
               Seja um Cooperado
             </h1>
 
-            <form className="text-white" method="post" onSubmit={handleSubmit}>
+            <form
+              className="text-white"
+              method="post"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >
               <div className="grid w-full items-center gap-4">
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-3 w-full">
                     <Label>Nome completo</Label>
                     <Input
-                      name="name"
+                      id="name"
                       type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="Nome"
+                      value={coFormData.name}
+                      onChange={handleInputChange}
+                      placeholder="Seu nome"
                       className="bg-white text-black"
                     />
                   </div>
                   <div className="flex flex-col gap-3 w-full">
                     <Label>WhatsApp</Label>
                     <Input
-                      name="Telefone"
-                      type="number"
-                      value={telefone}
-                      onChange={(e) => setTelefone(e.target.value)}
-                      placeholder="Número de contato"
+                      id="whatsapp"
+                      type="text"
+                      value={coFormData.whatsapp}
+                      onChange={handleInputChange}
+                      placeholder="Seu número de contato"
                       className="bg-white text-black"
                     />
                   </div>
@@ -136,10 +183,7 @@ const CoForm = () => {
 
                 <div className="flex flex-col gap-3 w-full">
                   <Label>Em qual cidade você reside?</Label>
-                  <Select
-                    value={cidade}
-                    onValueChange={(value) => setCidade(value)}
-                  >
+                  <Select onValueChange={handleCityChange}>
                     <SelectTrigger className="bg-white text-black">
                       <SelectValue placeholder="Selecione uma cidade" />
                     </SelectTrigger>
@@ -156,21 +200,21 @@ const CoForm = () => {
                   <div className="flex flex-col gap-3 w-full">
                     <Label>Eircode</Label>
                     <Input
-                      name="Eircode"
+                      id="eircode"
                       type="text"
-                      value={eircode}
-                      onChange={(e) => setEircode(e.target.value)}
+                      value={coFormData.eircode}
+                      onChange={handleInputChange}
                       placeholder="Seu Eircode"
-                      className="bg-white text-black uppercase"
+                      className="bg-white text-black placeholder:capitalize"
                     />
                   </div>
                   <div className="flex flex-col gap-3 w-full">
                     <Label>Rua</Label>
                     <Input
+                      id="street"
                       type="text"
-                      name="Street"
-                      value={street}
-                      onChange={(e) => setStreet(e.target.value)}
+                      value={coFormData.street}
+                      onChange={handleInputChange}
                       placeholder="Nome da rua"
                       className="bg-white text-black"
                     />
@@ -181,10 +225,10 @@ const CoForm = () => {
                   <div className="flex flex-col gap-3 w-full">
                     <Label>Bairro</Label>
                     <Input
-                      name="District"
                       type="text"
-                      value={district}
-                      onChange={(e) => setDistrict(e.target.value)}
+                      id="district"
+                      value={coFormData.district}
+                      onChange={handleInputChange}
                       placeholder="Nome do bairro"
                       className="bg-white text-black"
                     />
@@ -193,9 +237,9 @@ const CoForm = () => {
                     <Label>Número</Label>
                     <Input
                       type="text"
-                      name="HouseNumber"
-                      value={houseNumber}
-                      onChange={(e) => setHouseNumber(e.target.value)}
+                      id="houseNumber"
+                      value={coFormData.houseNumber}
+                      onChange={handleInputChange}
                       placeholder="Número da casa"
                       className="bg-white text-black"
                     />
@@ -205,19 +249,16 @@ const CoForm = () => {
                 <div className="flex flex-col gap-3 w-full">
                   <Label>Quais serviços você realiza?</Label>
                   <Textarea
-                    name="Skills"
-                    value={skills}
-                    onChange={(e) => setSkills(e.target.value)}
+                    id="skills"
+                    value={coFormData.skills}
+                    onChange={handleTextAreaChange}
                     className="bg-white text-black"
                     placeholder="Escreva o nome dos serviços que você realiza..."
                   />
                 </div>
               </div>
 
-              <Button
-                type="submit"
-                className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6 lg:mb-11"
-              >
+              <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6 lg:mb-11">
                 Enviar candidatura
               </Button>
             </form>
