@@ -121,7 +121,7 @@ const WorkWithUs = () => {
 
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
-              href="#form"
+              href="#apply"
               className="flex w-full px-8 py-4 bg-yellow-300 rounded-full text-base font-semibold text-black hover:bg-yellow-400 transition-all duration-500  hover:font-semibold"
               onClick={() => closeMenuOnClick("#hero")}
             >
