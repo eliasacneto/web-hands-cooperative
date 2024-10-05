@@ -17,7 +17,7 @@ const CoHero = () => {
       className="bg-cover flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-end w-full"
     >
       <div className="flex flex-col justify-evenly items-center w-full">
-        <div className="flex flex-col items-center lg:items-start mt-10">
+        <div className="flex flex-col items-center lg:items-start mt-10 lg:mb-10">
           <p className="text-center lg:text-start bg-blue-600 w-fit px-4 py-2 rounded-full text-white font-bold mb-5">
             #01 Cooperativa Brasileira na Irlanda 🇮🇪
           </p>
@@ -32,7 +32,7 @@ const CoHero = () => {
             oportunidade de trabalho flexível e bem remunerada, venha fazer
             parte da nossa equipe!
           </p>
-          <div className="lg:flex flex-col justify-start items-start hidden">
+          {/* <div className="lg:flex flex-col justify-start items-start hidden">
             <div className="flex mt-10 justify-start items-center gap-4">
               <div className="flex bg-blue-500 px-4 py-4 items-center justify-center rounded-full">
                 <Image src={Broom} alt="broom icon" width={24} height={24} />
@@ -55,7 +55,7 @@ const CoHero = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex bg-emerald-50 mt-10 lg:mt-0 lg:py-0 lg:bg-transparent flex-col lg:flex-row w-full justify-center items-center lg:items-end ">

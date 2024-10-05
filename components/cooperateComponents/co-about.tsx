@@ -40,8 +40,7 @@ const CoAbout = () => {
             trabalho.
           </p>
         </div>
-        <Link href="#hero">
-
+        <Link href="#apply">
           <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg lg:hover:-translate-y-2 transition-transform duration-700">
             Candidate-se agora!
           </Button>
