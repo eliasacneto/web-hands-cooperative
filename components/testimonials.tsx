@@ -18,10 +18,8 @@ const Testimonials = () => {
             <h1 className="pb-5 text-2xl text-center font-medium lg:text-4xl lg:text-start lg:w-[380px]">
               Testimonials from Our Customers
             </h1>
-            <p className="pb-5 text-start">
-              Fermentum enim a tellus ac feugiat sit. Posuere cras in duis nec
-              potenti. Velit ornare mi auctor aliquam pellentesque arcu.
-              Tristique mollis vel turpis.
+            <p className="pb-5 text-xl text-gray-500 text-start">
+              Check out what our customers are saying about us
             </p>
           </div>
           <Link href="#hero">
