@@ -24,13 +24,13 @@ const Hero = () => {
             #01 Cleaning Service
           </p>
 
-          <h1 className="text-3xl text-center px-1 lg:px-0 font-semibold lg:text-[52px] lg:w-[563px] lg:leading-relaxed lg:text-start">
+          <h1 className="text-3xl text-center px-1 lg:px-0 font-semibold lg:text-[52px] lg:w-[563px] lg:leading-none lg:text-start">
             Brazilian Hands Expert Cleaning Services Await
           </h1>
           <p className="mt-5 text-base lg:text-lg px-4 lg:px-0 text-center lg:w-[448px] lg:text-start">
             Discover reliable residential cleaning, garden maintenance,
             painting, beauty services, and more with Brazilian Hands
-            Co-operative.
+            Cooperative.
           </p>
           <div className="lg:flex flex-col justify-start items-start hidden">
             <div className="flex mt-10 justify-start items-center gap-4">

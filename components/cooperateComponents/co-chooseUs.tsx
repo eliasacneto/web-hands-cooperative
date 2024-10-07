@@ -39,7 +39,7 @@ const CoChooseUs = () => {
                 Você decide onde e quando quer trabalhar. Pode optar por atender
                 apenas em sua cidade ou se deslocar para outras, conforme sua
                 disponibilidade e meios de transporte. Na Brazilian Hands
-                Co-operative, quem controla sua agenda é você!
+                Cooperative, quem controla sua agenda é você!
               </p>
             </div>
           </div>

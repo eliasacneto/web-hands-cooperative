@@ -7,7 +7,7 @@ import Link from "next/link";
 const CoAbout = () => {
   return (
     <div className="bg-blue-50 flex flex-col items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 w-full py-14">
-      <div className="flex flex-col mx-10 lg:mx-10 ">
+      <div className="flex flex-col mx-10 lg:mx-10" id="coabout">
         <Image
           className="rounded-3xl w-[300px] lg:w-[450px] "
           src={CleanerIMG}
@@ -24,7 +24,7 @@ const CoAbout = () => {
         </p>
 
         <div className="flex flex-col lg:w-[560px] ">
-          <h1 className="pb-5 text-2xl text-center font-medium lg:text-4xl lg:text-start">
+          <h1 className="pb-5 text-2xl text-center font-semibold lg:text-4xl lg:text-start">
             Quem pode fazer parte?
           </h1>
 

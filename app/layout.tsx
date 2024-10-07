@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Brazilian Hands Co-operative - Cleaning & Maintenance Services",
+  title: "Brazilian Hands Cooperative - Cleaning & Maintenance Services",
   description:
     "Affordable cleaning, garden care, beauty, and repair services in Ireland. Professionalism with a Brazilian touch.",
 };
