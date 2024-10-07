@@ -4,6 +4,7 @@ import OurPurpose from "./AboutUs/ourPurpose";
 import CleanerIMG from "../public/assets/cleaner.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { Calendar } from "lucide-react";
 
 const About = () => {
   return (
@@ -31,7 +32,7 @@ const About = () => {
 
           <p className="pb-5 text-justify text-lg">
             At{" "}
-            <span className="font-semibold">Brazilian Hands Co-operative</span>,
+            <span className="font-semibold">Brazilian Hands Cooperative</span>,
             we believe in providing exceptional service with a personal touch.
             Founded by a group of hardworking Brazilians in Ireland, our mission
             is simple: to make your life easier by offering high-quality
@@ -41,8 +42,8 @@ const About = () => {
           </p>
         </div>
         <Link href="#hero">
-          <Button className="bg-[#FDE047] flex justify-center items-center lg:justify-start text-black hover:bg-yellow-400 px-8 py-3 rounded-full font-semibold lg:hover:-translate-y-2 transition-transform duration-700">
-            Request now
+          <Button className="bg-[#FDE047] text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg m-4">
+            <Calendar className="mr-2" /> Request now
           </Button>
         </Link>
       </div>

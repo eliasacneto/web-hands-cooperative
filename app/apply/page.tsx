@@ -15,8 +15,23 @@ import CoChooseUs from "@/components/cooperateComponents/co-chooseUs";
 import ScrollToTop from "@/components/scrollToTop";
 import CoFaq from "@/components/cooperateComponents/co-faq";
 import CoForm from "@/components/cooperateComponents/co-form";
+import { useInView } from "react-intersection-observer";
 
 const WorkWithUs = () => {
+  {
+    /*useInView*/
+  }
+  const { ref: aboutRef, inView: aboutInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: chooseRef, inView: chooseInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: formRef, inView: formInView } = useInView({ triggerOnce: true });
+  {
+    /*useInView */
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
@@ -122,7 +137,7 @@ const WorkWithUs = () => {
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
             <a
               href="#apply"
-              className="flex w-full px-8 py-4 bg-yellow-300 rounded-full text-base font-semibold text-black hover:bg-yellow-400 transition-all duration-500  hover:font-semibold"
+              className="flex w-full px-8 py-4 bg-yellow-400 rounded-full text-base font-semibold text-black hover:bg-yellow-500 transition-all duration-500  hover:font-semibold"
               onClick={() => closeMenuOnClick("#hero")}
             >
               <Calendar className="mr-2" /> Candidatar-se
@@ -130,13 +145,52 @@ const WorkWithUs = () => {
           </div>
         </div>
       </header>
-      <CoHero />
-      <CoAbout />
-      <CoChooseUs />
+
+      <section>
+        <CoHero />
+      </section>
+
+      <section
+        id="about"
+        ref={aboutRef}
+        className={`transition-all duration-1000 ease-out ${
+          aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+        }`}
+      >
+        <CoAbout />
+      </section>
+
+      <section
+        id="chooseus"
+        ref={chooseRef}
+        className={`transition-all duration-1000 ease-out ${
+          chooseInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
+        }`}
+      >
+        <CoChooseUs />
+      </section>
+
       {/* <CoFaq /> */}
-      <CoForm />
-      <CoFooter />
-      <ScrollToTop />
+
+      <section
+        id="services"
+        ref={formRef}
+        className={`transition-all duration-1000 ease-out ${
+          formInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+        }`}
+      >
+        <CoForm />
+      </section>
+
+      <section>
+        <CoFooter />
+      </section>
+
+      <section>
+        <ScrollToTop />
+      </section>
     </>
   );
 };

@@ -14,8 +14,19 @@ import LogoWhite from "../assets/logo/logo_w.png";
 import SpecialOffer from "@/components/specialOffer";
 import ScrollToTop from "@/components/scrollToTop";
 import Loader from "@/components/loader";
+import { useInView } from "react-intersection-observer";
+
 
 export default function Home() {
+
+  {/*useInView*/}
+  const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
+  const { ref: chooseRef, inView: chooseInView } = useInView({ triggerOnce: true });
+  const { ref: servicesRef, inView: servicesInView } = useInView({ triggerOnce: true });
+  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({ triggerOnce: true });
+  const { ref: specialOfferRef, inView: specialOfferRefInView } = useInView({ triggerOnce: true });
+  {/*useInView */}
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
@@ -137,24 +148,60 @@ export default function Home() {
         <OurService />
       </div> */}
 
-      <div id="about" className="flex w-full">
-        <About />
-      </div>
+        <section
+          id="about"
+          ref={aboutRef}
+          className={`transition-all duration-1000 ease-out ${
+            aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+          }`}
+        >
+          <About />
 
-      <div id="chooseus" className=" ">
+        </section>
+
+      <section 
+        id="chooseus"
+        ref={chooseRef} 
+        className={`transition-all duration-1000 ease-out ${
+          chooseInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+        }`}  
+      >
+
         <ChooseUs />
-      </div>
-      <div id="services" className="flex w-full">
+        
+      </section>
+
+      <section 
+        id="services" 
+        ref={servicesRef}
+        className={`transition-all duration-1000 ease-out ${
+          servicesInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+        }`}
+        
+      >
         <Services />
-      </div>
 
-      <div id="testimonials" className="flex w-full mt-6">
+      </section>
+
+      <section 
+        id="testimonials" 
+        ref={testimonialsRef}
+        className={`transition-all duration-1000 ease-out ${
+          testimonialsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+        }`}
+      >
         <Testimonials />
-      </div>
+      </section>
 
-      <div id="offer" className="flex w-full mt-6">
+      <section 
+        id="offer" 
+        ref={specialOfferRef}
+        className={`transition-all duration-1000 ease-out ${
+          specialOfferRefInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+        }`}
+      >
         <SpecialOffer />
-      </div>
+      </section>
 
       <div className="flex w-full">
         <Footer />

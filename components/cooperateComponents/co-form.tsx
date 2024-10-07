@@ -253,6 +253,7 @@ Obrigado e aguardo resposta!`;
                     id="skills"
                     value={coFormData.skills}
                     onChange={handleTextAreaChange}
+                    rows={6}
                     className="bg-white text-black"
                     placeholder="Escreva o nome dos serviços que você realiza..."
                   />

@@ -1,7 +1,7 @@
 <h1 align="center">
-  🇧🇷 Brazilian Hands Co-operative Website 🇮🇪
+  🇧🇷 Brazilian Hands Cooperative Website 🇮🇪
 </h1>
-Welcome to the Brazilian Hands Co-operative project! This website serves a dual purpose: it provides a platform for customers to easily request cleaning, maintenance, and beauty services, while also offering Brazilians in Ireland an opportunity to join our cooperative and work with us.
+Welcome to the Brazilian Hands Cooperative project! This website serves a dual purpose: it provides a platform for customers to easily request cleaning, maintenance, and beauty services, while also offering Brazilians in Ireland an opportunity to join our cooperative and work with us.
 
 This project showcases my skills in developing responsive, user-friendly web applications that meet both customer and business needs.
 
@@ -9,17 +9,17 @@ This project showcases my skills in developing responsive, user-friendly web app
 
 ## 🚀 About the Project
 
-The Brazilian Hands Co-operative website is designed with two main user journeys in mind:
+The Brazilian Hands Cooperative website is designed with two main user journeys in mind:
 
 1. For Customers:
 
 - Services Overview: Learn about the wide range of services we offer, including residential cleaning, garden maintenance, painting, and more.
 - Service Booking: Customers can easily browse our services and get in touch via WhatsApp or Discord to schedule appointments.
-- About Us: Discover our story, our mission, and why Brazilian Hands Co-operative is the perfect choice for your home and business needs.
+- About Us: Discover our story, our mission, and why Brazilian Hands Cooperative is the perfect choice for your home and business needs.
 
 2. For Service Providers:
 
-- Join the Co-operative: Brazilians in Ireland can easily apply to join our team, providing them with flexible working opportunities and competitive earnings.
+- Join the Cooperative: Brazilians in Ireland can easily apply to join our team, providing them with flexible working opportunities and competitive earnings.
 - Work Opportunities: Information on the variety of services providers can offer, from cleaning to manual labor and beauty services.
 - Fair Earnings: Learn about our cooperative structure, where 80% of the service fee goes directly to the worker.
 
@@ -78,4 +78,4 @@ This project is licensed under the MIT License.
 
 <hr>
 
-Thank you for checking out the Brazilian Hands Co-operative project! 😊
+Thank you for checking out the Brazilian Hands Cooperative project! 😊
