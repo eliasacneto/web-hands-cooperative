@@ -153,7 +153,7 @@ const WorkWithUs = () => {
       <section
         id="about"
         ref={aboutRef}
-        className={`transition-all duration-1000 ease-out ${
+        className={`transition-all duration-500 ease-out ${
           aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         }`}
       >
@@ -163,7 +163,7 @@ const WorkWithUs = () => {
       <section
         id="chooseus"
         ref={chooseRef}
-        className={`transition-all duration-1000 ease-out ${
+        className={`transition-all duration-500 ease-out ${
           chooseInView
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-20"
@@ -177,7 +177,7 @@ const WorkWithUs = () => {
       <section
         id="services"
         ref={formRef}
-        className={`transition-all duration-1000 ease-out ${
+        className={`transition-all duration-500 ease-out ${
           formInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         }`}
       >
