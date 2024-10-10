@@ -103,7 +103,7 @@ function Form() {
 
 Thanks!`;
 
-    const whatsappUrl = `https://wa.me/5588997652020?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/353833471038?text=${encodeURIComponent(
       message
     )}`;
     window.open(whatsappUrl, "_blank");
