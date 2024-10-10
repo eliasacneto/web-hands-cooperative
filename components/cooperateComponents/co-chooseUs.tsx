@@ -4,7 +4,10 @@ import Image from "next/image";
 import ChooseIMG from "../../public/assets/partners.jpg";
 import Link from "next/link";
 import { BanknoteIcon, Clock, HandCoinsIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
+
 const CoChooseUs = () => {
+  const t = useTranslations("coChoose");
   return (
     <div className="flex flex-col-reverse bg-blue-100 items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 p-10">
       <div className="mx-4 flex flex-col items-center justify-center lg:items-start ">
@@ -23,41 +26,27 @@ const CoChooseUs = () => {
               <div className="flex  bg-blue-500 px-4 py-4 items-start justify-start rounded-full">
                 <BanknoteIcon width={24} height={24} color="white" />
               </div>
-              <h2 className="font-bold text-2xl">Ganhos Atraentes</h2>
-              <p className="text-justify">
-                Aqui, você fica com 80% do valor de cada serviço prestado. É um
-                dos melhores retornos do mercado, garantindo que o seu esforço
-                seja justamente recompensado.
-              </p>
+              <h2 className="font-bold text-2xl">{t("cardTitle1")}</h2>
+              <p className="text-justify">{t("cardSubtitle1")}</p>
             </div>
             <div className="flex mt-4  flex-col justify-start items-start lg:justify-start gap-4 w-full">
               <div className="flex  bg-blue-500 px-4 py-4 items-start justify-start rounded-full">
                 <Clock width={24} height={24} color="white" />
               </div>
-              <h2 className="font-bold text-2xl">Flexibilidade</h2>
-              <p className="text-justify ">
-                Você decide onde e quando quer trabalhar. Pode optar por atender
-                apenas em sua cidade ou se deslocar para outras, conforme sua
-                disponibilidade e meios de transporte. Na Brazilian Hands
-                Cooperative, quem controla sua agenda é você!
-              </p>
+              <h2 className="font-bold text-2xl">{t("cardTitle2")}</h2>
+              <p className="text-justify ">{t("cardSubtitle2")}</p>
             </div>
           </div>
           <div className="flex mt-4  flex-col justify-start items-start lg:justify-start gap-4">
             <div className="flex  bg-blue-500 px-4 py-4 items-start justify-start rounded-full ">
               <HandCoinsIcon width={24} height={24} color="white" />
             </div>
-            <h2 className="font-bold text-2xl">Pagamento Garantido</h2>
-            <p className="text-justify lg:w-[48%]">
-              Nós cuidamos de toda a parte administrativa! A empresa recebe o
-              pagamento dos clientes e faz o repasse diretamente para você. Isso
-              significa que você pode focar no que faz de melhor, sem
-              preocupações com burocracias.
-            </p>
+            <h2 className="font-bold text-2xl">{t("cardTitle3")}</h2>
+            <p className="text-justify lg:w-[48%]">{t("cardSubtitle3")}</p>
           </div>
           <Link href="#apply">
             <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start  hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-10 lg:hover:-translate-y-2 transition-transform duration-700">
-              Quero me candidatar
+              {t("cta")}
             </Button>
           </Link>
         </div>

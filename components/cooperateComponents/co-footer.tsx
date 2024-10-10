@@ -4,8 +4,10 @@ import LogoWhite from "../../assets/logo/logo_w.png";
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const CoFooter = () => {
+  const t = useTranslations("footer");
   return (
     <div className="bg-blue-700 w-full h-full flex flex-col justify-center items-start pl-6 gap-6 lg:justify-around lg:flex-row p-10 lg:px-6 lg:py-6 text-white lg:gap-12 lg:pt-10 lg:pb-20">
       <div className="flex flex-col gap-4 justify-center items-center lg:items-center  ">
@@ -16,13 +18,10 @@ const CoFooter = () => {
           width={100}
           height={100}
         />
-        <p className="text-white text-start  w-[320px]">
-          Affordable cleaning, garden care, beauty, and repair services in
-          Ireland. Professionalism with a Brazilian touch.
-        </p>
+        <p className="text-white text-start  w-[320px]">{t("description")}</p>
       </div>
       <div className="flex flex-col ">
-        <h3 className="font-bold text-xl">Services</h3>
+        <h3 className="font-bold text-xl">{t("services")}</h3>
         <ul className="flex flex-col gap-2 mt-6">
           <li className="hover:text-yellow-400 font-semibold hover:transition duration-150">
             <Link href="#services"> Residential Cleaning</Link>
@@ -39,7 +38,7 @@ const CoFooter = () => {
         </ul>
       </div>
       <div className="flex flex-col ">
-        <h3 className="font-bold text-xl">Contact Info</h3>
+        <h3 className="font-bold text-xl">{t("contactInfo")}</h3>
         <ul className="flex flex-col gap-2 mt-6">
           <li className="hover:text-yellow-400 font-semibold hover:transition duration-150 ">
             <a
@@ -55,11 +54,11 @@ const CoFooter = () => {
         </ul>
       </div>
       <div className="flex flex-col">
-        <h3 className="font-bold text-xl">Follow us</h3>
+        <h3 className="font-bold text-xl">{t("follow")}</h3>
         <ul className="flex  gap-4 mt-6">
           {/* TODO: add social links  */}
           <a
-            href="https://WA.me/353833471038"
+            href="https://api.whatsapp.com/send?phone=353833471038&text=Hello,%20I%20came%20from%20your%20website%20and%20I'd%20like%20to%20work%20with%20you!%0A"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -76,7 +75,7 @@ const CoFooter = () => {
               <FaInstagram size={32} className="hover:text-yellow-300" />
             </li>
           </a>
-          <a
+          {/* <a
             href="https://www.facebook.com/profile.php?id=61563594075044"
             target="_blank"
             rel="noopener noreferrer"
@@ -84,7 +83,7 @@ const CoFooter = () => {
             <li>
               <FaLinkedin size={32} className="hover:text-yellow-300" />
             </li>
-          </a>
+          </a> */}
           <a
             href="https://www.facebook.com/profile.php?id=61563594075044"
             target="_blank"

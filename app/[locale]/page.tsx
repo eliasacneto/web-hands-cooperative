@@ -9,23 +9,35 @@ import Footer from "@/components/footer";
 import Testimonials from "@/components/testimonials";
 import Services from "@/components/services";
 import ChooseUs from "@/components/chooseUs";
-import Logo from "../assets/logo/logo_g.png";
-import LogoWhite from "../assets/logo/logo_w.png";
+import Logo from "../../public/assets/logo_g.png";
+import LogoWhite from "../../public/assets/logo_w.png";
 import SpecialOffer from "@/components/specialOffer";
 import ScrollToTop from "@/components/scrollToTop";
 import Loader from "@/components/loader";
 import { useInView } from "react-intersection-observer";
 
-
 export default function Home() {
-
-  {/*useInView*/}
-  const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
-  const { ref: chooseRef, inView: chooseInView } = useInView({ triggerOnce: true });
-  const { ref: servicesRef, inView: servicesInView } = useInView({ triggerOnce: true });
-  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({ triggerOnce: true });
-  const { ref: specialOfferRef, inView: specialOfferRefInView } = useInView({ triggerOnce: true });
-  {/*useInView */}
+  {
+    /*useInView*/
+  }
+  const { ref: aboutRef, inView: aboutInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: chooseRef, inView: chooseInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: servicesRef, inView: servicesInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: specialOfferRef, inView: specialOfferRefInView } = useInView({
+    triggerOnce: true,
+  });
+  {
+    /*useInView */
+  }
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -148,56 +160,59 @@ export default function Home() {
         <OurService />
       </div> */}
 
-        <section
-          id="about"
-          ref={aboutRef}
-          className={`transition-all duration-1000 ease-out ${
-            aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-          }`}
-        >
-          <About />
-
-        </section>
-
-      <section 
-        id="chooseus"
-        ref={chooseRef} 
+      <section
+        id="about"
+        ref={aboutRef}
         className={`transition-all duration-1000 ease-out ${
-          chooseInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-        }`}  
+          aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+        }`}
       >
-
-        <ChooseUs />
-        
+        <About />
       </section>
 
-      <section 
-        id="services" 
+      <section
+        id="chooseus"
+        ref={chooseRef}
+        className={`transition-all duration-1000 ease-out ${
+          chooseInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
+        }`}
+      >
+        <ChooseUs />
+      </section>
+
+      <section
+        id="services"
         ref={servicesRef}
         className={`transition-all duration-1000 ease-out ${
-          servicesInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+          servicesInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
         }`}
-        
       >
         <Services />
-
       </section>
 
-      <section 
-        id="testimonials" 
+      <section
+        id="testimonials"
         ref={testimonialsRef}
         className={`transition-all duration-1000 ease-out ${
-          testimonialsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+          testimonialsInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
         }`}
       >
         <Testimonials />
       </section>
 
-      <section 
-        id="offer" 
+      <section
+        id="offer"
         ref={specialOfferRef}
         className={`transition-all duration-1000 ease-out ${
-          specialOfferRefInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+          specialOfferRefInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-20"
         }`}
       >
         <SpecialOffer />
