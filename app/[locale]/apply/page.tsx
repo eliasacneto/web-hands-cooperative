@@ -1,23 +1,23 @@
 "use client";
 
 import { Calendar, MenuIcon } from "lucide-react";
-import LogoWhite from "../../assets/logo/logo_w.png";
-import Logo from "../../assets/logo/logo_g.png";
+import LogoWhite from "../../../public/assets/logo_w.png";
+import Logo from "../../../public/assets/logo_g.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import FormWorkUs from "@/components/FormWorkUs/formWorkUs";
-import CoServices from "@/components/cooperateComponents/co-services";
-import Loader from "@/components/loader";
 import CoAbout from "@/components/cooperateComponents/co-about";
 import CoHero from "@/components/cooperateComponents/co-hero";
 import CoFooter from "@/components/cooperateComponents/co-footer";
 import CoChooseUs from "@/components/cooperateComponents/co-chooseUs";
 import ScrollToTop from "@/components/scrollToTop";
-import CoFaq from "@/components/cooperateComponents/co-faq";
 import CoForm from "@/components/cooperateComponents/co-form";
 import { useInView } from "react-intersection-observer";
+import LanguageSwitcher from "@/components/languageSwitcher";
+import LoaderWork from "@/components/loaderWork";
+import { useTranslations } from "next-intl";
 
 const WorkWithUs = () => {
+  const t = useTranslations("coMenu");
   {
     /*useInView*/
   }
@@ -58,7 +58,7 @@ const WorkWithUs = () => {
   }, []);
 
   if (isLoading) {
-    return <Loader />;
+    return <LoaderWork />;
   }
 
   return (
@@ -108,7 +108,7 @@ const WorkWithUs = () => {
               href="/"
               onClick={() => closeMenuOnClick("#")}
             >
-              Início
+              {t("home")}
             </a>
 
             <a
@@ -116,7 +116,7 @@ const WorkWithUs = () => {
               href="#who"
               onClick={() => closeMenuOnClick("#about")}
             >
-              Para quem é
+              {t("forYou")}
             </a>
 
             <a
@@ -124,24 +124,29 @@ const WorkWithUs = () => {
               href="#reasons"
               onClick={() => closeMenuOnClick("#services")}
             >
-              Trabalhe na BHC
+              {t("workHere")}
             </a>
             <a
               className="hover:text-yellow-500 transition-all duration-500"
               href="#faq"
             >
-              FAQ
+              {t("faq")}
             </a>
           </nav>
 
-          <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-0">
-            <a
-              href="#apply"
-              className="flex w-full px-8 py-4 bg-yellow-400 rounded-full text-base font-semibold text-black hover:bg-yellow-500 transition-all duration-500  hover:font-semibold"
-              onClick={() => closeMenuOnClick("#hero")}
-            >
-              <Calendar className="mr-2" /> Candidatar-se
-            </a>
+          <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-4">
+            <div className="flex">
+              <a
+                href="#apply"
+                className="flex w-full px-8 py-4 bg-yellow-400 rounded-full text-base font-semibold text-black hover:bg-yellow-500 transition-all duration-500  hover:font-semibold"
+                onClick={() => closeMenuOnClick("#hero")}
+              >
+                <Calendar className="mr-2" /> {t("apply")}
+              </a>
+            </div>
+            <div className="flex">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>

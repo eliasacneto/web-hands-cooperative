@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/select";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
+import { useTranslations } from "next-intl";
+import Swal from "sweetalert2";
 
 interface CoFormData {
   name: string;
@@ -25,6 +27,8 @@ interface CoFormData {
 }
 
 const CoForm = () => {
+  const t = useTranslations("coForm");
+  const a = useTranslations("alerts");
   const [coFormData, setCoFormData] = useState<CoFormData>({
     name: "",
     whatsapp: "",
@@ -72,27 +76,33 @@ const CoForm = () => {
   };
   const handleSubmit = async () => {
     if (!validateForm()) {
-      alert("Por favor, preencha todos os campos!");
+      Swal.fire({
+        title: a("ops"),
+        text: a("checkFields"),
+        icon: "error",
+        confirmButtonText: a("ok"),
+        confirmButtonColor: "#16a34a",
+      });
       return;
     }
 
-    const message = `Olá! Gostaria de fazer parte do time Brazilian Hands Cooperative:
+    const message = `Hi! I'd like to be part of the Brazilian Hands Cooperative team:
 
-*Nome:* ${coFormData.name}
+*Full Name:* ${coFormData.name}
 *WhatsApp:* ${coFormData.whatsapp}
 
-*Serviços que realizo:* ${coFormData.skills}
+*Services I perform:* ${coFormData.skills}
 
-*Meu endereço na Irlanda:*
-- *Cidade:* ${coFormData.city}
+*My address in Ireland:*
+- *City:* ${coFormData.city}
 - *Eircode:* ${coFormData.eircode}
-- *Rua:* ${coFormData.street}
-- *Distrito:* ${coFormData.district}
-- *Número:* ${coFormData.houseNumber}
+- *Street:* ${coFormData.street}
+- *District:* ${coFormData.district}
+- *House Number:* ${coFormData.houseNumber}
 
-Obrigado e aguardo resposta!`;
+Thank you and I await your response!`;
 
-    const whatsappUrl = `https://wa.me/5588997652020?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/353833471038?text=${encodeURIComponent(
       message
     )}`;
     window.open(whatsappUrl, "_blank");
@@ -126,25 +136,25 @@ Obrigado e aguardo resposta!`;
   };
 
   return (
-    <div className="flex flex-col lg:flex-row w-full lg:h-screen">
-      <div className="lg:w-1/2 w-full h-full hidden lg:block">
+    <div className="flex flex-col lg:flex-row w-full ">
+      <div className="w-full lg:h-[956px] hidden lg:flex">
         <Image
-          className="object-cover w-full h-full"
+          className=" w-full"
           src={ApplyIMG}
           alt="hero-img"
-          quality={75}
+          quality={100}
         />
       </div>
 
-      <div className="lg:w-1/2 w-full bg-blue-500 flex items-center justify-center py-14 px-4">
+      <div className="lg:w-full w-full bg-blue-500 flex items-center justify-center py-14 px-4">
         <div className="mx-4 flex flex-col items-center justify-center lg:items-start mt-10">
           <p className="text-center lg:text-start text-white font-bold pb-5">
-            Vamos trabalhar juntos!
+            {t("letsWork")}
           </p>
 
           <div className="flex flex-col lg:w-[560px]">
             <h1 className="pb-5 text-4xl text-center text-white lg:text-4xl lg:text-start font-semibold">
-              Seja um Cooperado
+              {t("beMember")}
             </h1>
 
             <form
@@ -159,34 +169,34 @@ Obrigado e aguardo resposta!`;
               <div className="grid w-full items-center gap-4">
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>Nome completo</Label>
+                    <Label>{t("fullName")}</Label>
                     <Input
                       id="name"
                       type="text"
                       value={coFormData.name}
                       onChange={handleInputChange}
-                      placeholder="Seu nome"
+                      placeholder={t("fullnamePlaceholder")}
                       className="bg-white text-black"
                     />
                   </div>
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>WhatsApp</Label>
+                    <Label>{t("whatsapp")}</Label>
                     <Input
                       id="whatsapp"
                       type="text"
                       value={coFormData.whatsapp}
                       onChange={handleInputChange}
-                      placeholder="Seu número de contato"
+                      placeholder={t("whatsappPlaceholder")}
                       className="bg-white text-black"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-3 w-full">
-                  <Label>Em qual cidade você reside?</Label>
+                  <Label> {t("city")}</Label>
                   <Select onValueChange={handleCityChange}>
                     <SelectTrigger className="bg-white text-black">
-                      <SelectValue placeholder="Selecione uma cidade" />
+                      <SelectValue placeholder={t("cityPlaceholder")} />
                     </SelectTrigger>
                     <SelectContent position="popper">
                       <SelectItem value="Cork">Cork</SelectItem>
@@ -199,24 +209,24 @@ Obrigado e aguardo resposta!`;
 
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>Eircode</Label>
+                    <Label>{t("eircode")}</Label>
                     <Input
                       id="eircode"
                       type="text"
                       value={coFormData.eircode}
                       onChange={handleInputChange}
-                      placeholder="Seu Eircode"
+                      placeholder={t("eircodePlaceholder")}
                       className="bg-white text-black placeholder:capitalize"
                     />
                   </div>
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>Rua</Label>
+                    <Label> {t("street")}</Label>
                     <Input
                       id="street"
                       type="text"
                       value={coFormData.street}
                       onChange={handleInputChange}
-                      placeholder="Nome da rua"
+                      placeholder={t("streetPlaceholder")}
                       className="bg-white text-black"
                     />
                   </div>
@@ -224,44 +234,44 @@ Obrigado e aguardo resposta!`;
 
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>Bairro</Label>
+                    <Label> {t("district")}</Label>
                     <Input
                       type="text"
                       id="district"
                       value={coFormData.district}
                       onChange={handleInputChange}
-                      placeholder="Nome do bairro"
+                      placeholder={t("districtPlaceholder")}
                       className="bg-white text-black"
                     />
                   </div>
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>Número</Label>
+                    <Label> {t("houseNumber")}</Label>
                     <Input
                       type="text"
                       id="houseNumber"
                       value={coFormData.houseNumber}
                       onChange={handleInputChange}
-                      placeholder="Número da casa"
+                      placeholder={t("houseNumberPlaceholder")}
                       className="bg-white text-black"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-3 w-full">
-                  <Label>Quais serviços você realiza?</Label>
+                  <Label>{t("skills")}</Label>
                   <Textarea
                     id="skills"
                     value={coFormData.skills}
                     onChange={handleTextAreaChange}
                     rows={6}
                     className="bg-white text-black"
-                    placeholder="Escreva o nome dos serviços que você realiza..."
+                    placeholder={t("skillsPlaceholder")}
                   />
                 </div>
               </div>
 
               <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6 lg:mb-11">
-                Enviar candidatura
+                {t("apply")}
               </Button>
             </form>
           </div>
