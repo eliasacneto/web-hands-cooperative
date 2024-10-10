@@ -175,7 +175,7 @@ Thank you and I await your response!`;
                       type="text"
                       value={coFormData.name}
                       onChange={handleInputChange}
-                      placeholder={t("fullnamePlaceholder")}
+                      placeholder={t("fullNamePlaceholder")}
                       className="bg-white text-black"
                     />
                   </div>
