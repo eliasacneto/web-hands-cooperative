@@ -137,7 +137,7 @@ Thank you and I await your response!`;
 
   return (
     <div className="flex flex-col lg:flex-row w-full ">
-      <div className="w-full lg:h-[956px] hidden lg:flex">
+      <div className="w-full lg:h-[848px] hidden lg:flex">
         <Image
           className=" w-full"
           src={ApplyIMG}
