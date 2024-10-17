@@ -85,16 +85,16 @@ export default function Home() {
 
       {/*Menu abaixo */}
 
-      <div className="flex fixed items-center z-40 bg-white w-screen lg:hidden px-6 py-6 shadow-md ">
+      <div className="flex fixed items-center z-40 bg-emerald-500 w-screen lg:hidden px-6 py-6 shadow-md ">
         <a href="#" className="">
-          <Image src={Logo} alt="logoo" width={60} height={50} />
+          <Image src={LogoWhite} alt="logoo" width={60} height={50} />
         </a>
 
         <button
           onClick={toggleMenu}
           className="fixed flex items-center top-4 right-0 p-4 z-40 lg:hidden lg:bg-none  rounded-lg"
         >
-          <MenuIcon size={28} className="text-emerald-400 font-bold" />
+          <MenuIcon size={28} className="text-white font-bold" />
         </button>
       </div>
 
