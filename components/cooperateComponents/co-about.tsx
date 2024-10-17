@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 const CoAbout = () => {
   const t = useTranslations("coAbout");
   return (
-    <div className="bg-blue-50 flex flex-col items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 w-full py-14">
+    <div className="bg-blue-50 flex flex-col items-center justify-center lg:flex-row lg:justify-evenly lg:gap-10 w-full py-14 mt-10">
       <div className="flex flex-col mx-10 lg:mx-10" id="coabout">
         <Image
           className="rounded-3xl w-[300px] lg:w-[450px] "
