@@ -18,19 +18,6 @@ import { useTranslations } from "next-intl";
 
 const WorkWithUs = () => {
   const t = useTranslations("coMenu");
-  {
-    /*useInView*/
-  }
-  const { ref: aboutRef, inView: aboutInView } = useInView({
-    triggerOnce: true,
-  });
-  const { ref: chooseRef, inView: chooseInView } = useInView({
-    triggerOnce: true,
-  });
-  const { ref: formRef, inView: formInView } = useInView({ triggerOnce: true });
-  {
-    /*useInView */
-  }
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -155,37 +142,17 @@ const WorkWithUs = () => {
         <CoHero />
       </section>
 
-      <section
-        id="about"
-        ref={aboutRef}
-        className={`transition-all duration-500 ease-out ${
-          aboutInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-        }`}
-      >
+      <section id="about">
         <CoAbout />
       </section>
 
-      <section
-        id="chooseus"
-        ref={chooseRef}
-        className={`transition-all duration-500 ease-out ${
-          chooseInView
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-20"
-        }`}
-      >
+      <section id="chooseus">
         <CoChooseUs />
       </section>
 
       {/* <CoFaq /> */}
 
-      <section
-        id="services"
-        ref={formRef}
-        className={`transition-all duration-500 ease-out ${
-          formInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-        }`}
-      >
+      <section id="services">
         <CoForm />
       </section>
 
