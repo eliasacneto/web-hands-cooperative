@@ -19,7 +19,7 @@ const Hero = () => {
       className="bg-hero bg-cover flex flex-col items-center lg:flex-row lg:justify-evenly lg:items-end w-full"
     >
       <div className="flex flex-col justify-evenly items-center w-full">
-        <div className="flex flex-col items-center lg:items-start mt-10">
+        <div className="flex flex-col items-center lg:items-start lg:mt-10">
           <p className="text-center lg:text-start bg-emerald-500 w-fit px-4 py-2 rounded-full text-white font-bold mb-5">
             #01 Cleaning Service
           </p>
@@ -62,7 +62,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="flex bg-emerald-50 mt-10 lg:mt-0 lg:py-0 lg:bg-transparent flex-col lg:flex-row w-full justify-center items-center lg:items-end ">
+      <div className="flex bg-emerald-50 mt-5 lg:mt-0 lg:py-0 lg:bg-transparent flex-col lg:flex-row w-full justify-center items-center lg:items-end ">
         <div className="flex md:w-1/2">
           <Image
             className="w-[200px] lg:w-[500px] h-full"

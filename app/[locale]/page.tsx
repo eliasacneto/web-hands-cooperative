@@ -85,7 +85,7 @@ export default function Home() {
 
       {/*Menu abaixo */}
 
-      <div className="flex fixed items-center z-40 bg-emerald-500 w-screen lg:hidden px-6 py-6 shadow-md ">
+      <div className="flex fixed items-center z-40 bg-emerald-500 w-screen lg:hidden px-6 py-6 shadow-lg ">
         <a href="#" className="">
           <Image src={LogoWhite} alt="logoo" width={60} height={50} />
         </a>

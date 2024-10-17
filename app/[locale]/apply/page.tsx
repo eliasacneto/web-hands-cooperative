@@ -65,7 +65,7 @@ const WorkWithUs = () => {
 
       {/*Menu abaixo */}
 
-      <div className="flex fixed items-center z-40 bg-blue-600 w-screen lg:hidden px-6 py-6 shadow-md ">
+      <div className="flex fixed items-center z-40 bg-blue-600 w-screen lg:hidden px-6 py-6 shadow-lg ">
         <a href="#" className="">
           <Image src={LogoWhite} alt="logoo" width={60} height={50} />
         </a>
