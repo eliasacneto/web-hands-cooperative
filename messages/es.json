@@ -6,7 +6,6 @@
         "faq": "FAQ",
         "apply": "Postúlate"
     },
-
     "coHero": {
         "badge": "#01 Cooperativa Brasileña en Irlanda 🇮🇪",
         "title": "Únete a la Brazilian Hands Cooperative",
@@ -14,7 +13,6 @@
         "cta1": "Quiero saber más",
         "cta2": "Quiero postularme"
     },
-
     "coAbout": {
         "badge": "¿Tienes dudas si es para ti?",
         "title": "¿Quién puede ser parte?",
@@ -22,23 +20,17 @@
         "subtitle2": "ofrecemos soporte para que te sientas seguro y valorado en el trabajo.",
         "cta": "¡Postúlate ahora!"
     },
-
     "coChoose": {
         "badge": "¿Por qué trabajar con nosotros?",
         "title": "Razones para trabajar en BHC",
-
         "cardTitle1": "Ingresos atractivos",
-        "cardSubtitle1": "Aquí, te quedas con el 80% del valor de cada servicio prestado. Es uno de los mejores retornos del mercado, garantizando que tu esfuerzo sea justamente recompensado.",
-
+        "cardSubtitle1": "Como forma de fidelizar y demostrar nuestra confianza en usted como socio, las primeras veces usted recibe dinero en efectivo y nos transfiere nuestra parte. Somos la única institución en Irlanda que ofrece este tipo de beneficio.",
         "cardTitle2": "Flexibilidad",
         "cardSubtitle2": "Tú decides dónde y cuándo quieres trabajar. Puedes optar por atender solo en tu ciudad o desplazarte a otras, según tu disponibilidad y medios de transporte. ¡En Brazilian Hands Cooperative, tú controlas tu agenda!",
-
         "cardTitle3": "Pago garantizado",
         "cardSubtitle3": "¡Nosotros nos encargamos de toda la parte administrativa! La empresa recibe el pago de los clientes y te lo transfiere directamente. Esto significa que puedes concentrarte en lo que mejor haces, sin preocuparte por la burocracia.",
-
         "cta": "¡Quiero postularme!"
     },
-
     "coForm": {
         "letsWork": "¡Trabajemos juntos!",
         "beMember": "Sé un cooperado",
@@ -60,17 +52,15 @@
         "skillsPlaceholder": "Escribe los servicios que realizas...",
         "apply": "Enviar postulación"
     },
-
     "footer": {
         "services": "Servicios",
         "contactInfo": "Contacto",
         "follow": "Síguenos",
         "description": "Servicios de limpieza, jardinería, belleza y reparaciones accesibles en Irlanda. Profesionalismo con un toque brasileño."
     },
-
     "alerts": {
         "ops": "¡Ups!",
         "checkFields": "Asegúrese de que todos los campos estén completos",
         "ok": "Ok"
-      }
+    }
 }
