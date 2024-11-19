@@ -76,7 +76,6 @@ function FormWorkUs() {
       return;
     }
 
-
     //checar esta linha de codigo abaixo, está sendo utilizada?
     const message = `Hello! I came across the Brazilian Hands website and I'd like to request a service: 
 
@@ -93,7 +92,7 @@ function FormWorkUs() {
 
 Thanks!`;
 
-    const whatsappUrl = `https://wa.me/5588997652020?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/353833471038?text=${encodeURIComponent(
       message
     )}`;
     window.open(whatsappUrl, "_blank");
@@ -125,7 +124,9 @@ Thanks!`;
       <div
         ref={formRef} // Observando este elemento
         className={`flex z-10 lg:w-[400px]  justify-center lg:pr-10 items-center lg:justify-start lg:items-end lg:mt-10 lg:mb-10 pb-10 transition-all duration-1000 ${
-          formInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+          formInView
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-full"
         }`}
       >
         <Card className="w-[350px] lg:w-[400px] bg-[#E4F0FF]">
@@ -163,7 +164,6 @@ Thanks!`;
                     value={formData.skills}
                     onChange={handleInputChange}
                   />
-
                 </div>
                 <div className="flex flex-col">
                   <Select onValueChange={handleCityChange}>

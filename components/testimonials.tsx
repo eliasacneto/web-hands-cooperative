@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import Samir from "../public/assets/testimonials/samir.jpg";
+import Sean from "../public/assets/testimonials/Sean.png";
 import Ada from "../public/assets/testimonials/ada.jpg";
 import { Calendar } from "lucide-react";
 import Link from "next/link";
@@ -36,8 +36,8 @@ const Testimonials = () => {
             <div className="flex flex-col lg:flex-row items-center gap-5">
               <div className="flex px-4 items-center justify-center rounded-full lg:justify-start lg:items-start">
                 <Image
-                  src={Samir}
-                  alt="Samir Rajesh"
+                  src={Sean}
+                  alt="Sean"
                   width={100}
                   height={100}
                   className="rounded-full"
