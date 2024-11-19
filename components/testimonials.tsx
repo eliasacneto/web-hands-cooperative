@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import Sean from "../public/assets/testimonials/Sean.png";
+import Sean from "../public/assets/testimonials/sean.png";
 import Ada from "../public/assets/testimonials/ada.jpg";
 import { Calendar } from "lucide-react";
 import Link from "next/link";
