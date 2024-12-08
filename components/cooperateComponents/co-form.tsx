@@ -14,10 +14,12 @@ import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { useTranslations } from "next-intl";
 import Swal from "sweetalert2";
+import { validateEmail } from "@/lib/validateEmail";
 
 interface CoFormData {
   name: string;
   whatsapp: string;
+  email: string;
   city: string;
   eircode: string;
   street: string;
@@ -32,6 +34,7 @@ const CoForm = () => {
   const [coFormData, setCoFormData] = useState<CoFormData>({
     name: "",
     whatsapp: "",
+    email: "",
     city: "",
     eircode: "",
     street: "",
@@ -66,6 +69,7 @@ const CoForm = () => {
     return (
       coFormData.name !== "" &&
       coFormData.whatsapp !== "" &&
+      validateEmail(coFormData.email) &&
       coFormData.city !== "" &&
       coFormData.eircode !== "" &&
       coFormData.street !== "" &&
@@ -75,6 +79,17 @@ const CoForm = () => {
     );
   };
   const handleSubmit = async () => {
+    if (!validateEmail(coFormData.email)) {
+      Swal.fire({
+        title: a("ops"), 
+        text: a("checkEmail"),
+        icon: "error",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#16a34a",
+      });
+      return;
+    }
+
     if (!validateForm()) {
       Swal.fire({
         title: a("ops"),
@@ -126,6 +141,7 @@ Thank you and I await your response!`;
     setCoFormData({
       name: "",
       whatsapp: "",
+      email: "",
       city: "",
       eircode: "",
       street: "",
@@ -167,18 +183,18 @@ Thank you and I await your response!`;
               }}
             >
               <div className="grid w-full items-center gap-4">
+                <div className="flex flex-col gap-3 w-full">
+                  <Label>{t("fullName")}</Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    value={coFormData.name}
+                    onChange={handleInputChange}
+                    placeholder={t("fullNamePlaceholder")}
+                    className="bg-white text-black"
+                  />
+                </div>
                 <div className="flex gap-2">
-                  <div className="flex flex-col gap-3 w-full">
-                    <Label>{t("fullName")}</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      value={coFormData.name}
-                      onChange={handleInputChange}
-                      placeholder={t("fullNamePlaceholder")}
-                      className="bg-white text-black"
-                    />
-                  </div>
                   <div className="flex flex-col gap-3 w-full">
                     <Label>{t("whatsapp")}</Label>
                     <Input
@@ -187,6 +203,17 @@ Thank you and I await your response!`;
                       value={coFormData.whatsapp}
                       onChange={handleInputChange}
                       placeholder={t("whatsappPlaceholder")}
+                      className="bg-white text-black"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-3 w-full">
+                    <Label>{t("email")}</Label>
+                    <Input
+                      id="email"
+                      type="text"
+                      value={coFormData.email}
+                      onChange={handleInputChange}
+                      placeholder={t("emailPlaceholder")}
                       className="bg-white text-black"
                     />
                   </div>

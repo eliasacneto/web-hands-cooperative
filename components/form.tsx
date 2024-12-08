@@ -18,10 +18,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
+import { validateEmail } from "@/lib/validateEmail";
 
 interface FormData {
   name: string;
   phone: string;
+  email: string;
   service: string;
   otherService: string;
   city: string;
@@ -34,6 +36,7 @@ interface FormData {
 function Form() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    email: "",
     phone: "",
     service: "",
     city: "",
@@ -67,6 +70,7 @@ function Form() {
   const validateForm = (): boolean => {
     return (
       formData.name !== "" &&
+      validateEmail(formData.email) &&
       formData.phone !== "" &&
       formData.service !== "" &&
       (formData.service !== "Other" || formData.otherService !== "") &&
@@ -79,10 +83,17 @@ function Form() {
   };
 
   const handleSubmit = async () => {
+  if (!validateEmail(formData.email)) {
+      alert("Please, enter a valid email!");
+      return;
+    }
+
     if (!validateForm()) {
       alert("Please, fill in all fields!");
       return;
     }
+
+  
 
     const serviceMessage =
       formData.service === "Other" ? formData.otherService : formData.service;
@@ -90,6 +101,7 @@ function Form() {
     const message = `Hello! I came across the Brazilian Hands website and I'd like to request a service:
 
 *Name:* ${formData.name}
+*Email:* ${formData.email}
 *Phone:* ${formData.phone}
 
 *Service Chosen:* ${serviceMessage}
@@ -108,7 +120,7 @@ Thanks!`;
     )}`;
     window.open(whatsappUrl, "_blank");
 
-    // Enviar mensagem para o Discord
+    //Enviar mensagem para o Discord
     try {
       const discordWebhookUrl =
         "https://discord.com/api/webhooks/1288456722352177153/GMs-ePR7U7aLyHePFS6OqZcs0uFDBjaRDw9iem1vEMd6NRDcTMo1Hp02KrZxBiWzlZFj";
@@ -126,6 +138,7 @@ Thanks!`;
 
     setFormData({
       name: "",
+      email: "",
       phone: "",
       service: "",
       city: "",
@@ -136,6 +149,8 @@ Thanks!`;
       houseNumber: "",
     });
   };
+  
+  console.log(formData)
 
   return (
     <Card id="form" className="w-[350px] lg:w-[400px] bg-[#E4F0FF] ">
@@ -153,6 +168,14 @@ Thanks!`;
                 placeholder="Your name"
                 className="bg-white "
                 value={formData.name}
+                onChange={handleInputChange}
+              />
+              <Input
+                id="email"
+                typeof="text"
+                placeholder="Your email"
+                className="bg-white "
+                value={formData.email}
                 onChange={handleInputChange}
               />
               <InputMask

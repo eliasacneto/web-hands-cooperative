@@ -32,25 +32,27 @@
         "cta": "¡Quiero postularme!"
     },
     "coForm": {
-        "letsWork": "¡Trabajemos juntos!",
-        "beMember": "Sé un cooperado",
-        "fullName": "Nombre completo",
-        "fullNamePlaceholder": "Tu nombre completo",
-        "whatsapp": "WhatsApp",
-        "whatsappPlaceholder": "Tu número de contacto",
-        "city": "¿En qué ciudad resides?",
-        "cityPlaceholder": "Selecciona una ciudad",
-        "eircode": "Eircode",
-        "eircodePlaceholder": "Tu Eircode",
-        "street": "Calle",
-        "streetPlaceholder": "Nombre de la calle",
-        "district": "Barrio",
-        "districtPlaceholder": "Nombre del barrio",
-        "houseNumber": "Número",
-        "houseNumberPlaceholder": "Número de la casa",
-        "skills": "¿Qué servicios realizas?",
-        "skillsPlaceholder": "Escribe los servicios que realizas...",
-        "apply": "Enviar postulación"
+      "letsWork": "¡Trabajemos juntos!",
+      "beMember": "Sé un cooperado",
+      "fullName": "Nombre completo",
+      "fullNamePlaceholder": "Tu nombre completo",
+      "whatsapp": "WhatsApp",
+      "whatsappPlaceholder": "Tu número de contacto",
+      "email": "Correo",
+      "emailPlaceholder": "Tu correo",
+      "city": "¿En qué ciudad resides?",
+      "cityPlaceholder": "Selecciona una ciudad",
+      "eircode": "Eircode",
+      "eircodePlaceholder": "Tu Eircode",
+      "street": "Calle",
+      "streetPlaceholder": "Nombre de la calle",
+      "district": "Barrio",
+      "districtPlaceholder": "Nombre del barrio",
+      "houseNumber": "Número",
+      "houseNumberPlaceholder": "Número de la casa",
+      "skills": "¿Qué servicios realizas?",
+      "skillsPlaceholder": "Escribe los servicios que realizas...",
+      "apply": "Enviar postulación"
     },
     "footer": {
         "services": "Servicios",
@@ -61,6 +63,7 @@
     "alerts": {
         "ops": "¡Ups!",
         "checkFields": "Asegúrese de que todos los campos estén completos",
-        "ok": "Ok"
+        "ok": "Ok",
+        "checkEmail": "Por favor, introduzca un correo electrónico valido"
     }
 }

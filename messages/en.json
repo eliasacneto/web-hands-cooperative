@@ -37,6 +37,8 @@
         "beMember": "Be a member",
         "fullName": "Full name",
         "fullNamePlaceholder": "Your full name",
+        "email": "E-mail",
+        "emailPlaceholder": "Your email",
         "whatsapp": "WhatsApp",
         "whatsappPlaceholder": "Your best contact",
         "city": "Which city do you reside in?",
@@ -62,6 +64,7 @@
     "alerts": {
         "ops": "Oops!",
         "checkFields": "Make sure all fields are filled in!",
-        "ok": "Ok"
+        "ok": "Ok", 
+        "checkEmail": "Please, enter a valid email"
     }
 }

@@ -38,6 +38,8 @@
         "fullNamePlaceholder": "Seu nome completo",
         "whatsapp": "WhatsApp",
         "whatsappPlaceholder": "Seu número de contato",
+        "email": "E-mail",
+        "emailPlaceholder": "Seu email",
         "city": "Em qual cidade você reside?",
         "cityPlaceholder": "Selecione uma cidade",
         "eircode": "Eircode",
@@ -61,6 +63,7 @@
     "alerts": {
         "ops": "Ops!",
         "checkFields": "Por favor, preencha os campos!",
-        "ok": "Ok"
+        "ok": "Ok",
+        "checkEmail": "Por favor, insira um email válido!"
     }
 }
