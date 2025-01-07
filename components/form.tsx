@@ -102,16 +102,15 @@ function Form() {
 - *House Number:* ${formData.houseNumber}
 
 Thanks!`;
-
-    const whatsappUrl = `https://wa.me/353833471038?text=${encodeURIComponent(
-      message
-    )}`;
+    //https://wa.me/353833471038?text=${encodeURIComponent(
+    //  message
+    //)}
+    const whatsappUrl = ``;
     window.open(whatsappUrl, "_blank");
 
     // Enviar mensagem para o Discord
     try {
-      const discordWebhookUrl =
-        "https://discord.com/api/webhooks/1288456722352177153/GMs-ePR7U7aLyHePFS6OqZcs0uFDBjaRDw9iem1vEMd6NRDcTMo1Hp02KrZxBiWzlZFj";
+      const discordWebhookUrl = "";
       await fetch(discordWebhookUrl, {
         method: "POST",
         headers: {

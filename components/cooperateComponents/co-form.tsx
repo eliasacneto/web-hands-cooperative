@@ -101,16 +101,17 @@ const CoForm = () => {
 - *House Number:* ${coFormData.houseNumber}
 
 Thank you and I await your response!`;
-
-    const whatsappUrl = `https://wa.me/353833471038?text=${encodeURIComponent(
-      message
-    )}`;
+    //https://wa.me/353833471038?text=${encodeURIComponent(
+    //message
+    //)}
+    const whatsappUrl = ``;
+    //"
     window.open(whatsappUrl, "_blank");
 
     // Enviar mensagem para o Discord
     try {
-      const discordWebhookUrl =
-        "https://discord.com/api/webhooks/1288456738714026044/kSnKDxhBJ8r3vxUGdSCOZ3PQJMtPj5xaF8OXzZgSEZ4kTB3CRmHonHkIa6LHZzu1IelL";
+      const discordWebhookUrl = "";
+      // "";
       await fetch(discordWebhookUrl, {
         method: "POST",
         headers: {
