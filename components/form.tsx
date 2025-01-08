@@ -32,16 +32,22 @@ interface FormData {
 }
 
 function Form() {
+  //form client
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    email: "", //new
     phone: "",
-    service: "",
     city: "",
-    otherService: "",
-    eircode: "",
     street: "",
     district: "",
     houseNumber: "",
+    eircode: "",
+    service: "", //typeOfWork
+    dateOfService: "", //data do servico
+    howFindCompany: "", //como conheceu a empresa
+    particularities: "", //particularidades
+    dataProtection: false, // termos de uso
+    otherService: "",
   });
 
   const [showOtherService, setShowOtherService] = useState(false);

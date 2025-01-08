@@ -26,18 +26,27 @@ interface CoFormData {
   skills: string;
 }
 
+//select de works
+const works = ["Cleaning", "Gardening", "Painting", "Repairs"];
+
 const CoForm = () => {
+  //form collaborator
   const t = useTranslations("coForm");
   const a = useTranslations("alerts");
   const [coFormData, setCoFormData] = useState<CoFormData>({
     name: "",
+    email: "", //new
     whatsapp: "",
     city: "",
-    eircode: "",
     street: "",
     district: "",
     houseNumber: "",
-    skills: "",
+    eircode: "",
+    skills: "", // vem de works em um select
+    equipment: "", //boolean
+    whatEquipment: "", // qual equipamento
+    shapeOfDisplacement: "", //['carro', 'moto', 'transporte público', 'caminhando', 'carro de aplicativo', ],
+    dataProtection: false, // termos de uso
   });
 
   const handleInputChange = (
@@ -259,6 +268,25 @@ Thank you and I await your response!`;
                 </div>
 
                 <div className="flex flex-col gap-3 w-full">
+                  <Select>
+                    <SelectTrigger className="bg-white text-black">
+                      <SelectValue placeholder="Que serviço você pode realizar?" />
+                    </SelectTrigger>
+                    <SelectContent position="popper">
+                      {works?.map((work) => (
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={work}
+                          value={work}
+                        >
+                          {work}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* <div className="flex flex-col gap-3 w-full">
                   <Label>{t("skills")}</Label>
                   <Textarea
                     id="skills"
@@ -268,7 +296,7 @@ Thank you and I await your response!`;
                     className="bg-white text-black"
                     placeholder={t("skillsPlaceholder")}
                   />
-                </div>
+                </div> */}
               </div>
 
               <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6 lg:mb-11">
