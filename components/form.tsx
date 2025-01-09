@@ -61,6 +61,15 @@ function Form() {
     });
   };
 
+  const handleInputChangeDate = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData({
+      ...formData,
+      dateOfService: e.target.value,
+    });
+  };
+
   const handleServiceChange = (value: string) => {
     setFormData({ ...formData, service: value });
     setShowOtherService(value === "Other");
@@ -251,15 +260,6 @@ Thanks!`;
                 onChange={handleInputChange}
               />
 
-              <Input
-                type="date"
-                id="data"
-                placeholder="data"
-                className="bg-white w-1/2"
-                value={formData.data}
-                onChange={handleInputChange}
-              />
-
               {/* <Input
                 type="text"
                 id="street"
@@ -271,6 +271,14 @@ Thanks!`;
             </div>
 
             <div className="flex gap-2">
+              
+              {/* <Input
+                type="date"
+                id="dateOfService"
+                className="p-2 border rounded w-2/4 bg-white"
+                value={formData.dateOfService}
+                onChange={handleInputChangeDate}
+              /> */}
               {/* <Input
                 id="district"
                 type="text"
