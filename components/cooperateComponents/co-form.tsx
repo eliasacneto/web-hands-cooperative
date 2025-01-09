@@ -14,6 +14,7 @@ import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { useTranslations } from "next-intl";
 import Swal from "sweetalert2";
+import ConsentCheckBox from "../consentCheckBox";
 
 interface CoFormData {
   name: string;
@@ -78,10 +79,14 @@ const CoForm = () => {
     setCoFormData({ ...coFormData, city: value });
   };
 
- const handleSelectChangeEquipement = (value: string) => {
+  const handleSelectChangeEquipement = (value: string) => {
     const parsedValue = JSON.parse(value);
     if (parsedValue === false) {
-      setCoFormData({ ...coFormData, equipment: parsedValue, whatEquipment: "" });
+      setCoFormData({
+        ...coFormData,
+        equipment: parsedValue,
+        whatEquipment: "",
+      });
     } else {
       setCoFormData({ ...coFormData, equipment: parsedValue });
     }
@@ -353,10 +358,10 @@ Thank you and I await your response!`;
                 )}
 
                 <div>
-                  <div className="flex flex-col gap-3 w-3/5">
+                  <div className="flex flex-col gap-3">
                     <Select>
                       <SelectTrigger className="bg-white text-black">
-                        <SelectValue placeholder="Que serviço você pode realizar?" />
+                        <SelectValue placeholder="Que forma de deslocamento você pode usar para realizar o serviço?" />
                       </SelectTrigger>
                       <SelectContent position="popper">
                         {displacementMode?.map((mode) => (
@@ -372,6 +377,11 @@ Thank you and I await your response!`;
                     </Select>
                   </div>
                 </div>
+
+                <ConsentCheckBox
+                  classCheckbox="text-gray-100"
+                  classLink="text-yellow-500"
+                />
               </div>
 
               <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6 lg:mb-11">

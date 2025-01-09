@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
+import ConsentCheckBox from "./consentCheckBox";
 
 interface FormData {
   name: string;
@@ -255,11 +256,10 @@ Thanks!`;
                 id="eircode"
                 type="text"
                 placeholder="Eircode"
-                className="bg-white w-1/2 uppercase placeholder:capitalize"
+                className="bg-white uppercase placeholder:capitalize"
                 value={formData.eircode}
                 onChange={handleInputChange}
               />
-
               {/* <Input
                 type="text"
                 id="street"
@@ -270,8 +270,30 @@ Thanks!`;
               /> */}
             </div>
 
-            <div className="flex gap-2">
-              
+            <div className="flex gap-2 mb-4">
+              <Select onValueChange={handleServiceChange}>
+                <SelectTrigger id="howFindCompany" className="bg-white">
+                  <SelectValue placeholder="How did you find our company" />
+                </SelectTrigger>
+
+                <SelectContent position="popper">
+                  <SelectItem className="cursor-pointer" value="facebook">
+                    Facebook
+                  </SelectItem>
+                  <SelectItem className="cursor-pointer" value="instagram">
+                    Instagram"
+                  </SelectItem>
+                  <SelectItem className="cursor-pointer" value="google">
+                    Google
+                  </SelectItem>
+                  <SelectItem className="cursor-pointer" value="Indicação">
+                    Indicação
+                  </SelectItem>
+                  {/* <SelectItem className="cursor-pointer" value="Other">
+                    Other services...
+                  </SelectItem> */}
+                </SelectContent>
+              </Select>
               {/* <Input
                 type="date"
                 id="dateOfService"
@@ -298,6 +320,10 @@ Thanks!`;
               /> */}
             </div>
           </div>
+          <ConsentCheckBox
+            classCheckbox="text-gray-700"
+            classLink="text-blue-600"
+          />
         </form>
       </CardContent>
 
