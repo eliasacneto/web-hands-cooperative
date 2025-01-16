@@ -1,5 +1,5 @@
-import { api } from "../connections/Api";
-import { useEffect, useState } from "react";
+import { api } from "@/connection/Api";
+import { useState } from "react";
 
 export const usePost = <T>(endpoint: string) => {
   const [data, setData] = useState<T | null>(null);
@@ -13,7 +13,7 @@ export const usePost = <T>(endpoint: string) => {
       setLoading(false);
 
       return response.data;
-    } catch (error) {
+    } catch (error: any) {
       setError(error);
       setLoading(false);
     }

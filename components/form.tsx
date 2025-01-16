@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import InputMask from "react-input-mask";
 
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   Card,
   CardContent,
@@ -16,7 +17,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
+import { usePost } from "@/hook/usePost";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import ConsentCheckBox from "./consentCheckBox";
 
 interface FormData {
@@ -40,6 +43,8 @@ function Form() {
     howFindCompany: "",
     dataProtection: false,
   });
+  const [message, setMessage] = useState("");
+  const captchaRef = useRef<ReCAPTCHA>(null);
 
   const [showOtherService, setShowOtherService] = useState(false);
 
@@ -57,6 +62,13 @@ function Form() {
     setShowOtherService(value === "Other");
   };
 
+  const handleConsentChange = (isChecked: boolean) => {
+    setFormData((prev) => ({
+      ...prev,
+      dataProtection: isChecked,
+    }));
+  };
+
   const validateForm = (): boolean => {
     return (
       formData.name !== "" &&
@@ -68,11 +80,22 @@ function Form() {
     );
   };
 
+  const { data, loading, error, postData } = usePost("");
+
+  const captchaToken = captchaRef.current?.getValue();
+
   const handleSubmit = async () => {
     if (!validateForm()) {
       alert("Please, fill in all fields!");
       return;
     }
+
+    if (!captchaToken) {
+      setMessage("Please complete the captcha"); //traduzir
+      return;
+    }
+
+    await postData({ formData, captchaToken });
 
     // enviar form para back
     setFormData({
@@ -84,6 +107,8 @@ function Form() {
       howFindCompany: "",
       dataProtection: false,
     });
+
+    captchaRef.current?.reset();
   };
 
   return (
@@ -255,9 +280,24 @@ function Form() {
             </div>
           </div>
           <ConsentCheckBox
+            required={false}
+            onChange={handleConsentChange}
             classCheckbox="text-gray-700"
             classLink="text-blue-600"
           />
+          <div className="flex justify-center">
+            {formData?.dataProtection && (
+              <ReCAPTCHA
+                ref={captchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              />
+            )}
+          </div>
+          {message && (
+            <Alert>
+              <AlertDescription>{message}</AlertDescription>
+            </Alert>
+          )}
         </form>
       </CardContent>
 

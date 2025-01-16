@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/select";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import ApplyIMG from "../../public/assets/apply.jpg";
 import ConsentCheckBox from "../consentCheckBox";
@@ -15,6 +15,10 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
+
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { usePost } from "@/hook/usePost";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface CoFormData {
   name: string;
@@ -43,6 +47,8 @@ const CoForm = () => {
     shapeOfDisplacement: "", //['carro', 'moto', 'transporte público', 'caminhando', 'carro de aplicativo', ],
     dataProtection: false, // termos de uso
   });
+  const [message, setMessage] = useState("");
+  const captchaRef = useRef<ReCAPTCHA>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -75,6 +81,13 @@ const CoForm = () => {
     }
   };
 
+  const handleConsentChange = (isChecked: boolean) => {
+    setCoFormData((prev) => ({
+      ...prev,
+      dataProtection: isChecked,
+    }));
+  };
+
   const validateForm = (): boolean => {
     return (
       coFormData.name !== "" &&
@@ -87,22 +100,55 @@ const CoForm = () => {
       coFormData.dataProtection === true
     );
   };
-  const handleSubmit = async () => {
-    if (!validateForm()) {
-      Swal.fire({
-        title: a("ops"),
-        text: a("checkFields"),
-        icon: "error",
-        confirmButtonText: a("ok"),
-        confirmButtonColor: "#16a34a",
-      });
-      return;
-    }
 
-    // Enviar dados para back
+  const { data, loading, error, postData } = usePost("");
+
+  const captchaToken = captchaRef.current?.getValue();
+
+  const handleSubmit = async () => {
+    try {
+      if (!validateForm()) {
+        Swal.fire({
+          title: a("ops"),
+          text: a("checkFields"),
+          icon: "error",
+          confirmButtonText: a("ok"),
+          confirmButtonColor: "#16a34a",
+        });
+        return;
+      }
+
+      if (!captchaToken) {
+        setMessage(t("captcha")); //traduzir
+        return;
+      }
+
+      await postData({ coFormData, captchaToken });
+
+      setCoFormData({
+        name: "",
+        email: "",
+        whatsapp: "",
+        eircode: "",
+        skills: "",
+        equipment: false,
+        whatEquipment: "",
+        shapeOfDisplacement: "",
+        dataProtection: false,
+      });
+
+      captchaRef.current?.reset();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  console.log("coFormData", coFormData);
+  useEffect(() => {
+    console.log(
+      "RECAPTCHA SITE KEY:",
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    );
+  }, []);
 
   return (
     <div className="flex flex-col lg:flex-row w-full ">
@@ -360,10 +406,26 @@ const CoForm = () => {
                 </div>
 
                 <ConsentCheckBox
+                  required={false}
+                  onChange={handleConsentChange}
                   classCheckbox="text-gray-100"
                   classLink="text-yellow-500"
                 />
               </div>
+
+              <div className="flex justify-center">
+                {coFormData?.dataProtection && (
+                  <ReCAPTCHA
+                    ref={captchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                  />
+                )}
+              </div>
+              {message && (
+                <Alert>
+                  <AlertDescription>{message}</AlertDescription>
+                </Alert>
+              )}
 
               <Button className="bg-yellow-400 text-black flex justify-center items-center lg:justify-start hover:bg-yellow-500 px-8 py-6 rounded-full font-semibold lg:text-lg mt-6 lg:mb-11">
                 {t("apply")}
