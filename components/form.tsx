@@ -4,7 +4,6 @@ import InputMask from "react-input-mask";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -23,32 +22,23 @@ import ConsentCheckBox from "./consentCheckBox";
 interface FormData {
   name: string;
   phone: string;
-  service: string;
-  otherService: string;
-  city: string;
+  email: string;
   eircode: string;
-  street: string;
-  district: string;
-  houseNumber: string;
+  service: string;
+  howFindCompany?: string;
+  dataProtection: boolean;
 }
 
 function Form() {
   //form client
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    email: "", //new
     phone: "",
-    city: "",
-    street: "",
-    district: "",
-    houseNumber: "",
+    email: "",
     eircode: "",
-    service: "", //typeOfWork
-    dateOfService: "", //data do servico
-    howFindCompany: "", //como conheceu a empresa
-    particularities: "", //particularidades
-    dataProtection: false, // termos de uso
-    otherService: "",
+    service: "",
+    howFindCompany: "",
+    dataProtection: false,
   });
 
   const [showOtherService, setShowOtherService] = useState(false);
@@ -62,35 +52,19 @@ function Form() {
     });
   };
 
-  const handleInputChangeDate = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setFormData({
-      ...formData,
-      dateOfService: e.target.value,
-    });
-  };
-
   const handleServiceChange = (value: string) => {
     setFormData({ ...formData, service: value });
     setShowOtherService(value === "Other");
-  };
-
-  const handleCityChange = (value: string) => {
-    setFormData({ ...formData, city: value });
   };
 
   const validateForm = (): boolean => {
     return (
       formData.name !== "" &&
       formData.phone !== "" &&
-      formData.service !== "" &&
-      (formData.service !== "Other" || formData.otherService !== "") &&
-      formData.city !== "" &&
+      formData.email !== "" &&
       formData.eircode !== "" &&
-      formData.street !== "" &&
-      formData.district !== "" &&
-      formData.houseNumber !== ""
+      formData.service !== "" &&
+      formData.dataProtection === true
     );
   };
 
@@ -100,55 +74,15 @@ function Form() {
       return;
     }
 
-    const serviceMessage =
-      formData.service === "Other" ? formData.otherService : formData.service;
-
-    const message = `Hello! I came across the Brazilian Hands website and I'd like to request a service:
-
-*Name:* ${formData.name}
-*Phone:* ${formData.phone}
-
-*Service Chosen:* ${serviceMessage}
-
-*My address:*
-- *City:* ${formData.city}
-- *Eircode:* ${formData.eircode}
-- *Street:* ${formData.street}
-- *District:* ${formData.district}
-- *House Number:* ${formData.houseNumber}
-
-Thanks!`;
-    //https://wa.me/353833471038?text=${encodeURIComponent(
-    //  message
-    //)}
-    const whatsappUrl = ``;
-    window.open(whatsappUrl, "_blank");
-
-    // Enviar mensagem para o Discord
-    try {
-      const discordWebhookUrl = "";
-      await fetch(discordWebhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ content: message }),
-      });
-      console.log("Mensagem enviada para o Discord!");
-    } catch (error) {
-      console.error("Erro ao enviar mensagem para o Discord:", error);
-    }
-
+    // enviar form para back
     setFormData({
       name: "",
       phone: "",
-      service: "",
-      city: "",
-      otherService: "",
+      email: "",
       eircode: "",
-      street: "",
-      district: "",
-      houseNumber: "",
+      service: "",
+      howFindCompany: "",
+      dataProtection: false,
     });
   };
 
@@ -199,26 +133,26 @@ Thanks!`;
                     className="cursor-pointer"
                     value="serviço de limpeza"
                   >
-                    serviço de limpeza
+                    Cleaning
                   </SelectItem>
                   <SelectItem
                     className="cursor-pointer"
                     value="paisagismo e jardinagem"
                   >
-                    paisagismo e jardinagem
+                    Gardening
                   </SelectItem>
-                  <SelectItem className="cursor-pointer" value="Reformas">
-                    Reformas
+                  <SelectItem className="cursor-pointer" value="reformas">
+                    Renovations and Repairs
                   </SelectItem>
-                  <SelectItem className="cursor-pointer" value="Pintura">
-                    Pintura
+                  <SelectItem className="cursor-pointer" value="pintura">
+                    Painting
                   </SelectItem>
-                  <SelectItem className="cursor-pointer" value="Other">
+                  {/* <SelectItem className="cursor-pointer" value="Other">
                     Other services...
-                  </SelectItem>
+                  </SelectItem> */}
                 </SelectContent>
               </Select>
-              {showOtherService && (
+              {/* {showOtherService && (
                 <Input
                   id="otherService"
                   placeholder="Please specify"
@@ -226,7 +160,7 @@ Thanks!`;
                   value={formData.otherService}
                   onChange={handleInputChange}
                 />
-              )}
+              )} */}
             </div>
             {/* <div className="flex flex-col">
               <Select onValueChange={handleCityChange}>
@@ -281,13 +215,13 @@ Thanks!`;
                     Facebook
                   </SelectItem>
                   <SelectItem className="cursor-pointer" value="instagram">
-                    Instagram"
+                    Instagram
                   </SelectItem>
                   <SelectItem className="cursor-pointer" value="google">
                     Google
                   </SelectItem>
                   <SelectItem className="cursor-pointer" value="Indicação">
-                    Indicação
+                    Referral
                   </SelectItem>
                   {/* <SelectItem className="cursor-pointer" value="Other">
                     Other services...

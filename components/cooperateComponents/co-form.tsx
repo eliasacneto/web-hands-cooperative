@@ -1,8 +1,3 @@
-import Image from "next/image";
-import React, { useState } from "react";
-import ApplyIMG from "../../public/assets/apply.jpg";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import {
   Select,
   SelectContent,
@@ -10,32 +5,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import ApplyIMG from "../../public/assets/apply.jpg";
+import ConsentCheckBox from "../consentCheckBox";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
-import { useTranslations } from "next-intl";
-import Swal from "sweetalert2";
-import ConsentCheckBox from "../consentCheckBox";
 
 interface CoFormData {
   name: string;
   whatsapp: string;
-  city: string;
+  email: string;
   eircode: string;
-  street: string;
-  district: string;
-  houseNumber: string;
   skills: string;
+  equipment: boolean;
+  whatEquipment?: string;
+  shapeOfDisplacement: string;
+  dataProtection: boolean;
 }
-
-//select de works
-const works = ["Cleaning", "Gardening", "Painting", "Repairs"];
-const displacementMode = [
-  "carro",
-  "moto",
-  "transporte público",
-  "caminhando",
-  "carro de aplicativo",
-];
 
 const CoForm = () => {
   //form collaborator
@@ -45,10 +36,6 @@ const CoForm = () => {
     name: "",
     email: "", //new
     whatsapp: "",
-    city: "",
-    street: "",
-    district: "",
-    houseNumber: "",
     eircode: "",
     skills: "", // vem de works em um select
     equipment: false, //boolean
@@ -75,10 +62,6 @@ const CoForm = () => {
     });
   };
 
-  const handleCityChange = (value: string) => {
-    setCoFormData({ ...coFormData, city: value });
-  };
-
   const handleSelectChangeEquipement = (value: string) => {
     const parsedValue = JSON.parse(value);
     if (parsedValue === false) {
@@ -96,12 +79,12 @@ const CoForm = () => {
     return (
       coFormData.name !== "" &&
       coFormData.whatsapp !== "" &&
-      coFormData.city !== "" &&
+      coFormData.email !== "" &&
       coFormData.eircode !== "" &&
-      coFormData.street !== "" &&
-      coFormData.district !== "" &&
-      coFormData.houseNumber !== "" &&
-      coFormData.skills !== ""
+      coFormData.skills !== "" &&
+      (!coFormData.equipment || coFormData.whatEquipment?.trim() !== "") &&
+      coFormData.shapeOfDisplacement.trim() !== "" &&
+      coFormData.dataProtection === true
     );
   };
   const handleSubmit = async () => {
@@ -116,54 +99,7 @@ const CoForm = () => {
       return;
     }
 
-    const message = `Hi! I'd like to be part of the Brazilian Hands Cooperative team:
-
-*Full Name:* ${coFormData.name}
-*WhatsApp:* ${coFormData.whatsapp}
-
-*Services I perform:* ${coFormData.skills}
-
-*My address in Ireland:*
-- *City:* ${coFormData.city}
-- *Eircode:* ${coFormData.eircode}
-- *Street:* ${coFormData.street}
-- *District:* ${coFormData.district}
-- *House Number:* ${coFormData.houseNumber}
-
-Thank you and I await your response!`;
-    //https://wa.me/353833471038?text=${encodeURIComponent(
-    //message
-    //)}
-    const whatsappUrl = ``;
-    //"
-    window.open(whatsappUrl, "_blank");
-
-    // Enviar mensagem para o Discord
-    try {
-      const discordWebhookUrl = "";
-      // "";
-      await fetch(discordWebhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ content: message }),
-      });
-      console.log("Mensagem enviada para o Discord!");
-    } catch (error) {
-      console.error("Erro ao enviar mensagem para o Discord:", error);
-    }
-
-    setCoFormData({
-      name: "",
-      whatsapp: "",
-      city: "",
-      eircode: "",
-      street: "",
-      district: "",
-      houseNumber: "",
-      skills: "",
-    });
+    // Enviar dados para back
   };
 
   console.log("coFormData", coFormData);
@@ -226,13 +162,13 @@ Thank you and I await your response!`;
                 </div>
 
                 <div className="flex flex-col gap-3 w-full">
-                  <Label>E-mail</Label>
+                  <Label>{t("email")}</Label>
                   <Input
                     id="email"
                     type="text"
                     value={coFormData.email}
                     onChange={handleInputChange}
-                    placeholder="Digite seu e-mail"
+                    placeholder={t("emailPlaceholder")}
                     className="bg-white text-black"
                   />
                   {/* <Label> {t("city")}</Label>
@@ -303,25 +239,44 @@ Thank you and I await your response!`;
                   <div className="flex flex-col gap-3 w-3/5">
                     <Select>
                       <SelectTrigger className="bg-white text-black">
-                        <SelectValue placeholder="Que serviço você pode realizar?" />
+                        <SelectValue placeholder={t("skills")} />
                       </SelectTrigger>
                       <SelectContent position="popper">
-                        {works?.map((work) => (
-                          <SelectItem
-                            className="cursor-pointer"
-                            key={work}
-                            value={work}
-                          >
-                            {work}
-                          </SelectItem>
-                        ))}
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"serviço de limpeza"}
+                          value={"serviço de limpeza"}
+                        >
+                          {t("cleaning")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"paisagismo e jardinagem"}
+                          value={"paisagismo e jardinagem"}
+                        >
+                          {t("gardening")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"pintura"}
+                          value={"pintura"}
+                        >
+                          {t("painting")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"reformas"}
+                          value={"reformas"}
+                        >
+                          {t("repairs")}
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <div className="flex flex-col gap-3 w-2/5">
                     <Select onValueChange={handleSelectChangeEquipement}>
                       <SelectTrigger className="bg-white text-black">
-                        <SelectValue placeholder="Você possui equipamentos?" />
+                        <SelectValue placeholder={t("equipments")} />
                       </SelectTrigger>
                       <SelectContent position="popper">
                         <SelectItem
@@ -329,14 +284,14 @@ Thank you and I await your response!`;
                           key={"não"}
                           value={"false"}
                         >
-                          Não
+                          {t("no")}
                         </SelectItem>
                         <SelectItem
                           className="cursor-pointer"
                           key={"sim"}
                           value={"true"}
                         >
-                          Sim
+                          {t("yes")}
                         </SelectItem>
                       </SelectContent>
                     </Select>
@@ -345,14 +300,14 @@ Thank you and I await your response!`;
 
                 {coFormData?.equipment && (
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>Quais equipamentos?</Label>
+                    <Label>{t("whatEquipment")}</Label>
                     <Textarea
                       id="whatEquipment"
                       value={coFormData.whatEquipment}
                       onChange={handleTextAreaChange}
                       rows={6}
                       className="bg-white text-black"
-                      placeholder={t("skillsPlaceholder")}
+                      placeholder={t("whatEquipmentsPlaceholder")}
                     />
                   </div>
                 )}
@@ -361,18 +316,44 @@ Thank you and I await your response!`;
                   <div className="flex flex-col gap-3">
                     <Select>
                       <SelectTrigger className="bg-white text-black">
-                        <SelectValue placeholder="Que forma de deslocamento você pode usar para realizar o serviço?" />
+                        <SelectValue placeholder={t("shapeOfDisplacement")} />
                       </SelectTrigger>
                       <SelectContent position="popper">
-                        {displacementMode?.map((mode) => (
-                          <SelectItem
-                            className="cursor-pointer"
-                            key={mode}
-                            value={mode}
-                          >
-                            {mode}
-                          </SelectItem>
-                        ))}
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"carro"}
+                          value={"carro"}
+                        >
+                          {t("car")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"moto"}
+                          value={"moto"}
+                        >
+                          {t("motorcycle")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"transporte publico"}
+                          value={"transporte publico"}
+                        >
+                          {t("publicTransport")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"andando"}
+                          value={"andando"}
+                        >
+                          {t("walking")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={"carro de app"}
+                          value={"carro de app"}
+                        >
+                          {t("taxi")}
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

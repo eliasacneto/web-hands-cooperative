@@ -1,8 +1,9 @@
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
+import { Button } from "./ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { Button } from "./ui/button";
 import { ScrollArea } from "./ui/scroll-area";
 
 interface ConsentProps {
@@ -20,6 +21,7 @@ function ConsentCheckBox({
 }: ConsentProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const t = useTranslations("coForm");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
@@ -38,13 +40,13 @@ function ConsentCheckBox({
             className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
           />
           <span className={`text-sm ${classCheckbox}`}>
-            I agree to the{" "}
+            {t("agree")}{" "}
             <button
               type="button"
               onClick={() => setIsOpen(true)}
               className={`${classLink} hover:underline font-medium`}
             >
-              terms and conditions
+              {t("terms")}
             </button>
           </span>
         </Label>

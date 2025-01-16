@@ -34,7 +34,6 @@ interface FormData {
 function FormWorkUs() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    email: "", //new
     phone: "",
     skills: "",
     city: "",

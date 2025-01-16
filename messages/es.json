@@ -1,66 +1,85 @@
 {
-    "coMenu": {
-        "home": "Inicio",
-        "forYou": "Para quién es",
-        "workHere": "Trabaja en BHC",
-        "faq": "FAQ",
-        "apply": "Postúlate"
-    },
-    "coHero": {
-        "badge": "#01 Cooperativa Brasileña en Irlanda 🇮🇪",
-        "title": "Únete a la Brazilian Hands Cooperative",
-        "subtitle": "En la Brazilian Hands Cooperative, siempre estamos buscando nuevos colaboradores brasileños dispuestos a ofrecer servicios de limpieza, mantenimiento, belleza y otros. Si estás en Irlanda y buscas una oportunidad de trabajo flexible y bien remunerada, ¡únete a nuestro equipo!",
-        "cta1": "Quiero saber más",
-        "cta2": "Quiero postularme"
-    },
-    "coAbout": {
-        "badge": "¿Tienes dudas si es para ti?",
-        "title": "¿Quién puede ser parte?",
-        "subtitle1": "Si tienes talento para servicios como limpieza residencial, jardinería, pintura, reparaciones o belleza, y estás en Irlanda buscando una oportunidad, ¡te queremos en nuestro equipo! Seas experimentado o nuevo en el área, en la ",
-        "subtitle2": "ofrecemos soporte para que te sientas seguro y valorado en el trabajo.",
-        "cta": "¡Postúlate ahora!"
-    },
-    "coChoose": {
-        "badge": "¿Por qué trabajar con nosotros?",
-        "title": "Razones para trabajar en BHC",
-        "cardTitle1": "Ingresos atractivos",
-        "cardSubtitle1": "Como forma de fidelizar y demostrar nuestra confianza en usted como socio, las primeras veces usted recibe dinero en efectivo y nos transfiere nuestra parte. Somos la única institución en Irlanda que ofrece este tipo de beneficio.",
-        "cardTitle2": "Flexibilidad",
-        "cardSubtitle2": "Tú decides dónde y cuándo quieres trabajar. Puedes optar por atender solo en tu ciudad o desplazarte a otras, según tu disponibilidad y medios de transporte. ¡En Brazilian Hands Cooperative, tú controlas tu agenda!",
-        "cardTitle3": "Pago garantizado",
-        "cardSubtitle3": "¡Nosotros nos encargamos de toda la parte administrativa! La empresa recibe el pago de los clientes y te lo transfiere directamente. Esto significa que puedes concentrarte en lo que mejor haces, sin preocuparte por la burocracia.",
-        "cta": "¡Quiero postularme!"
-    },
-    "coForm": {
-        "letsWork": "¡Trabajemos juntos!",
-        "beMember": "Sé un cooperado",
-        "fullName": "Nombre completo",
-        "fullNamePlaceholder": "Tu nombre completo",
-        "whatsapp": "WhatsApp",
-        "whatsappPlaceholder": "Tu número de contacto",
-        "city": "¿En qué ciudad resides?",
-        "cityPlaceholder": "Selecciona una ciudad",
-        "eircode": "Eircode",
-        "eircodePlaceholder": "Tu Eircode",
-        "street": "Calle",
-        "streetPlaceholder": "Nombre de la calle",
-        "district": "Barrio",
-        "districtPlaceholder": "Nombre del barrio",
-        "houseNumber": "Número",
-        "houseNumberPlaceholder": "Número de la casa",
-        "skills": "¿Qué servicios realizas?",
-        "skillsPlaceholder": "Escribe los servicios que realizas...",
-        "apply": "Enviar postulación"
-    },
-    "footer": {
-        "services": "Servicios",
-        "contactInfo": "Contacto",
-        "follow": "Síguenos",
-        "description": "Servicios de limpieza, jardinería, belleza y reparaciones accesibles en Irlanda. Profesionalismo con un toque brasileño."
-    },
-    "alerts": {
-        "ops": "¡Ups!",
-        "checkFields": "Asegúrese de que todos los campos estén completos",
-        "ok": "Ok"
-    }
+  "coMenu": {
+    "home": "Inicio",
+    "forYou": "Para quién es",
+    "workHere": "Trabaja en BHC",
+    "faq": "FAQ",
+    "apply": "Postúlate"
+  },
+  "coHero": {
+    "badge": "#01 Cooperativa Brasileña en Irlanda 🇮🇪",
+    "title": "Únete a la Brazilian Hands Cooperative",
+    "subtitle": "En la Brazilian Hands Cooperative, siempre estamos buscando nuevos colaboradores brasileños dispuestos a ofrecer servicios de limpieza, mantenimiento, belleza y otros. Si estás en Irlanda y buscas una oportunidad de trabajo flexible y bien remunerada, ¡únete a nuestro equipo!",
+    "cta1": "Quiero saber más",
+    "cta2": "Quiero postularme"
+  },
+  "coAbout": {
+    "badge": "¿Tienes dudas si es para ti?",
+    "title": "¿Quién puede ser parte?",
+    "subtitle1": "Si tienes talento para servicios como limpieza residencial, jardinería, pintura, reparaciones o belleza, y estás en Irlanda buscando una oportunidad, ¡te queremos en nuestro equipo! Seas experimentado o nuevo en el área, en la ",
+    "subtitle2": "ofrecemos soporte para que te sientas seguro y valorado en el trabajo.",
+    "cta": "¡Postúlate ahora!"
+  },
+  "coChoose": {
+    "badge": "¿Por qué trabajar con nosotros?",
+    "title": "Razones para trabajar en BHC",
+    "cardTitle1": "Ingresos atractivos",
+    "cardSubtitle1": "Como forma de fidelizar y demostrar nuestra confianza en usted como socio, las primeras veces usted recibe dinero en efectivo y nos transfiere nuestra parte. Somos la única institución en Irlanda que ofrece este tipo de beneficio.",
+    "cardTitle2": "Flexibilidad",
+    "cardSubtitle2": "Tú decides dónde y cuándo quieres trabajar. Puedes optar por atender solo en tu ciudad o desplazarte a otras, según tu disponibilidad y medios de transporte. ¡En Brazilian Hands Cooperative, tú controlas tu agenda!",
+    "cardTitle3": "Pago garantizado",
+    "cardSubtitle3": "¡Nosotros nos encargamos de toda la parte administrativa! La empresa recibe el pago de los clientes y te lo transfiere directamente. Esto significa que puedes concentrarte en lo que mejor haces, sin preocuparte por la burocracia.",
+    "cta": "¡Quiero postularme!"
+  },
+  "coForm": {
+    "letsWork": "¡Trabajemos juntos!",
+    "beMember": "Sé un cooperado",
+    "fullName": "Nombre completo",
+    "fullNamePlaceholder": "Tu nombre completo",
+    "whatsapp": "WhatsApp",
+    "whatsappPlaceholder": "Tu número de contacto",
+    "email": "Correo",
+    "emailPlaceholder": "Tu correo",
+    "city": "¿En qué ciudad resides?",
+    "cityPlaceholder": "Selecciona una ciudad",
+    "eircode": "Eircode",
+    "eircodePlaceholder": "Tu Eircode",
+    "street": "Calle",
+    "streetPlaceholder": "Nombre de la calle",
+    "district": "Barrio",
+    "districtPlaceholder": "Nombre del barrio",
+    "houseNumber": "Número",
+    "houseNumberPlaceholder": "Número de la casa",
+    "skills": "¿Qué servicios realizas?",
+    "skillsPlaceholder": "Escribe los servicios que realizas...",
+    "cleaning": "Limpieza",
+    "gardening": "Jardinería",
+    "painting": "Pintura",
+    "repairs": "Reformas y Reparaciones",
+    "equipments": "Tienes equipo?",
+    "yes": "Si",
+    "no": "No",
+    "whatEquipments": "Que equipo tienes?",
+    "whatEquipmentsPlaceholder": "Escribe el nombre de los equipos...",
+    "shapeOfDisplacement": "Forma de desplazamiento",
+    "car": "Coche",
+    "motorcycle": "Moto",
+    "publicTransport": "Transporte público",
+    "walking": "Camino",
+    "taxi": "Taxi",
+    "agree": "Acepto",
+    "terms": "Condiciones",
+    "apply": "Enviar postulación"
+  },
+  "footer": {
+    "services": "Servicios",
+    "contactInfo": "Contacto",
+    "follow": "Síguenos",
+    "description": "Servicios de limpieza, jardinería, belleza y reparaciones accesibles en Irlanda. Profesionalismo con un toque brasileño."
+  },
+  "alerts": {
+    "ops": "¡Ups!",
+    "checkFields": "Asegúrese de que todos los campos estén completos",
+    "ok": "Ok"
+  }
 }
