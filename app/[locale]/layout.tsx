@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server"; // Importação da API
+import { Poppins } from "next/font/google";
 import "./globals.css";
+
+//google GoogleAnalytics
+//npm install @next/third-parties
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,6 +42,10 @@ export default async function RootLayout({
     messages = {}; // Fallback para mensagens vazias
   }
 
+  if (!process.env.NEXT_PUBLIC_GAID) {
+    console.warn("Google Analytics ID não configurado");
+  }
+
   return (
     <html lang={locale}>
       <body className={`${poppins.className} antialiased`}>
@@ -45,6 +53,7 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID!} />
     </html>
   );
 }

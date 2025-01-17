@@ -27,7 +27,7 @@ interface FormData {
   phone: string;
   email: string;
   eircode: string;
-  service: string;
+  typeOfWork: string;
   howFindCompany?: string;
   dataProtection: boolean;
 }
@@ -39,7 +39,7 @@ function Form() {
     phone: "",
     email: "",
     eircode: "",
-    service: "",
+    typeOfWork: "",
     howFindCompany: "",
     dataProtection: false,
   });
@@ -58,8 +58,12 @@ function Form() {
   };
 
   const handleServiceChange = (value: string) => {
-    setFormData({ ...formData, service: value });
-    setShowOtherService(value === "Other");
+    setFormData({ ...formData, typeOfWork: value });
+    // setShowOtherService(value === "Other");
+  };
+
+  const handleHowFindCompanyChange = (value: string) => {
+    setFormData({ ...formData, howFindCompany: value });
   };
 
   const handleConsentChange = (isChecked: boolean) => {
@@ -75,14 +79,12 @@ function Form() {
       formData.phone !== "" &&
       formData.email !== "" &&
       formData.eircode !== "" &&
-      formData.service !== "" &&
+      formData.typeOfWork !== "" &&
       formData.dataProtection === true
     );
   };
 
-  const { data, loading, error, postData } = usePost("");
-
-  const captchaToken = captchaRef.current?.getValue();
+  const { data, loading, error, postData } = usePost("client");
 
   const handleSubmit = async () => {
     if (!validateForm()) {
@@ -90,12 +92,14 @@ function Form() {
       return;
     }
 
+    const captchaToken = captchaRef.current?.getValue();
+
     if (!captchaToken) {
       setMessage("Please complete the captcha"); //traduzir
       return;
     }
 
-    await postData({ formData, captchaToken });
+    await postData({ ...formData, captchaToken });
 
     // enviar form para back
     setFormData({
@@ -103,7 +107,7 @@ function Form() {
       phone: "",
       email: "",
       eircode: "",
-      service: "",
+      typeOfWork: "",
       howFindCompany: "",
       dataProtection: false,
     });
@@ -148,7 +152,10 @@ function Form() {
             </div>
 
             <div className="flex flex-col">
-              <Select onValueChange={handleServiceChange}>
+              <Select
+                value={formData.typeOfWork}
+                onValueChange={handleServiceChange}
+              >
                 <SelectTrigger id="service" className="bg-white">
                   <SelectValue placeholder="Choose a service" />
                 </SelectTrigger>
@@ -230,7 +237,10 @@ function Form() {
             </div>
 
             <div className="flex gap-2 mb-4">
-              <Select onValueChange={handleServiceChange}>
+              <Select
+                value={formData.howFindCompany}
+                onValueChange={handleHowFindCompanyChange}
+              >
                 <SelectTrigger id="howFindCompany" className="bg-white">
                   <SelectValue placeholder="How did you find our company" />
                 </SelectTrigger>

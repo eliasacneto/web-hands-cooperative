@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/select";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Swal from "sweetalert2";
 import ApplyIMG from "../../public/assets/apply.jpg";
 import ConsentCheckBox from "../consentCheckBox";
@@ -22,10 +22,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 interface CoFormData {
   name: string;
-  whatsapp: string;
+  phone: string;
   email: string;
   eircode: string;
-  skills: string;
+  work: string;
   equipment: boolean;
   whatEquipment?: string;
   shapeOfDisplacement: string;
@@ -39,9 +39,9 @@ const CoForm = () => {
   const [coFormData, setCoFormData] = useState<CoFormData>({
     name: "",
     email: "", //new
-    whatsapp: "",
+    phone: "",
     eircode: "",
-    skills: "", // vem de works em um select
+    work: "", // vem de works em um select
     equipment: false, //boolean
     whatEquipment: "", // qual equipamento
     shapeOfDisplacement: "", //['carro', 'moto', 'transporte público', 'caminhando', 'carro de aplicativo', ],
@@ -81,6 +81,14 @@ const CoForm = () => {
     }
   };
 
+  const handleSelectChangeShape = (value: string) => {
+    setCoFormData({ ...coFormData, shapeOfDisplacement: value });
+  };
+
+  const handleSelectChangeSkills = (value: string) => {
+    setCoFormData({ ...coFormData, work: value });
+  };
+
   const handleConsentChange = (isChecked: boolean) => {
     setCoFormData((prev) => ({
       ...prev,
@@ -91,19 +99,17 @@ const CoForm = () => {
   const validateForm = (): boolean => {
     return (
       coFormData.name !== "" &&
-      coFormData.whatsapp !== "" &&
+      coFormData.phone !== "" &&
       coFormData.email !== "" &&
       coFormData.eircode !== "" &&
-      coFormData.skills !== "" &&
+      coFormData.work !== "" &&
       (!coFormData.equipment || coFormData.whatEquipment?.trim() !== "") &&
       coFormData.shapeOfDisplacement.trim() !== "" &&
       coFormData.dataProtection === true
     );
   };
 
-  const { data, loading, error, postData } = usePost("");
-
-  const captchaToken = captchaRef.current?.getValue();
+  const { data, loading, error, postData } = usePost("collaborator");
 
   const handleSubmit = async () => {
     try {
@@ -118,19 +124,21 @@ const CoForm = () => {
         return;
       }
 
+      const captchaToken = captchaRef.current?.getValue();
+
       if (!captchaToken) {
         setMessage(t("captcha")); //traduzir
         return;
       }
 
-      await postData({ coFormData, captchaToken });
+      await postData({ ...coFormData, captchaToken });
 
       setCoFormData({
         name: "",
         email: "",
-        whatsapp: "",
+        phone: "",
         eircode: "",
-        skills: "",
+        work: "",
         equipment: false,
         whatEquipment: "",
         shapeOfDisplacement: "",
@@ -138,17 +146,14 @@ const CoForm = () => {
       });
 
       captchaRef.current?.reset();
+
+      console.log("Form após reset:", coFormData);
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    console.log(
-      "RECAPTCHA SITE KEY:",
-      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-    );
-  }, []);
+  console.log("collaborator form data:", coFormData);
 
   return (
     <div className="flex flex-col lg:flex-row w-full ">
@@ -197,9 +202,9 @@ const CoForm = () => {
                   <div className="flex flex-col gap-3 w-full">
                     <Label>{t("whatsapp")}</Label>
                     <Input
-                      id="whatsapp"
+                      id="phone"
                       type="text"
-                      value={coFormData.whatsapp}
+                      value={coFormData.phone}
                       onChange={handleInputChange}
                       placeholder={t("whatsappPlaceholder")}
                       className="bg-white text-black"
@@ -283,7 +288,11 @@ const CoForm = () => {
 
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-3 w-3/5">
-                    <Select>
+                    <Label>{t("skills")}</Label>
+                    <Select
+                      value={coFormData.work || ""}
+                      onValueChange={handleSelectChangeSkills}
+                    >
                       <SelectTrigger className="bg-white text-black">
                         <SelectValue placeholder={t("skills")} />
                       </SelectTrigger>
@@ -320,7 +329,11 @@ const CoForm = () => {
                     </Select>
                   </div>
                   <div className="flex flex-col gap-3 w-2/5">
-                    <Select onValueChange={handleSelectChangeEquipement}>
+                    <Label>{t("equipments")}</Label>
+                    <Select
+                      value={coFormData.equipment.toString() || ""}
+                      onValueChange={handleSelectChangeEquipement}
+                    >
                       <SelectTrigger className="bg-white text-black">
                         <SelectValue placeholder={t("equipments")} />
                       </SelectTrigger>
@@ -346,7 +359,7 @@ const CoForm = () => {
 
                 {coFormData?.equipment && (
                   <div className="flex flex-col gap-3 w-full">
-                    <Label>{t("whatEquipment")}</Label>
+                    <Label>{t("whatEquipments")}</Label>
                     <Textarea
                       id="whatEquipment"
                       value={coFormData.whatEquipment}
@@ -360,7 +373,11 @@ const CoForm = () => {
 
                 <div>
                   <div className="flex flex-col gap-3">
-                    <Select>
+                    <Label>{t("shapeOfDisplacement")}</Label>
+                    <Select
+                      value={coFormData.shapeOfDisplacement || ""}
+                      onValueChange={handleSelectChangeShape}
+                    >
                       <SelectTrigger className="bg-white text-black">
                         <SelectValue placeholder={t("shapeOfDisplacement")} />
                       </SelectTrigger>
