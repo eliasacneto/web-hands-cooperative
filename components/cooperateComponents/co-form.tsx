@@ -33,7 +33,7 @@ interface CoFormData {
 }
 
 const CoForm = () => {
-  //form collaborator
+  //form collaborator OK
   const t = useTranslations("coForm");
   const a = useTranslations("alerts");
   const [coFormData, setCoFormData] = useState<CoFormData>({
