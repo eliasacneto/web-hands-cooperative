@@ -1,66 +1,88 @@
 {
-    "coMenu": {
-        "home": "Início",
-        "forYou": "Para quem é",
-        "workHere": "Trabalhe na BHC",
-        "faq": "FAQ",
-        "apply": "Candidate-se"
-    },
-    "coHero": {
-        "badge": "#01 Cooperativa Brasileira na Irlanda 🇮🇪",
-        "title": "Junte-se à Brazilian Hands Cooperative",
-        "subtitle": "Na Brazilian Hands Cooperative, estamos sempre em busca de novos colaboradores brasileiros dispostos a oferecer serviços de limpeza, manutenção, beleza, e outros. Se você está na Irlanda e procura uma oportunidade de trabalho flexível e bem remunerada, venha fazer parte da nossa equipe!",
-        "cta1": "Quero saber mais",
-        "cta2": "Quero me candidatar"
-    },
-    "coAbout": {
-        "badge": "Na dúvida se é para você?",
-        "title": "Quem pode fazer parte?",
-        "subtitle1": "Se você tem talento para serviços como limpeza residencial, jardinagem, pintura, reparos ou beleza, e está na Irlanda procurando por uma oportunidade, queremos você na nossa equipe! Seja experiente ou novo na área, na ",
-        "subtitle2": "oferecemos suporte para que você se sinta seguro e valorizado no trabalho.",
-        "cta": "Candidate-se agora!"
-    },
-    "coChoose": {
-        "badge": "Por que trabalhar conosco?",
-        "title": "Razões para trabalhar na BHC",
-        "cardTitle1": "Ganhos Atraentes",
-        "cardSubtitle1": "Como forma de fidelizar e demonstrar nossa confiança em você como parceiro, nas primeiras vezes você recebe cash in hands e nos repassa nossa parte. Somos a única instituição na Irlanda que oferece esse tipo de benefício.",
-        "cardTitle2": "Flexibilidade",
-        "cardSubtitle2": "Você decide onde e quando quer trabalhar. Pode optar por atender apenas em sua cidade ou se deslocar para outras, conforme sua disponibilidade e meios de transporte. Na Brazilian Hands Cooperative, quem controla sua agenda é você!",
-        "cardTitle3": "Pagamento Garantido",
-        "cardSubtitle3": "Nós cuidamos de toda a parte administrativa! A empresa recebe o pagamento dos clientes e faz o repasse diretamente para você. Isso significa que você pode focar no que faz de melhor, sem preocupações com burocracias.",
-        "cta": "Quero me candidatar!"
-    },
-    "coForm": {
-        "letsWork": "Vamos trabalhar juntos!",
-        "beMember": "Seja um cooperado",
-        "fullName": "Nome completo",
-        "fullNamePlaceholder": "Seu nome completo",
-        "whatsapp": "WhatsApp",
-        "whatsappPlaceholder": "Seu número de contato",
-        "city": "Em qual cidade você reside?",
-        "cityPlaceholder": "Selecione uma cidade",
-        "eircode": "Eircode",
-        "eircodePlaceholder": "Seu Eircode",
-        "street": "Rua",
-        "streetPlaceholder": "Nome da Rua",
-        "district": "Bairro",
-        "districtPlaceholder": "Nome do bairro",
-        "houseNumber": "Número",
-        "houseNumberPlaceholder": "Número da casa",
-        "skills": "Quais serviços você realiza?",
-        "skillsPlaceholder": "Escreva o nome dos serviços que você realiza...",
-        "apply": "Enviar candidatura"
-    },
-    "footer": {
-        "services": "Serviços",
-        "contactInfo": "Contato",
-        "follow": "Siga-nos",
-        "description": "Serviços de limpeza, jardinagem, beleza e reparos acessíveis na Irlanda. Profissionalismo com um toque brasileiro."
-    },
-    "alerts": {
-        "ops": "Ops!",
-        "checkFields": "Por favor, preencha os campos!",
-        "ok": "Ok"
-    }
+  "coMenu": {
+    "home": "Início",
+    "forYou": "Para quem é",
+    "workHere": "Trabalhe na BHC",
+    "faq": "FAQ",
+    "apply": "Candidate-se"
+  },
+  "coHero": {
+    "badge": "#01 Cooperativa Brasileira na Irlanda 🇮🇪",
+    "title": "Junte-se à Brazilian Hands Cooperative",
+    "subtitle": "Na Brazilian Hands Cooperative, estamos sempre em busca de novos colaboradores brasileiros dispostos a oferecer serviços de limpeza, manutenção, beleza, e outros. Se você está na Irlanda e procura uma oportunidade de trabalho flexível e bem remunerada, venha fazer parte da nossa equipe!",
+    "cta1": "Quero saber mais",
+    "cta2": "Quero me candidatar"
+  },
+  "coAbout": {
+    "badge": "Na dúvida se é para você?",
+    "title": "Quem pode fazer parte?",
+    "subtitle1": "Se você tem talento para serviços como limpeza residencial, jardinagem, pintura, reparos ou beleza, e está na Irlanda procurando por uma oportunidade, queremos você na nossa equipe! Seja experiente ou novo na área, na ",
+    "subtitle2": "oferecemos suporte para que você se sinta seguro e valorizado no trabalho.",
+    "cta": "Candidate-se agora!"
+  },
+  "coChoose": {
+    "badge": "Por que trabalhar conosco?",
+    "title": "Razões para trabalhar na BHC",
+    "cardTitle1": "Ganhos Atraentes",
+    "cardSubtitle1": "Como forma de fidelizar e demonstrar nossa confiança em você como parceiro, nas primeiras vezes você recebe cash in hands e nos repassa nossa parte. Somos a única instituição na Irlanda que oferece esse tipo de benefício.",
+    "cardTitle2": "Flexibilidade",
+    "cardSubtitle2": "Você decide onde e quando quer trabalhar. Pode optar por atender apenas em sua cidade ou se deslocar para outras, conforme sua disponibilidade e meios de transporte. Na Brazilian Hands Cooperative, quem controla sua agenda é você!",
+    "cardTitle3": "Pagamento Garantido",
+    "cardSubtitle3": "Nós cuidamos de toda a parte administrativa! A empresa recebe o pagamento dos clientes e faz o repasse diretamente para você. Isso significa que você pode focar no que faz de melhor, sem preocupações com burocracias.",
+    "cta": "Quero me candidatar!"
+  },
+  "coForm": {
+    "letsWork": "Vamos trabalhar juntos!",
+    "beMember": "Seja um cooperado",
+    "fullName": "Nome completo",
+    "fullNamePlaceholder": "Seu nome completo",
+    "whatsapp": "WhatsApp",
+    "whatsappPlaceholder": "Seu número de contato",
+    "email": "E-mail",
+    "emailPlaceholder": "Seu e-mail",
+    "city": "Em qual cidade você reside?",
+    "cityPlaceholder": "Selecione uma cidade",
+    "eircode": "Eircode",
+    "eircodePlaceholder": "Seu Eircode",
+    "street": "Rua",
+    "streetPlaceholder": "Nome da Rua",
+    "district": "Bairro",
+    "districtPlaceholder": "Nome do bairro",
+    "houseNumber": "Número",
+    "houseNumberPlaceholder": "Número da casa",
+    "skills": "Quais serviços você realiza?",
+    "skillsPlaceholder": "Escreva o nome dos serviços que você realiza...",
+    "cleaning": "Limpeza",
+    "gardening": "Jardinagem",
+    "painting": "Pintura",
+    "repairs": "Reformas e Reparos",
+    "equipments": "Você possui equipamentos?",
+    "yes": "Sim",
+    "no": "Não",
+    "whatEquipments": "Quais equipamentos?",
+    "whatEquipmentsPlaceholder": "Escreva o nome dos equipamentos...",
+    "shapeOfDisplacement": "Que forma de deslocamento você pode usar para realizar o serviço?",
+    "car": "Carro",
+    "motorcycle": "Moto",
+    "publicTransport": "Transporte público",
+    "walking": "Andando",
+    "taxi": "Carros de aplicativo ex: Uber",
+    "agree": "Eu concordo com os",
+    "terms": "termos de uso",
+    "captcha": "Por favor, complete o captcha",
+    "apply": "Enviar candidatura"
+  },
+  "footer": {
+    "services": "Serviços",
+    "contactInfo": "Contato",
+    "follow": "Siga-nos",
+    "description": "Serviços de limpeza, jardinagem, beleza e reparos acessíveis na Irlanda. Profissionalismo com um toque brasileiro."
+  },
+  "alerts": {
+    "ops": "Ops!",
+    "checkFields": "Por favor, preencha os campos!",
+    "ok": "Ok",
+    "success": "Candidatura enviada com sucesso!",
+    "contact": "Obrigado por se candidatar e Bem-vindo a Brazilian Hands Cooperative! Logo em breve entraremos em contato com você."
+  }
 }

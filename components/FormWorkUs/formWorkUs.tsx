@@ -37,11 +37,11 @@ function FormWorkUs() {
     phone: "",
     skills: "",
     city: "",
-    otherService: "",
-    eircode: "",
     street: "",
     district: "",
     houseNumber: "",
+    otherService: "",
+    eircode: "",
   });
 
   const handleInputChange = (
