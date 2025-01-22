@@ -277,16 +277,16 @@ function ConsentCheckBox({
                 <h2 className="text-lg font-semibold mb-2">10. Contact</h2>
                 <p>
                   To exercise your rights or clarify doubts about our privacy
-                  policy, contact our Data Protection Officer (DPO):
+                  policy, contact our :
                 </p>
                 <p className="mt-2">
-                  Email: [DPO email]
+                  Email: brazilianhandscooperative@gmail.com
                   <br />
-                  Phone: [DPO phone]
+                  Phone: +55 33 9709-5884
                   <br />
-                  Address: [Company address]
+                  Address: 163 West end, malow, cork
                 </p>
-                <p className="mt-2">Last updated: [DATE]</p>
+                <p className="mt-2">Last updated: January 22, 2025</p>
               </section>
             </div>
           </ScrollArea>
