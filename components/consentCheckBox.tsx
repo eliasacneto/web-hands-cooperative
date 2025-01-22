@@ -84,8 +84,10 @@ function ConsentCheckBox({
                     </h3>
                     <p>We collect the following personal data:</p>
                     <ul className="list-disc pl-5 mt-1">
+                      <li>Name</li>
                       <li>Email address</li>
-                      <li>WhatsApp number</li>
+                      <li>Phone number</li>
+                      <li>Eircode</li>
                     </ul>
                   </div>
 
@@ -152,7 +154,7 @@ function ConsentCheckBox({
                   <div>
                     <h3 className="font-medium mb-1">5.1 Retention Period</h3>
                     <p>
-                      We retain your personal data for a maximum period of 7
+                      We retain your personal data for a maximum period of 3
                       years after your last interaction, as permitted by
                       applicable legislation. After this period, your data will
                       be permanently deleted from our systems.

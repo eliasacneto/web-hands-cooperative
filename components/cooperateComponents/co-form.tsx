@@ -405,8 +405,8 @@ const CoForm = () => {
                         </SelectItem>
                         <SelectItem
                           className="cursor-pointer"
-                          key={"andando"}
-                          value={"andando"}
+                          key={"caminhando"}
+                          value={"caminhando"}
                         >
                           {t("walking")}
                         </SelectItem>
