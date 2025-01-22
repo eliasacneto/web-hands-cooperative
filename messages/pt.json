@@ -81,6 +81,8 @@
   "alerts": {
     "ops": "Ops!",
     "checkFields": "Por favor, preencha os campos!",
-    "ok": "Ok"
+    "ok": "Ok",
+    "success": "Candidatura enviada com sucesso!",
+    "contact": "Obrigado por se candidatar e Bem-vindo a Brazilian Hands Cooperative! Logo em breve entraremos em contato com você."
   }
 }

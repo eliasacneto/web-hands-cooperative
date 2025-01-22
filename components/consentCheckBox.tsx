@@ -11,20 +11,22 @@ interface ConsentProps {
   required: boolean;
   classLink?: string;
   classCheckbox?: string;
+  checked?: boolean;
 }
 
 function ConsentCheckBox({
   onChange,
+  checked,
   required,
   classLink,
   classCheckbox,
 }: ConsentProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  // const [isChecked, setIsChecked] = useState(false);
   const t = useTranslations("coForm");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(event.target.checked);
+    // setIsChecked(event.target.checked);
     onChange(event.target.checked);
   };
 
@@ -34,7 +36,7 @@ function ConsentCheckBox({
         <Label className="flex items-start gap-2">
           <Input
             type="checkbox"
-            checked={isChecked}
+            checked={checked}
             required={required}
             onChange={handleChange}
             className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -50,7 +52,7 @@ function ConsentCheckBox({
             </button>
           </span>
         </Label>
-        {required && !isChecked && (
+        {required && !checked && (
           <span className="text-red-500 text-sm mt-1 block">
             Please agree to the terms and conditions
           </span>

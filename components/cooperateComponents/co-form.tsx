@@ -117,7 +117,6 @@ const CoForm = () => {
         Swal.fire({
           title: a("ops"),
           text: a("checkFields"),
-          icon: "error",
           confirmButtonText: a("ok"),
           confirmButtonColor: "#16a34a",
         });
@@ -131,7 +130,17 @@ const CoForm = () => {
         return;
       }
 
-      await postData({ ...coFormData, captchaToken });
+      const response = await postData({ ...coFormData, captchaToken });
+
+      if (response) {
+        Swal.fire({
+          title: a("success"),
+          text: a("contact"),
+          icon: "success",
+          confirmButtonText: a("ok"),
+          confirmButtonColor: "#16a34a",
+        });
+      }
 
       setCoFormData({
         name: "",
@@ -424,6 +433,7 @@ const CoForm = () => {
 
                 <ConsentCheckBox
                   required={false}
+                  checked={coFormData.dataProtection}
                   onChange={handleConsentChange}
                   classCheckbox="text-gray-100"
                   classLink="text-yellow-500"

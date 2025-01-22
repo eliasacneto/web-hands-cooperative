@@ -20,6 +20,7 @@ import {
 import { usePost } from "@/hook/usePost";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Swal from "sweetalert2";
 import ConsentCheckBox from "./consentCheckBox";
 
 interface FormData {
@@ -87,32 +88,52 @@ function Form() {
   const { data, loading, error, postData } = usePost("client");
 
   const handleSubmit = async () => {
-    if (!validateForm()) {
-      alert("Please, fill in all fields!");
-      return;
+    try {
+      if (!validateForm()) {
+        Swal.fire({
+          title: "Oops",
+          //text: "Please fill all required fields",
+          text: "To serve you better, please fill in all the required fields. Thank you!",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#16a34a",
+        });
+        return;
+      }
+
+      const captchaToken = captchaRef.current?.getValue();
+
+      if (!captchaToken) {
+        setMessage("Please complete the captcha"); //traduzir
+        return;
+      }
+
+      const response = await postData({ ...formData, captchaToken });
+
+      if (response) {
+        Swal.fire({
+          title: "Success",
+          text: "Thank you for choosing Brazilian Hands! Our team will contact you shortly. We look forward to assisting you!",
+          icon: "success",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#16a34a",
+        });
+      }
+
+      // enviar form para back
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        eircode: "",
+        typeOfWork: "",
+        howFindCompany: "",
+        dataProtection: false,
+      });
+
+      captchaRef.current?.reset();
+    } catch (error) {
+      console.error(error);
     }
-
-    const captchaToken = captchaRef.current?.getValue();
-
-    if (!captchaToken) {
-      setMessage("Please complete the captcha"); //traduzir
-      return;
-    }
-
-    await postData({ ...formData, captchaToken });
-
-    // enviar form para back
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      eircode: "",
-      typeOfWork: "",
-      howFindCompany: "",
-      dataProtection: false,
-    });
-
-    captchaRef.current?.reset();
   };
 
   return (
@@ -290,6 +311,7 @@ function Form() {
             </div>
           </div>
           <ConsentCheckBox
+            checked={formData?.dataProtection}
             required={false}
             onChange={handleConsentChange}
             classCheckbox="text-gray-700"
