@@ -109,7 +109,12 @@ const CoForm = () => {
     );
   };
 
-  const { data, loading, error, postData } = usePost("collaborator");
+  const {
+    data,
+    loading,
+    error: collaboratorError,
+    postData,
+  } = usePost("collaborator");
 
   const handleSubmit = async () => {
     try {
@@ -155,14 +160,35 @@ const CoForm = () => {
       });
 
       captchaRef.current?.reset();
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
 
-      console.log("Form após reset:", coFormData);
-    } catch (error) {
-      console.log(error);
+      let errorMessage =
+        "An error occurred while submitting the form. Please try again later or contact our support team at +55 33 9709-5884.";
+
+      if (error.response) {
+        if (error.response.status === 400) {
+          errorMessage =
+            "Invalid data. Please check your inputs and try again.";
+        } else if (error.response.status === 500) {
+          errorMessage = "Server error. Please try again later.";
+        }
+      } else if (
+        error.message.includes("Network Error") ||
+        error.message.includes("ERR_CONNECTION_REFUSED")
+      ) {
+        errorMessage =
+          "Could not connect to the server. Please check your internet connection.";
+      }
+
+      Swal.fire({
+        title: "Oops",
+        text: errorMessage,
+        confirmButtonText: "OK",
+        confirmButtonColor: "#16a34a",
+      });
     }
   };
-
-  console.log("collaborator form data:", coFormData);
 
   return (
     <div className="flex flex-col lg:flex-row w-full ">
@@ -421,8 +447,8 @@ const CoForm = () => {
                         </SelectItem>
                         <SelectItem
                           className="cursor-pointer"
-                          key={"carro de app"}
-                          value={"carro de app"}
+                          key={"carro de aplicativo"}
+                          value={"carro de aplicativo"}
                         >
                           {t("taxi")}
                         </SelectItem>
