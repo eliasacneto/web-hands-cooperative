@@ -444,7 +444,7 @@ const CoForm = () => {
                 {coFormData?.dataProtection && (
                   <ReCAPTCHA
                     ref={captchaRef}
-                    sitekey={"6Ldo37kqAAAAADtdOshaszMqbScQrkDd9qRCg65-"!}
+                    sitekey={`6Ldo37kqAAAAADtdOshaszMqbScQrkDd9qRCg65-`!}
                   />
                 )}
               </div>
