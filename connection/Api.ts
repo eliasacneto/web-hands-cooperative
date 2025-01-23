@@ -6,4 +6,3 @@ export const api: AxiosInstance = axios.create({
     "Content-Type": "application/json",
   },
 });
-console.log("teste =", api.defaults.baseURL);
