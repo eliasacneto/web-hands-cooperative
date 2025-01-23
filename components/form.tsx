@@ -87,12 +87,72 @@ function Form() {
 
   const { data, loading, error, postData } = usePost("client");
 
+  // const handleSubmit = async () => {
+  //   try {
+  //     if (!validateForm()) {
+  //       Swal.fire({
+  //         title: "Oops",
+  //         //text: "Please fill all required fields",
+  //         text: "To serve you better, please fill in all the required fields. Thank you!",
+  //         confirmButtonText: "OK",
+  //         confirmButtonColor: "#16a34a",
+  //       });
+  //       return;
+  //     }
+
+  //     console.log("Form error:", error);
+
+  //     const captchaToken = captchaRef.current?.getValue();
+
+  //     if (!captchaToken) {
+  //       setMessage("Please complete the captcha"); //traduzir
+  //       return;
+  //     }
+
+  //     const response = await postData({ ...formData, captchaToken });
+
+  //     console.log("Response from backend: ", response);
+
+  //     if (response) {
+  //       Swal.fire({
+  //         title: "Success",
+  //         text: "Thank you for choosing Brazilian Hands! Our team will contact you shortly. We look forward to assisting you!",
+  //         icon: "success",
+  //         confirmButtonText: "OK",
+  //         confirmButtonColor: "#16a34a",
+  //       });
+  //     }
+
+  //     // enviar form para back
+  //     setFormData({
+  //       name: "",
+  //       phone: "",
+  //       email: "",
+  //       eircode: "",
+  //       typeOfWork: "",
+  //       howFindCompany: "",
+  //       dataProtection: false,
+  //     });
+
+  //     captchaRef.current?.reset();
+  //   } catch (error: any) {
+  //     console.error(error);
+  //     if (error.response.status === 400) {
+  //       Swal.fire({
+  //         title: "Oops",
+  //         text: "An error occurred while submitting the form. Please try again later.",
+  //         confirmButtonText: "OK",
+  //         confirmButtonColor: "#16a34a",
+  //       });
+  //     }
+  //   }
+  // };
+
   const handleSubmit = async () => {
     try {
       if (!validateForm()) {
         Swal.fire({
           title: "Oops",
-          //text: "Please fill all required fields",
           text: "To serve you better, please fill in all the required fields. Thank you!",
           confirmButtonText: "OK",
           confirmButtonColor: "#16a34a",
@@ -100,8 +160,9 @@ function Form() {
         return;
       }
 
-      const captchaToken = captchaRef.current?.getValue();
+      console.log("Form validation passed");
 
+      const captchaToken = captchaRef.current?.getValue();
       if (!captchaToken) {
         setMessage("Please complete the captcha"); //traduzir
         return;
@@ -110,6 +171,7 @@ function Form() {
       const response = await postData({ ...formData, captchaToken });
 
       if (response) {
+        // Certifique-se de que a resposta é válida
         Swal.fire({
           title: "Success",
           text: "Thank you for choosing Brazilian Hands! Our team will contact you shortly. We look forward to assisting you!",
@@ -117,22 +179,48 @@ function Form() {
           confirmButtonText: "OK",
           confirmButtonColor: "#16a34a",
         });
+
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          eircode: "",
+          typeOfWork: "",
+          howFindCompany: "",
+          dataProtection: false,
+        });
+
+        captchaRef.current?.reset();
+      } else {
+        throw new Error("Invalid response from server");
+      }
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+
+      let errorMessage =
+        "An error occurred while submitting the form. Please try again later or contact our support team at +55 33 9709-5884.";
+
+      if (error.response) {
+        if (error.response.status === 400) {
+          errorMessage =
+            "Invalid data. Please check your inputs and try again.";
+        } else if (error.response.status === 500) {
+          errorMessage = "Server error. Please try again later.";
+        }
+      } else if (
+        error.message.includes("Network Error") ||
+        error.message.includes("ERR_CONNECTION_REFUSED")
+      ) {
+        errorMessage =
+          "Could not connect to the server. Please check your internet connection.";
       }
 
-      // enviar form para back
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        eircode: "",
-        typeOfWork: "",
-        howFindCompany: "",
-        dataProtection: false,
+      Swal.fire({
+        title: "Oops",
+        text: errorMessage,
+        confirmButtonText: "OK",
+        confirmButtonColor: "#16a34a",
       });
-
-      captchaRef.current?.reset();
-    } catch (error) {
-      console.error(error);
     }
   };
 
@@ -270,6 +358,7 @@ function Form() {
                   <SelectItem className="cursor-pointer" value="facebook">
                     Facebook
                   </SelectItem>
+                  {/**  Instagram  depois corrigir*/}
                   <SelectItem className="cursor-pointer" value="instagram">
                     Instagram
                   </SelectItem>
