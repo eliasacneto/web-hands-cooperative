@@ -321,7 +321,7 @@ function Form() {
             {formData?.dataProtection && (
               <ReCAPTCHA
                 ref={captchaRef}
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                sitekey={"6Ldo37kqAAAAADtdOshaszMqbScQrkDd9qRCg65-"!}
               />
             )}
           </div>

@@ -42,7 +42,7 @@ export default async function RootLayout({
     messages = {}; // Fallback para mensagens vazias
   }
 
-  if (!process.env.NEXT_PUBLIC_GAID) {
+  if (!"G-CSVZP8Z022") {
     console.warn("Google Analytics ID não configurado");
   }
 
@@ -53,7 +53,7 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GAID!} />
+      <GoogleAnalytics gaId={"G-CSVZP8Z022"!} />
     </html>
   );
 }

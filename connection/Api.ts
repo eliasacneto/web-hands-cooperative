@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 
 export const api: AxiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_DATABASE_URL,
+  baseURL: "https://brazilian-api.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
