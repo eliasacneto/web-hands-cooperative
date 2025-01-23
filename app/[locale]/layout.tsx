@@ -42,7 +42,7 @@ export default async function RootLayout({
     messages = {}; // Fallback para mensagens vazias
   }
 
-  if (!"G-CSVZP8Z022") {
+  if (`G-CSVZP8Z022` === null) {
     console.warn("Google Analytics ID não configurado");
   }
 
@@ -53,7 +53,7 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
       </body>
-      <GoogleAnalytics gaId={"G-CSVZP8Z022"!} />
+      <GoogleAnalytics gaId={`G-CSVZP8Z022`!} />
     </html>
   );
 }
