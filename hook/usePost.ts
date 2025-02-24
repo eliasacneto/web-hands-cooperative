@@ -9,6 +9,8 @@ export const usePost = <T>(endpoint: string) => {
   const postData = async (body: T) => {
     try {
       const response = await api.post<T>(endpoint, body);
+      console.log("hook", response);
+      console.log("hook data", response.data);
       setData(response.data);
       setLoading(false);
 

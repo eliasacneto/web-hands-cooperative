@@ -1,10 +1,4 @@
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
@@ -50,18 +44,14 @@ const CoForm = () => {
   const [message, setMessage] = useState("");
   const captchaRef = useRef<ReCAPTCHA>(null);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setCoFormData({
       ...coFormData,
       [e.target.id]: e.target.value,
     });
   };
 
-  const handleTextAreaChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLSelectElement>) => {
     setCoFormData({
       ...coFormData,
       [e.target.id]: e.target.value,
@@ -109,12 +99,7 @@ const CoForm = () => {
     );
   };
 
-  const {
-    data,
-    loading,
-    error: collaboratorError,
-    postData,
-  } = usePost("collaborator");
+  const { data, loading, error: collaboratorError, postData } = usePost("collaborator");
 
   const handleSubmit = async () => {
     try {
@@ -136,6 +121,9 @@ const CoForm = () => {
       }
 
       const response = await postData({ ...coFormData, captchaToken });
+
+      console.log("response", response);
+      console.log("error", collaboratorError);
 
       if (response) {
         Swal.fire({
@@ -161,26 +149,22 @@ const CoForm = () => {
 
       captchaRef.current?.reset();
     } catch (error: any) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error.response?.data || error.message);
 
       let errorMessage =
         "An error occurred while submitting the form. Please try again later or contact our support team at +55 33 9709-5884.";
 
       if (error.response) {
         if (error.response.status === 400) {
-          errorMessage =
-            "Invalid data. Please check your inputs and try again.";
+          errorMessage = "Invalid data. Please check your inputs and try again.";
         } else if (error.response.status === 500) {
           errorMessage = "Server error. Please try again later.";
         }
-      } else if (
-        error.message.includes("Network Error") ||
-        error.message.includes("ERR_CONNECTION_REFUSED")
-      ) {
-        errorMessage =
-          "Could not connect to the server. Please check your internet connection.";
+      } else if (error.message.includes("Network Error") || error.message.includes("ERR_CONNECTION_REFUSED")) {
+        errorMessage = "Could not connect to the server. Please check your internet connection.";
       }
 
+      console.log("error", collaboratorError);
       Swal.fire({
         title: "Oops",
         text: errorMessage,
@@ -193,19 +177,12 @@ const CoForm = () => {
   return (
     <div className="flex flex-col lg:flex-row w-full ">
       <div className="w-full lg:h-[848px] hidden lg:flex">
-        <Image
-          className=" w-full"
-          src={ApplyIMG}
-          alt="hero-img"
-          quality={100}
-        />
+        <Image className=" w-full" src={ApplyIMG} alt="hero-img" quality={100} />
       </div>
 
       <div className="lg:w-full w-full bg-blue-500 flex items-center justify-center py-14 px-4">
         <div className="mx-4 flex flex-col items-center justify-center lg:items-start mt-10">
-          <p className="text-center lg:text-start text-white font-bold pb-5">
-            {t("letsWork")}
-          </p>
+          <p className="text-center lg:text-start text-white font-bold pb-5">{t("letsWork")}</p>
 
           <div className="flex flex-col lg:w-[560px]">
             <h1 className="pb-5 text-4xl text-center text-white lg:text-4xl lg:text-start font-semibold">
@@ -324,19 +301,12 @@ const CoForm = () => {
                 <div className="flex gap-2">
                   <div className="flex flex-col gap-3 w-3/5">
                     <Label>{t("skills")}</Label>
-                    <Select
-                      value={coFormData.work || ""}
-                      onValueChange={handleSelectChangeSkills}
-                    >
+                    <Select value={coFormData.work || ""} onValueChange={handleSelectChangeSkills}>
                       <SelectTrigger className="bg-white text-black">
                         <SelectValue placeholder={t("skills")} />
                       </SelectTrigger>
                       <SelectContent position="popper">
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"serviço de limpeza"}
-                          value={"serviço de limpeza"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"serviço de limpeza"} value={"serviço de limpeza"}>
                           {t("cleaning")}
                         </SelectItem>
                         <SelectItem
@@ -346,18 +316,10 @@ const CoForm = () => {
                         >
                           {t("gardening")}
                         </SelectItem>
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"pintura"}
-                          value={"pintura"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"pintura"} value={"pintura"}>
                           {t("painting")}
                         </SelectItem>
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"reformas"}
-                          value={"reformas"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"reformas"} value={"reformas"}>
                           {t("repairs")}
                         </SelectItem>
                       </SelectContent>
@@ -365,26 +327,15 @@ const CoForm = () => {
                   </div>
                   <div className="flex flex-col gap-3 w-2/5">
                     <Label>{t("equipments")}</Label>
-                    <Select
-                      value={coFormData.equipment.toString() || ""}
-                      onValueChange={handleSelectChangeEquipement}
-                    >
+                    <Select value={coFormData.equipment.toString() || ""} onValueChange={handleSelectChangeEquipement}>
                       <SelectTrigger className="bg-white text-black">
                         <SelectValue placeholder={t("equipments")} />
                       </SelectTrigger>
                       <SelectContent position="popper">
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"não"}
-                          value={"false"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"não"} value={"false"}>
                           {t("no")}
                         </SelectItem>
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"sim"}
-                          value={"true"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"sim"} value={"true"}>
                           {t("yes")}
                         </SelectItem>
                       </SelectContent>
@@ -409,40 +360,21 @@ const CoForm = () => {
                 <div>
                   <div className="flex flex-col gap-3">
                     <Label>{t("shapeOfDisplacement")}</Label>
-                    <Select
-                      value={coFormData.shapeOfDisplacement || ""}
-                      onValueChange={handleSelectChangeShape}
-                    >
+                    <Select value={coFormData.shapeOfDisplacement || ""} onValueChange={handleSelectChangeShape}>
                       <SelectTrigger className="bg-white text-black">
                         <SelectValue placeholder={t("shapeOfDisplacement")} />
                       </SelectTrigger>
                       <SelectContent position="popper">
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"carro"}
-                          value={"carro"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"carro"} value={"carro"}>
                           {t("car")}
                         </SelectItem>
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"moto"}
-                          value={"moto"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"moto"} value={"moto"}>
                           {t("motorcycle")}
                         </SelectItem>
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"transporte publico"}
-                          value={"transporte publico"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"transporte publico"} value={"transporte publico"}>
                           {t("publicTransport")}
                         </SelectItem>
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={"caminhando"}
-                          value={"caminhando"}
-                        >
+                        <SelectItem className="cursor-pointer" key={"caminhando"} value={"caminhando"}>
                           {t("walking")}
                         </SelectItem>
                         <SelectItem
@@ -468,10 +400,7 @@ const CoForm = () => {
 
               <div className="flex justify-center">
                 {coFormData?.dataProtection && (
-                  <ReCAPTCHA
-                    ref={captchaRef}
-                    sitekey={`6Ldo37kqAAAAADtdOshaszMqbScQrkDd9qRCg65-`!}
-                  />
+                  <ReCAPTCHA ref={captchaRef} sitekey={`6Ldo37kqAAAAADtdOshaszMqbScQrkDd9qRCg65-`!} />
                 )}
               </div>
               {message && (
